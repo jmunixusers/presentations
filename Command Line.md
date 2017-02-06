@@ -24,7 +24,7 @@ This can be done either with a local installation or remote connection over ssh.
 - top
 
 ## [Cantrill rant] (https://youtu.be/S0mviKhVmBI)
-: Explain the inspirations for command line piping, "the UNIX philosophy", and introduce Jon Bentley's challenge.
+Explain the inspirations for command line piping, "the UNIX philosophy", and introduce Jon Bentley's challenge.
 
 ## Iteratively build an example of the text pipeline:
 1. dmesg/echo - text source
@@ -38,12 +38,13 @@ This can be done either with a local installation or remote connection over ssh.
 9. head/tail
 
 ## Show that the pipeline can begin and end with a file:
-:This probably should include an explanation of stderr vs stdout, but hasn’t yet.
+This probably should include an explanation of stderr vs stdout, but hasn’t yet.
 - cat
 - > and <
 
 ## Bentley's challenge
 `cat shakespeare.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed 1q`
+
 1. Pipe works of Shakespeare
 2. Convert all non-alpha characters to newlines, then squeeze each string of repeated newlines into a single newline
 3. Transform upper to lowercase
@@ -59,14 +60,16 @@ This can be done either with a local installation or remote connection over ssh.
 - integration.sh
 
 ## If desperate, demonstrate transforming unformatted data to something more readable:
-: This was a last minute hack and needs refinement
+ This was a last minute hack and needs refinement
 `seq 1 500 50000 | tr '\n' ' ' | xargs -n3 echo | column -t`
+
 1. Generate 1-50000, every 500th
 2. Transform newline to space
 3. Echo three rows at a time
 4. Have column align columns
 
 `seq 1 500 50000 | tr '\n' ' ' | xargs -n4 echo | tr ' ' ',' | column -t -s,`
+
 1. Generate 1-50000, every 500th
 2. Transform newline to space
 3. Echo four rows at a time
