@@ -59,8 +59,9 @@ This probably should include an explanation of stderr vs stdout, but hasn’t ye
 - if/then/elif/fi
 - integration.sh
 
-## If desperate, demonstrate transforming unformatted data to something more readable:
- This was a last minute hack and needs refinement
+## Demonstrate transforming unformatted data to something more readable:
+This was a last minute hack and needs refinement.
+
 `seq 1 500 50000 | tr '\n' ' ' | xargs -n3 echo | column -t`
 
 1. Generate 1-50000, every 500th
