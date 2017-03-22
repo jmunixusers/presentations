@@ -1,4 +1,4 @@
-Let's Encrypt Introduction
+# Let's Encrypt Introduction
 
 This will assume that you have a server on which you are able to
 successfully run commands as the root user, either through `sudo` or by
