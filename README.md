@@ -9,3 +9,4 @@ This is a collection of presentation notes from previous UUG meetings.
 * [Intel Pin](https://github.com/lam2mo/uug-pin) (External)
 
 ## Lightning Talks
+* [Adventures in /proc](AdventuresInProc.md)
