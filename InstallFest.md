@@ -1,5 +1,24 @@
 # InstallFest
 
+The Unix Users Group provides an modified image of Linux Mint that is
+intended to function like the Linux lab computers in ISAT. The image has
+software recommended and requested by a variety of professors in the
+department.
+
+The image is provided as a virtual machine intended to be used with
+VirtualBox, which allows you to install it on your computer with no
+impact to your existing operating system. 
+
+In order to get the most use out of the image, it is important to follow
+the steps in the "Configuring" section below when going through the
+installer in the virtual machine. Additionally, some PCs with Windows
+will need to modify BIOS settings to enable the virtualization features
+necessary to run the virtual machine.
+
+This guide will give you a brief overview of what is done at the
+InstallFest and should allow you to install the image on your own if
+necessary.
+
 ## Getting Virtualbox
 
 Go to the [VirtualBox
