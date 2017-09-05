@@ -30,8 +30,8 @@ launch the virtual machine.
 ### Special instructions for Windows Users
 
 For people with a device running Windows, you *may* get an error that
-VT-x is not enabled. You will need to enable a BIOS feature to enable
-virtualization.
+VT-x  or AMD-V is not enabled. You will need to enable a BIOS feature to
+enable virtualization.
 
 To do this, open Settings and go to Updates and Security. On the left
 side of the window, choose "Recovery". In the main portion of the window
