@@ -33,7 +33,7 @@ For people with a device running Windows, you *may* get an error that
 VT-x is not enabled. You will need to enable a BIOS feature to enable
 virtualization.
 
-To do this, open Settings and go to Updates and Recovery. On the left
+To do this, open Settings and go to Updates and Security. On the left
 side of the window, choose "Recovery". In the main portion of the window
 (on the right), click "Restart now" under the Advanced Startup heading.
 
@@ -43,6 +43,9 @@ may be prompted to press a key on your keyboard to enter BIOS settings.
 
 Look for an option relating to virtualization and make sure that it is
 enabled.
+
+If you do not get an error when launching the virtual machine, you will
+not need to complete these steps.
 
 ## Configuring the virtual machine
 
