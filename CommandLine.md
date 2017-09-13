@@ -44,6 +44,7 @@ This probably should include an explanation of stderr vs stdout, but hasn’t ye
 
 ## Bentley's challenge
 `curl -o shakespeare.txt http://www.gutenberg.org/files/100/100.txt`
+
 `cat shakespeare.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed 1q`
 
 1. Pipe works of Shakespeare
