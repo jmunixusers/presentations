@@ -23,7 +23,7 @@ This can be done either with a local installation or remote connection over ssh.
 - scp/sftp
 - top
 
-## [Cantrill rant] (https://youtu.be/S0mviKhVmBI)
+## [Cantrill rant](https://youtu.be/S0mviKhVmBI)
 Explain the inspirations for command line piping, "the UNIX philosophy", and introduce Jon Bentley's challenge.
 
 ## Iteratively build an example of the text pipeline:
