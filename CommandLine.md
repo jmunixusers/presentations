@@ -55,6 +55,14 @@ This probably should include an explanation of stderr vs stdout, but hasn’t ye
 6. Reverse numeric sort
 7. Print only 1 line
 
+[Bigrams](https://davidxmoody.com/2015/word-frequency-analysis-with-command-line-tools/)
+
+`cat shakespeare.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | awk -- 'prev!="" { print prev,$0; } { prev=$0; }' | sort | uniq -c | sort -rn | sed 1q`
+
+[Trigrams](https://davidxmoody.com/2015/word-frequency-analysis-with-command-line-tools/)
+
+`cat shakespeare.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | awk -- 'first!=""&&second!="" { print first,second,$0; } { first=second; second=$0; }' | sort | uniq -c | sort -rn | sed 1q`
+
 ## Demonstrate programmability of the shell:
 - seq
 - for/do/done
