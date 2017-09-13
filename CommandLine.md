@@ -40,9 +40,10 @@ Explain the inspirations for command line piping, "the UNIX philosophy", and int
 ## Show that the pipeline can begin and end with a file:
 This probably should include an explanation of stderr vs stdout, but hasn’t yet.
 - cat
-- > and <
+- \> and <
 
 ## Bentley's challenge
+`curl -o shakespeare.txt http://www.gutenberg.org/files/100/100.txt`
 `cat shakespeare.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed 1q`
 
 1. Pipe works of Shakespeare
