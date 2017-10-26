@@ -3,6 +3,7 @@ This is a collection of presentation notes from previous UUG meetings.
 
 ## Special Events
 * [InstallFest](InstallFest.md)
+* [Internship Panel](InternshipQA.md)
 
 ## Full Length Meetings
 * [Command Line](CommandLine.md)
