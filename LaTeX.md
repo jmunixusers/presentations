@@ -72,7 +72,7 @@ Fun fact: LaTeX is Turing-complete!
 ## Bibliography
 
 * Special BibTeX file format (`.bib`)
-* Download references from [ACM Digital Library](dl.acm.org) and/or [IEEE Xplore](http://ieeexplore.ieee.org)
+* Download references from [ACM Digital Library](https://dl.acm.org) and/or [IEEE Xplore](http://ieeexplore.ieee.org)
 * `\bibliographystyle{plain}`, `\bibliography{fname}`
 * `\cite`
 
