@@ -16,7 +16,17 @@ scripts on your machine.
 
 As a description ahead of time, the way that Ansible knows how to configure your
 computer is by reading a set of files, called a **playbook**, that are provided to
-it. 
+it.
+
+The playbooks are resumable, which means that if for any reason you need to cancel
+the playbook while it's running, you can do so (press Ctrl + C), and then you can
+run it again whenver it is convenient.
+
+### Configuring using the provided scripts
+
+On your desktop, there are a few files with the names of various CS courses.
+One-by-one, double-click the name of each course you're in, wait for it to
+complete, and then double-click the name of another course you're taking.
 
 ### Configuring using the command line
 
@@ -42,12 +52,6 @@ CS101, CS159, and CS261, you would run the following command:
 ```
 ansible-pull -U https://github.com/jmunixusers/cs-vm-build -i hosts -K -t cs101,cs159,cs261
 ```
-
-### Configuring using the provided scripts
-
-On your desktop, there are a few files with the names of various CS courses.
-One-by-one, double-click the name of each course you're in, wait for it to
-complete, and then double-click the name of another course you're taking.
 
 ## Installing and removing software
 
@@ -112,7 +116,10 @@ the next time you're ready to use it, you can pause the VM.
 There are times where you may want to preserve a copy of the virtual machine's
 state, such as before making a major change. To do this, go to the Machine menu,
 click Take snapshot, and then name the snapshot something meaninful and press Ok.
-
+Snapshots should not be used as a form of long-term data retention and should not
+be your backup policy. They are intended only to have a frozen copy of your VM at
+a particular moment in time before you make a substantial change. You should still
+make regular backups some other way.
 
 ## Connecting to stu easily
 
@@ -171,9 +178,12 @@ there is software that you wish was installed by default,
 GitHub project. You can use this same form to request software be added for a
 particular course.
 
-## Attending UUG Meetings
+## Getting involved with the UUG
 
 To learn more about how to use your new VM or being a part of a community of
 users of open-source software, come to a meeting of the Unix Users Group on
 Wednesday nights at 6:30PM in ISAT 246.
+
+Follow us on Twitter [@jmunixusers](https://twitter.com/jmunixusers) or see
+upcoming events on [BeInvolved](https://beinvolved.jmu.edu/organization/uug).
 
