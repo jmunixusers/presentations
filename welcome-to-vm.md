@@ -115,9 +115,9 @@ the next time you're ready to use it, you can pause the VM.
 
 There are times where you may want to preserve a copy of the virtual machine's
 state, such as before making a major change. To do this, go to the Machine menu,
-click Take snapshot, and then name the snapshot something meaninful and press Ok.
+click Take snapshot, and then name the snapshot something meaningful and press Ok.
 Snapshots should not be used as a long-term retention policy. Over time, the
-cummulative size of the snapshots can grow quickly, taking up a large amount of
+cumulative size of the snapshots can grow quickly, taking up a large amount of
 disk space. In general, it is best to keep the last couple of snapshots and to
 mostly focus on taking snapshots before making major changes to your virtual
 machine.
@@ -125,7 +125,7 @@ machine.
 ## Connecting to stu easily
 
 There will be times in your courses where you need to connect to stu (or other
-systems). To do this, open a terminal windown and type
+systems). To do this, open a terminal window and type
 
 ```
 ssh EID@stu.cs.jmu.edu
