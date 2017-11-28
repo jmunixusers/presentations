@@ -14,7 +14,7 @@ one of two methods: typing commands on the command-line or using the provided
 scripts on your machine.
 
 The way that Ansible knows how to configure your
-computer is by reading a set of files, called **playboosk**.
+computer is by reading a set of files, called **playbooks**.
 The playbooks are resumable, which means that if for any reason you need to cancel
 the playbook while it's running, you can do so (press Ctrl + C), and then you can
 run it again whenver it is convenient.
