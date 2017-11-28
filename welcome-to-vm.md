@@ -1,9 +1,8 @@
 # JMU CS Virtual Machine
 
 Now that you have installed the virtual machine and set it up, you will configure
-it for your class using a software called [Ansible](https://ansible.com), a tool
-for automating the process of ensuring that a computer is in a particular state.
-We use this to download and install software and files needed for your various
+it for your class using a software called [Ansible](https://ansible.com).
+We use Ansible to download and install software and files needed for your various
 classes. To see the details of how this is implemented, you can view the
 [GitHub project](https://github.com/jmunixusers/cs-vm-build) hosted by the
 Unix Users Group.
@@ -14,10 +13,8 @@ You can configure the virtual machine for the various classes you're in using
 one of two methods: typing commands on the command-line or using the provided
 scripts on your machine.
 
-As a description ahead of time, the way that Ansible knows how to configure your
-computer is by reading a set of files, called a **playbook**, that are provided to
-it.
-
+The way that Ansible knows how to configure your
+computer is by reading a set of files, called **playboosk**.
 The playbooks are resumable, which means that if for any reason you need to cancel
 the playbook while it's running, you can do so (press Ctrl + C), and then you can
 run it again whenver it is convenient.
@@ -37,7 +34,7 @@ the following command, using the substitutions that are provided after.
 ansible-pull -U https://github.com/jmunixusers/cs-vm-build -i hosts -K -t TAGS
 ```
 
-When you run this command, replace `TAGS` with a command-separated list of classes
+When you run this command, replace `TAGS` with a comma-separated list of classes
 that you are taking. Valid values are:
 
 - cs101
