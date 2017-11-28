@@ -116,10 +116,11 @@ the next time you're ready to use it, you can pause the VM.
 There are times where you may want to preserve a copy of the virtual machine's
 state, such as before making a major change. To do this, go to the Machine menu,
 click Take snapshot, and then name the snapshot something meaninful and press Ok.
-Snapshots should not be used as a form of long-term data retention and should not
-be your backup policy. They are intended only to have a frozen copy of your VM at
-a particular moment in time before you make a substantial change. You should still
-make regular backups some other way.
+Snapshots should not be used as a long-term retention policy. Over time, the
+cummulative size of the snapshots can grow quickly, taking up a large amount of
+disk space. In general, it is best to keep the last couple of snapshots and to
+mostly focus on taking snapshots before making major changes to your virtual
+machine.
 
 ## Connecting to stu easily
 
