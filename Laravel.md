@@ -255,4 +255,4 @@ The vendor directory contains Composer dependencies related files of your applic
 
 ## Example App in Browser
 
-[laravel ap example](./images/laravel/laravel-home.png)
+![laravel ap example](./images/laravel/laravel-home.png)
