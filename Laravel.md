@@ -252,3 +252,7 @@ The tests directory contains all of your automated tests
 #### Vendor Directory
 
 The vendor directory contains Composer dependencies related files of your application.
+
+## Example App in Browser
+
+[laravel ap example](./images/laravel/laravel-home.png)
