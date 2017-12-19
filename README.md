@@ -15,3 +15,4 @@ This is a collection of presentation notes from previous UUG meetings.
 
 ## Lightning Talks
 * [Adventures in /proc](AdventuresInProc.md)
+* [Laravel](Laravel.md)
