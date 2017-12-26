@@ -13,17 +13,18 @@ You can configure the virtual machine for the various classes you're in using
 one of two methods: typing commands on the command-line or using the provided
 scripts on your machine.
 
-The way that Ansible knows how to configure your
-computer is by reading a set of files, called **playbooks**.
-The playbooks are resumable, which means that if for any reason you need to cancel
-the playbook while it's running, you can do so (press Ctrl + C), and then you can
-run it again whenver it is convenient.
+The way that Ansible knows how to configure your computer is by reading a set
+of files, called **playbooks**. The playbooks are resumable, which means that if
+for any reason you need to cancel the playbook while it's running, you can do
+so (press Ctrl + C), and then you can run it again whenver it is convenient.
 
 ### Configuring using the provided scripts
 
-On your desktop, there are a few files with the names of various CS courses.
-One-by-one, double-click the name of each course you're in, wait for it to
-complete, and then double-click the name of another course you're taking.
+On your desktop or in the menu there is a shortcut called "JMU CS VM
+Configuration." Open this tool and select the courses that you need to have
+your virtual machine set up for. Once you've selected the necessary courses,
+click "Run." You can watch the status in the black terminal window within the
+program and you will receive a notification when the configuration is complete.
 
 ### Configuring using the command line
 
@@ -121,6 +122,17 @@ machine.
 
 ## Connecting to stu easily
 
+### Using Filezilla
+
+If you only need to access stu in order to copy files to or from your VM, then
+you can use Filezilla. In the menu, search for Filezilla and open it. In the
+top-left is a black arrow. Click that and then select the
+"JMU CS Student server (stu)." You will be prompted for your JMU e-ID password.
+After entering that, you will be connected to stu and will be able to copy
+files.
+
+### Through the command line
+
 There will be times in your courses where you need to connect to stu (or other
 systems). To do this, open a terminal window and type
 
@@ -174,7 +186,9 @@ Should you encounter any issues with your virtual machine or if you notice
 there is software that you wish was installed by default,
 [open an issue](https://github.com/jmunixusers/cs-vm-build/issues/new) on the
 GitHub project. You can use this same form to request software be added for a
-particular course.
+particular course. If you get an error while configuring the virtual machine,
+try to have any files in `/opt/vmtools/logs` on your VM ready if possible when
+creating an issue.
 
 ## Getting involved with the UUG
 
