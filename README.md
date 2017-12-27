@@ -16,3 +16,6 @@ This is a collection of presentation notes from previous UUG meetings.
 ## Lightning Talks
 * [Adventures in /proc](AdventuresInProc.md)
 * [Laravel](Laravel.md)
+
+## Virtual Machine
+Virtual machine documentation is kept in a [separate folder](vm/)
