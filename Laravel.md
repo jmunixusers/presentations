@@ -29,11 +29,11 @@
 
 ## Introduction to PHP and Laravel
 
-PHP, very much like node.js or ruby is a back-end language. It is especially suited for web development.
+- PHP, very much like node.js or ruby is a back-end language. It is especially suited for web development.
 
-Laravel is a front-end framework for PHP. 
+- Laravel is a front-end framework for PHP. 
 
-Writing PHP and Laravel feels very similar to writing Ruby and Rails respectively. 
+- Writing PHP and Laravel feels very similar to writing Ruby and Rails respectively. 
 
 
 An example of this can be seen here when we make controllers for websites:
@@ -66,20 +66,15 @@ class FarmController extends Controller{
 
 ## How to Setup and Install
 
-- First we needs to install virtual box and vagrant:
-
-  [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
-
-  and
-
-  [Vagrant](https://www.vagrantup.com/downloads.html)
-
+- First we need to install virtual box and vagrant:
+    - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+    - [Vagrant](https://www.vagrantup.com/downloads.html)
 
 - Once these two are installed type the following in your terminal:
 
 ```
-  vagrant box add laravel/homestead
-  ```
+vagrant box add laravel/homestead
+```
 
 - You will need to make a choice of what provider you want, enter 2 for virtualbox:
 
@@ -109,8 +104,8 @@ ssh-keygen -t rsa -C “your_email@example.com”
 ![homestead.yaml](./images/laravel/HomesteadYaml.png) 
 
 - In the terminal type:
-```
-    sudo nano /etc/hosts
+``` 
+sudo nano /etc/hosts
 ```
 
   - At the end of the file add the following:
