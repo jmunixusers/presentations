@@ -117,3 +117,9 @@ This will create a commit with the default message, 'Revert "Old Commit"'. Push
 this change back to GitHub with
 
     git push
+
+## Going futher
+
+For an extension of this presentation and further examples and exercises in
+using Git, checkout out the [Git 201](https://github.com/jmunixusers/git-201)
+repository.
