@@ -60,7 +60,15 @@ a neccessity for command line applications
 
 ## Why do we use them?
 
+Manpages are the most complete and accepted documentation for programs on the
+command line.
 
+### Are there any replacements?
+
+What do you have against manpages? Anyways, There are a few, but none as
+popular as man.
+
+#### Sphynx
 
 ## How do I make one?
 
