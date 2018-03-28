@@ -11,8 +11,8 @@ This is a collection of presentation notes from previous UUG meetings.
 * [Intel Pin](https://github.com/lam2mo/uug-pin) (External)
 * [LaTeX](LaTeX.md)
 * [Let's Encrypt](LetsEncrypt.md)
-* [Vim](https://crosse.github.io/vim_tutorial/) (External)
 * [Manpages](Manpages.md)
+* [Vim](https://crosse.github.io/vim_tutorial/) (External)
 
 ## Lightning Talks
 * [Adventures in /proc](AdventuresInProc.md)
