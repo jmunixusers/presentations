@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**BEFORE WE START**: Get a [ShareLaTeX](https://www.sharelatex.com) or [Overleaf](https://www.overleaf.com) account.
+**BEFORE WE START**: [Overleaf](https://www.overleaf.com) account.
 
 Overview: The TeX [typesetting](https://en.wikipedia.org/wiki/Typesetting) system originated with Don Knuth in 1970s, prompted by his work on "The Art of Computer Programming." It first ran on a PDP-10 in 1978. TeX uses a versioning system w/ increasing digits of π; lastest is 3.14159265. It was extended to LaTeX by Leslie Lamport (@ SRI International) in 1980s, and is now a full document preparation system. The latest version is LaTeX 2e. LaTeX is widely used in CS, Math, Engineering, and other scientific fields.
 
@@ -78,7 +78,7 @@ Fun fact: LaTeX is Turing-complete!
 
 ## Large documents
 
-* Custom `.sty` files and ShareLaTeX/Overleaf templates
+* Custom `.sty` files and Overleaf templates
 * Multiple files: `\include`
 * Importance of unique labels & bibliography management
 * Build frameworks (e.g., Makefiles) -- need to rebuild multiple times!
@@ -104,7 +104,6 @@ Fun fact: LaTeX is Turing-complete!
 
 ## References
 
-* [ShareLaTeX tutorial](https://www.sharelatex.com/learn/)
 * [TEXbook](http://www.ctex.org/documents/shredder/src/texbook.pdf)
 * Quick-reference cards:
    * [General LaTeX](http://wch.github.io/latexsheet/)
