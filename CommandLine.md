@@ -21,6 +21,10 @@ This can be done either with a local installation or remote connection over ssh.
 ## Show a few systems level utilities:
 - ssh
 - scp/sftp
+To move a file on your local machine to `stu`:  
+`scp <local file> <your eId>@stu.cs.jmu.edu:<path>`  
+e.g.: `scp HelloWorld.java lam2mo@stu.cd.jmu.edu:Documents`
+
 - top
 
 ## [Cantrill rant](https://youtu.be/S0mviKhVmBI)
