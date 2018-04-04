@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**BEFORE WE START**: [Overleaf](https://www.overleaf.com) account.
+**BEFORE WE START**: Get an [Overleaf](https://www.overleaf.com) account.
 
 Overview: The TeX [typesetting](https://en.wikipedia.org/wiki/Typesetting) system originated with Don Knuth in 1970s, prompted by his work on "The Art of Computer Programming." It first ran on a PDP-10 in 1978. TeX uses a versioning system w/ increasing digits of π; lastest is 3.14159265. It was extended to LaTeX by Leslie Lamport (@ SRI International) in 1980s, and is now a full document preparation system. The latest version is LaTeX 2e. LaTeX is widely used in CS, Math, Engineering, and other scientific fields.
 
@@ -103,7 +103,7 @@ Fun fact: LaTeX is Turing-complete!
 * Plugins: [AUCTeX](https://www.gnu.org/software/auctex/) (Emacs), [TeXlipse](http://texlipse.sourceforge.net) (Eclipse), [Vim-LaTeX](http://vim-latex.sourceforge.net) (Vim)
 
 ## References
-
+* [Overleaf tutorial](https://www.overleaf.com/tutorial)
 * [TEXbook](http://www.ctex.org/documents/shredder/src/texbook.pdf)
 * Quick-reference cards:
    * [General LaTeX](http://wch.github.io/latexsheet/)
