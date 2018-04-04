@@ -23,7 +23,7 @@ This can be done either with a local installation or remote connection over ssh.
 - scp/sftp
 To move a file on your local machine to `stu`:  
 `scp <local file> <your eId>@stu.cs.jmu.edu:<path>`  
-For example: `scp HelloWorld.java lam2mo@stu.cd.jmu.edu:Documents`
+For example: `scp HelloWorld.java jmcsstudent@stu.cs.jmu.edu:Documents`
 
 - top
 
