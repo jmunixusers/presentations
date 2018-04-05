@@ -8,12 +8,12 @@ This is a collection of presentation notes from previous UUG meetings.
 ## Full Length Meetings
 * [Command Line](CommandLine.md)
 * [Git](Git.md)
+* [Git 201](https://github.com/jmunixusers/git-201) (External)
 * [Intel Pin](https://github.com/lam2mo/uug-pin) (External)
 * [LaTeX](LaTeX.md)
 * [Let's Encrypt](LetsEncrypt.md)
 * [Manpages](Manpages.md)
 * [Vim](https://crosse.github.io/vim_tutorial/) (External)
-* [Git 201](https://github.com/jmunixusers/git-201) (External)
 
 ## Lightning Talks
 * [Adventures in /proc](AdventuresInProc.md)
