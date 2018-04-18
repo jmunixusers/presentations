@@ -120,3 +120,4 @@ Fun fact: LaTeX is Turing-complete!
 
 * Beamer slides
 * Algorithm and inference packages
+* Latexmk and preview apps
