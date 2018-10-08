@@ -5,9 +5,9 @@
 Vim is described as a 'highly configurable text editor for efficiently creating
 and changing any kind of text'
 
-Vim is included under the alias vi on most UNIX systems, as well as OS-X
+Vim is included under the alias vi on most UNIX systems, as well as OS X
 
-Vim is designed with the intent to have functions easily accessable and to never
+Vim is designed with the intent to have functions easily accessible and to never
 require the user to remove their hands from the home row.
 
 ### Getting started with Vim
@@ -26,9 +26,18 @@ with `:wq`, saving and quitting at the same time.
 
 #### Modes of Vim
 
-Before we jump into movement, we should quickly go over the 2 modes of vim; 
-insert and visual. You can enter these modes at any time while not in another
-mode, and can get out of them by hitting the `esc` key.
+Before we jump into movement, we should quickly go over 3 modes of vim; 
+normal, insert and visual. You can enter these modes at any time while not in
+another mode, and can get out of them by hitting the `esc` key.
+
+##### Normal
+
+Normal mode is the default mode of vim, and the mode vim goes to when the
+escape key is pressed. In this mode, you can freely move the cursor, do some 
+limited text manipulation, enter commands, search, and enter the other two modes.
+
+Any vim command that is not a simple keypress will start with a `:` and is
+written to the bottom of the terminal.
 
 ##### Insert
 
@@ -49,6 +58,11 @@ character, and move the cursor to select more text.
 - `V` enter visual mode on a line-by-line basis
 
 This mode acts like the copy-paste mode of vim.
+
+Some commands from normal mode can actually be done in visual mode, and if
+those commands take a selection of text as an argument, the selection will
+automatically be whatever is selected. This allows for a simple	'replace in
+selection function.'
 
 #### Basic movement
 
@@ -134,7 +148,7 @@ reccommend getting any until you are more comfortable with vim.
 
 ## Markdown
 
-before this starts, if you are on a linux/mac distribution and you want to
+before this starts, if you are on a Linux/Mac distribution and you want to
 see this code update live you can go install
 [grip](https://github.com/joeyespo/grip) to view this markdown file on your
 system.
