@@ -18,7 +18,7 @@ be reported there.
 
 ## UUG Information
 
-The JMU Unix Users Group meets on Wednesday nights in ISAT 246 and 6:30pm.
+The JMU Unix Users Group meets on Wednesday nights in ISAT 246 at 6:30pm.
 Meetings are open to anyone who wants to attend.
 
 You can follow the UUG on JMU's [BeInvolved](https://beinvolved.jmu.edu) and

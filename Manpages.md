@@ -8,7 +8,7 @@ line inputs, and flags, as well as examples for each. Manpages are formatted
 with `Troff` by default on UNIX systems, and the GNU fork `Groff` on Linux 
 systems.
 
-Generally designed for C programs, though since they dont actually interface
+Generally designed for C programs, though since they don't actually interface
 with the code at all, they can be used for any program.
 
 ### Where are they?
@@ -18,22 +18,22 @@ sections:
 
 1. User Commands * - Described as user commands and tools such as file 
 manipulation programs, shells, compilers, web browsers, editors, etc.
-2. System Calls - An entry point into the Linux kernal, contains tools such as 
+2. System Calls - An entry point into the Linux kernel, contains tools such as
 *kill*, *mkdir*, and so on.
 3. Library Functions - Contains all library functions excluding library
 functions that wrap system calls, which are stored in man2. Contains functions
 from the Standard C Library like *libc*, or other libraries like *libm*, where
-the man page will alslo describe the linker option needed to link it.
+the man page will also describe the linker option needed to link it.
 4. Device Files - Manual files for devices on /dev/: *intel*, *sd*, *vmware*
 5. File Formats - Formats, protocols, and corresponding C structures. *elf*, 
 *time*, *motd*...
 6. Games - Games and fun programs on the system, programs such as *fortune*,
 *cowsay*, and a host of GNOME programs
-7. Conventions and Miscellany - Overviews on varios topics, describes
+7. Conventions and Miscellany - Overviews on various topics, describes
 conventions and protocols, character set standards, etc. Contains the Man page
 for Man!
 8. Administration and Privileged Commands * - Commands that are used by the 
-superuser; System administration controls, daemons, and hardware-releated
+superuser; System administration controls, daemons, and hardware-related
 commands.
 
 Two other sections exist; L, which contains math library functions, and N,
@@ -43,11 +43,11 @@ which contains tcl functions.
 
  - No documentation existed for UNIX for the first two years of it's existence
 
- - 'The Unix Programmers Manual' was the first manual published for unix,
+ - 'The Unix Programmers Manual' was the first manual published for UNIX,
 published November 3rd, 1971.
 
  - At first, the manual fit into a standard binder, but by the 7th edition was
-split into 2 seperate pages.
+split into 2 separate pages.
 
  - The manual also included some tutorials (mostly for general UNIX usage, the
 C compiler, and tools that came with the system)
@@ -56,7 +56,7 @@ C compiler, and tools that came with the system)
 at the 4th edition, and has continued to use it since.
 
  - At first, manpages were seen as a great advance, but today they have become 
-a neccessity for command line applications
+a necessity for command line applications
 
 ## Why do we use them?
 
@@ -75,7 +75,7 @@ Python. It uses `reStructuredText` as it's markup language, and has a few
 benefits over man. There also appears to be a program somewhere out there that
 converts rST to Groff, called `rst2man`.
 
-[Sphynx](sphinx-doc.org) (External)
+[Sphynx](http://sphinx-doc.org) (External)
 
 ### ManOpen
 
@@ -93,7 +93,7 @@ man, which is standard anyways.
 ## How do I make one?
 
 Remember: Manpages are **reference documentation**, not code documentation,
-and is ment to quickly answer questions about commands.
+and is meant to quickly answer questions about commands.
 
 First, see if you can find a program you want to include documentation for. A C
 program that takes flags is preferred, but since the documentation isn't
@@ -103,7 +103,7 @@ formatting of a manpage.
 If you are in CS261, I will use our current project as an example.
 
 Before we start, think about what section of the manpages your program would
-fit into, In my case, since out program is a user command to be run from the
+fit into, In my case, since the program is a user command to be run from the
 command line.
 
 First I will make a new file called `y86.l`, because my program is called y86.
@@ -116,9 +116,9 @@ page.
 
 From there we will describe our first Section Header as NAME with 
 `.SH NAME` Lines with headers like these simply end on the next new line, so
-we can start writing the name of our manpage on the next line. Dashes reqire
+we can start writing the name of our manpage on the next line. Dashes require
 escaping. This section is the source for `man -k` searches, so make sure your
-explination is useful.
+explanation is useful.
 
 `y86 \- y86 mini-elf file interactions`
 
@@ -132,7 +132,7 @@ man pages. From man's manpage:
  - Bold text is meant to typed exactly as shown
  - Italic text is to be replaced with appropriate arguments
  - any and all arguments within [] are optional
- - options seperated by a | cannot be used together
+ - options separated by a \| cannot be used together
  - ... means that whatever precedes it is repeatable
 
 Keep this in mind for the next section.
@@ -143,7 +143,7 @@ going to refer to the completed section of text at the bottom of this
 presentation. For our example file, we are bolding y86, because that is 
 certainly needed to run the program. We then give italicized options within
 brackets, as any options wanted can be called, and we don't want the user to
-type OPTION. after that we give elipses, showing that the user can type as many
+type OPTION. after that we give ellipses, showing that the user can type as many
 flags as they want, followed by italicized file.
 
 From then on, we get a Description section header, which is simply followed by
@@ -160,7 +160,7 @@ After that you can add all the options you want, just format them the same way.
 For this demo, we won't be going into any further options or headers, but they
 can all easily be found on the man manpage(accessed by `man man`), or online.
 
-to veiw your shiny new manpage type `man -l file` on the command line, where
+to view your shiny new manpage type `man -l file` on the command line, where
 file is the name of your page.
 
 ```
@@ -184,7 +184,7 @@ display the flag options
 display the elf header of the file
 .TP
 .BR \-m \fR
-breifly display the virtual memory
+briefly display the virtual memory
 .TP
 .BR \-M \fR
 display all contents of the virtual memory
@@ -201,4 +201,4 @@ the file.
 ```
 
 ## Sources
-[liw](liw.fi/manpages) (External)
+[liw](https://liw.fi/manpages) (External)
