@@ -95,7 +95,7 @@ Something to remember while using vim, if you want to do some simple changes
 to text or movement in vim, theres a good chance that it exists, and you should
 check online to see what the command is.
 
-I'll also point to [my vimrc](www.github.com/Advill/Dotfiles/blob/master/vimrc)
+I'll also point to [my vimrc](https://www.github.com/Advill/Dotfiles/blob/master/vimrc)
 Where I have a fairly barebones config that makes the most of default vim
 options. Most everything is commented and if you can't figure something out
 feel free to ask me.
