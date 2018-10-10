@@ -70,11 +70,25 @@ popular as man.
 
 #### Sphynx
 
-as Manpages were originally created for C, Sphynx was originally created for
+As Manpages were originally created for C, Sphynx was originally created for
 Python. It uses `reStructuredText` as it's markup language, and has a few
-benefits over man
+benefits over man. There also appears to be a program somewhere out there that
+converts rST to Groff, called `rst2man`.
 
 [Sphynx](http://sphinx-doc.org) (External)
+
+### ManOpen
+
+Less of a replacement, more of a refresh. A utility to view manpages in a
+graphical environment instead of a terminal emulator.
+
+[ManOpen](www.clindberg.org/projects/ManOpen.html) (Extermal)
+
+### Other Converters
+
+There are plenty of converters from man to whatever arbitrary file type you
+could ever want, but with most of these comes the drawback of not just being on
+man, which is standard anyways.
 
 ## How do I make one?
 
