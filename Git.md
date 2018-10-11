@@ -7,6 +7,17 @@ sharing and uploading your code with `git`. They also have a great
 [student pack](https://education.github.com/pack) which gives you all kinds of
 great benefits.
 
+Other services that will host your `git` repositories include:
+
+ - [GitLab](https://gitlab.com)
+ - [Bitbucket](https://bitbucket.org)
+ - [Microsoft Visual Studio Team Services](https://visualstudio.microsoft.com/team-services/)
+
+All services have different pros and cons. Some allow you to use private
+repositories for free, some are open source, and some cost money. Make sure to
+evaluate all options to decide which is best for you. For tonight, we will be
+using GitHub since, at the moment, it is the most popular.
+
 ## Creating a repository on the GitHub website
 
 Using the + button in the top right corner or the webpage, choose
@@ -23,7 +34,7 @@ to do anything with this now. Just keep the page open.
 
 First, we will create a directory to use for this tutorial.
 
-    mkdir -p ~/UUG/git_tutorial && cd $_
+    mkdir -p ~/UUG/uug-git-intro && cd $_
 
 If we try to use a git command here, we will get an error
 
@@ -32,11 +43,16 @@ If we try to use a git command here, we will get an error
 Notice that you got an error when you tried to do this! You cannot create a
 commit in git without that directory being a part of a git repository.
 
-So let's initialize your git repository.
+So let's initialize your git repository. This starts getting `git` set up to
+run.
 
     git init
 
-Now we will use that command from earlier
+If you run `ls -al`, you will now see a `.git` directory there. This is where
+git stores all of the data about your repository.
+
+You now have to tell `git` where your code should be pushed to. We are using
+GitHub for this and we'll now we will use that command from earlier.
 
     git add remote origin https://github.com/YOURUSERNAME/REPONAME.git
 
@@ -54,6 +70,7 @@ email address. Let's fix this.
 
     git config --global user.name "Your Name"
     git config --global user.email "your@email.address"
+    git config --global color.ui true
 
 Now `git` will always know who you are, and this information will be in all
 your commits.
@@ -79,9 +96,15 @@ that too.
 
     git diff
 
+We should instruct `git` to start tracking changes to our README.txt file. We
+also need to add it to our 'stage'. To do this, we will use the following
+command.
+
+    git add README.txt
+
 Let's tell `git` to create a record of our change
 
-    git commit README.txt
+    git commit
 
 Vim (or your default editor) will open. Type a description of your changes,
 called a commit message, and save the file (in Vim, you can type `:wq` in
@@ -123,3 +146,6 @@ this change back to GitHub with
 For an extension of this presentation and further examples and exercises in
 using Git, checkout out the [Git 201](https://github.com/jmunixusers/git-201)
 repository.
+
+For a `git` reference, check out GitHub's
+[Git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
