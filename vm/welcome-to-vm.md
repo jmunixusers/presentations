@@ -127,7 +127,7 @@ where `EID` is your JMU e-ID.
 This will prompt you for your e-ID password and after entering it, you will
 be connected to stu.
 
-Eventually you may find it exhausting to type your passowrd in every time
+Eventually you may find it exhausting to type your password in every time
 that you need to connect to stu. You can use an SSH key to sign in to stu so
 that you don't need to use your password.
 
