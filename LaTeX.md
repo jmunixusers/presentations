@@ -4,7 +4,13 @@
 
 **BEFORE WE START**: Get an [Overleaf](https://www.overleaf.com) account.
 
-Overview: The TeX [typesetting](https://en.wikipedia.org/wiki/Typesetting) system originated with Don Knuth in 1970s, prompted by his work on "The Art of Computer Programming." It first ran on a PDP-10 in 1978. TeX uses a versioning system w/ increasing digits of π; lastest is 3.14159265. It was extended to LaTeX by Leslie Lamport (@ SRI International) in 1980s, and is now a full document preparation system. The latest version is LaTeX 2e. LaTeX is widely used in CS, Math, Engineering, and other scientific fields.
+Overview: The TeX [typesetting](https://en.wikipedia.org/wiki/Typesetting)
+system originated with Don Knuth in 1970s, prompted by his work on "The Art of
+Computer Programming." It first ran on a PDP-10 in 1978. TeX uses a versioning
+system w/ increasing digits of π; lastest is 3.14159265. It was extended to
+LaTeX by Leslie Lamport (@ SRI International) in 1980s, and is now a full
+document preparation system. The latest version is LaTeX 2e. LaTeX is widely
+used in CS, Math, Engineering, and other scientific fields.
 
 Introduce concepts:
 
@@ -31,6 +37,7 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
 * Lists: `\begin{enumerate|itemize}`, `\item`
 * Common font/color formatting
    * `\textbf`, `\textit`, `\texttt`, `\underline`, quotes, `--`, `---`
+   * Shorter forms: `{\bf }`, `{\it }`, `{\tt }`
    * `\usepackage{xcolor}`, `\textcolor{color}{text}`
    * `\begin{tiny|small|large|huge}`
    * `\begin{verbatim}`, `\verb!`
@@ -55,10 +62,21 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
 * Logic symbols: `\in`, `\subset`, `\forall`, `\exists`, `\rightarrow`
 * Spacing:  `\;`  `\:`  `\,`  `\!`
 * Fun: `\flat`, `\sharp`, `\clubsuit`, `\heartsuit`, `\pitchfork`
-* AMS (American Mathematical Society) packages
-   * `\usepackage{amsmath, amssym}`
-   * `\begin{align*}`, `\noindent`
-   * Theorems, lemmas, etc.
+
+## Bibliography
+
+* Special BibTeX file format (`.bib`)
+* Download references from [ACM Digital Library](https://dl.acm.org) and/or [IEEE Xplore](http://ieeexplore.ieee.org)
+* `\bibliographystyle{plain}`, `\bibliography{fname}`
+* `\cite{key}`
+
+## Large documents
+
+* Custom `.sty` files and Overleaf templates
+* Multiple files: `\include`
+* Importance of unique labels & bibliography management
+* Build frameworks (e.g., Makefiles) -- need to rebuild multiple times!
+* Latexmk and preview apps
 
 ## Macros
 
@@ -69,19 +87,35 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
 
 Fun fact: LaTeX is Turing-complete!
 
-## Bibliography
+## Useful Extensions
 
-* Special BibTeX file format (`.bib`)
-* Download references from [ACM Digital Library](https://dl.acm.org) and/or [IEEE Xplore](http://ieeexplore.ieee.org)
-* `\bibliographystyle{plain}`, `\bibliography{fname}`
-* `\cite`
-
-## Large documents
-
-* Custom `.sty` files and Overleaf templates
-* Multiple files: `\include`
-* Importance of unique labels & bibliography management
-* Build frameworks (e.g., Makefiles) -- need to rebuild multiple times!
+* AMS (American Mathematical Society) packages ([docs](http://mirrors.ctan.org/macros/latex/required/amsmath/amsmath.pdf))
+   * `\usepackage{amsmath, amssym}`
+   * `\begin{align*}`, `\noindent`
+   * Theorems, lemmas, etc. ([Overleaf guide](https://www.overleaf.com/learn/latex/Theorems_and_proofs))
+* Code listings ([docs](http://mirrors.ctan.org/macros/latex/contrib/listings/listings.pdf))
+   * `\usepackage{listings}`
+   * `\lstset{language=C|C++|Java|Python|LaTeX}` (or leave out for pseudocode)
+   * `\begin{lstlisting}`
+* Algorithm packages
+   * [Overleaf guide](https://www.overleaf.com/learn/latex/algorithms)
+   * [Wikibooks guide](https://en.wikibooks.org/wiki/LaTeX/Algorithms)
+   * `\usepackage{algorithmicx,algpseudocode}`
+   * `\State` w/ math mode (`\gets` for assignment)
+   * `\If{cond}`, `\Else`, `\ElsIf`, `\EndIf`
+   * `\For{cond}`, `\ForAll{cond}`, `\EndFor`
+   * `\While{cond}`, `\EndWhile`
+   * `\Function{name}{params}`, `\EndFunction`, `\Return`, `\Call`
+* Semantics/proof rules ([docs](http://mirrors.ctan.org/macros/latex/contrib/semantic/semantic.pdf))
+   * `\usepackage{semantic}`
+   * `\inference[name]{premise(s)}{conclusion}`
+   * `->`, `=>`, `|-`
+   * Recursive nesting for proof trees
+* Beamer ([docs](http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf))
+   * `\documentclass{beamer}`
+   * `\begin{frame}`
+   * `\frametitle`
+   * Sections (same as usual, now with visual indicators)
 
 ## Common headaches
 
@@ -92,7 +126,7 @@ Fun fact: LaTeX is Turing-complete!
 * Table positioning: `[t|h|b|p]`
 * Finding typos and syntax errors
    * Q&A and experimentation
-   * [StackExchange](http://tex.stackexchange.com)
+   * [TeX StackExchange](http://tex.stackexchange.com)
 
 ## Local installation
 
@@ -103,7 +137,9 @@ Fun fact: LaTeX is Turing-complete!
 * Plugins: [AUCTeX](https://www.gnu.org/software/auctex/) (Emacs), [TeXlipse](http://texlipse.sourceforge.net) (Eclipse), [Vim-LaTeX](http://vim-latex.sourceforge.net) (Vim)
 
 ## References
+
 * [Overleaf tutorial](https://www.overleaf.com/tutorial)
+* [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
 * [TEXbook](http://www.ctex.org/documents/shredder/src/texbook.pdf)
 * Quick-reference cards:
    * [General LaTeX](http://wch.github.io/latexsheet/)
@@ -112,12 +148,8 @@ Fun fact: LaTeX is Turing-complete!
 
 ## Diversions
 
+* [Computer Modern Unicode](http://cm-unicode.sourceforge.net/download.html) font (choose otf)
 * [Lilypond](http://www.lilypond.org/) - LaTeX-like language for musical notation
 * [LaTeX math jokes](http://tex.stackexchange.com/questions/18326/latex-math-jokes)
 * [Coffee stains and the Simpsons](http://divisbyzero.com/2010/07/13/coffee-stains-and-the-simpsons-in-your-latex-document/)
 
-## TODO (next time)
-
-* Beamer slides
-* Algorithm and inference packages
-* Latexmk and preview apps
