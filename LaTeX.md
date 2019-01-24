@@ -101,6 +101,7 @@ Fun fact: LaTeX is Turing-complete!
    * [Overleaf guide](https://www.overleaf.com/learn/latex/algorithms)
    * [Wikibooks guide](https://en.wikibooks.org/wiki/LaTeX/Algorithms)
    * `\usepackage{algorithmicx,algpseudocode}`
+   * `\begin{algorithmic}`
    * `\State` w/ math mode (`\gets` for assignment)
    * `\If{cond}`, `\Else`, `\ElsIf`, `\EndIf`
    * `\For{cond}`, `\ForAll{cond}`, `\EndFor`
