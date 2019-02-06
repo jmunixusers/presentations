@@ -60,6 +60,7 @@ after a confirmation window pops up on the bottom in a different color. type `y`
 if you are sure you want your window closed. you can also type `exit` directly
 into the terminal and tmux will handle the pane closing perfectly.
 
+Quick ref:
 * prefix + `%` : split horizontally
 * prefix + `"` : split vertically
 * prefix + `x` : close terminal
@@ -85,6 +86,7 @@ prefix + `!`.
 
 Closing windows is the same as closing terminals, using prefix + `&`
 
+Quick ref:
 * prefix + `c` : open new window
 * prefix + `,` : rename window
 * prefix + `0-9` : switch to numbered window
@@ -120,6 +122,11 @@ These sessions will stay open once detatched until they are manually closed.
 Every once in a while I hear there is a purge on stu, so be sure to save your
 work even if you are using sessions.
 
+* prefix + `:` : tmux command
+* prefix + `s` : list sessions
+* `tmux a` : open tmux and attach to last session
+* `:kill-session -a` : kill all other sessions besides the currently open one.
+
 ### When are they useful?
 One last quick sidenote, sessions are automatically kept if a terminal is lost.
 This is most useful when stu or your internet are being dumb, and you get
@@ -130,4 +137,6 @@ ssh-ing again or on the lab computers.
 lets say you keep losing connection to stu, but never re-attach your session.
 This means you will keep creating new tmux sessions and slowly but surely load
 stu with terminal sessions simply waiting for you to return.
+
+So make sure to close sessions and periodically check for open ones.
 
