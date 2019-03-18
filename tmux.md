@@ -1,6 +1,4 @@
 # TMUX
-This was written with less than 3 hours to the presentation if this line is
-still here, I am likely working on improving it but bare with me.
 ## What is tmux?
 Tmux stands for terminal multiplexer. Anyone who has taken 261 might recognize
 the word multiplexer, but just in case you dont; Multiplexers take one thing and
