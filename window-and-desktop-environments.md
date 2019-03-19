@@ -54,4 +54,21 @@ out, such as window managers or toolbars. The downsides are that a full desktop
 environment is normally a heavier load on the system, as well as not being
 as streamlined for each individual user's needs.
 
+## The Specifics
+Window managers generally fall into one of three types based on how they manage
+windows by default. Those three types are Stacking, Tiling, and Dynamic.
 
+### Stacking
+Also referred to as floating windows, this is the type of environment many
+people will be used to from windows or OSX. Stacking environments make heavy use
+of the mouse to move and resize windows, and generally have very little in the
+way of keyboard bindings for those who want them. 
+
+The benefit of stacking window managers generally the shallow learning curve,
+and user-friendlyness of their controls and operations. Though for users who
+want more advanced operations and views, they tend to fall short.
+
+### Tiling
+Tiling window managers generally work like [Tmux](tmux.md) for your whole
+system. They are designed so that no window overlaps another, and any new
+window subdivides the available space to keep it that way.
