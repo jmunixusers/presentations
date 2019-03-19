@@ -15,6 +15,7 @@ This is a collection of presentation notes from previous UUG meetings.
 * [Manpages](Manpages.md)
 * [Vim](https://crosse.github.io/vim_tutorial/) (External)
 * [Vim + Markdown](Vim.md)
+* [Window Managers and Desktop Environments](window-and-desktop-environments.md)
 
 ## Lightning Talks
 * [Adventures in /proc](AdventuresInProc.md)
