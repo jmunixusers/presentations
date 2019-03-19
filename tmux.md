@@ -139,4 +139,35 @@ stu with terminal sessions simply waiting for you to return.
 So make sure to close sessions and periodically check for open ones.
 
 ## Configuration
+Here are some quick options from my `~/.tmux.conf` that I think are nice
+QOL improvements over base functionality.
 
+```conf
+# set base index to 1 for windows
+set -g base-index 1
+
+# rebind prefix to ctrl+a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+# Switch panes using alt+arrow keys
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-UP select-pane -U
+bind -n M-Down select-pane -D
+
+# Allow mouse control
+set -g mouse on
+
+# Turn off audio bell
+set -g bell-action none
+
+# turn visual bell on
+set -g visual-bell on
+
+# when I had tmux wrap any shell I used, this command was useful to attatch
+# tmux to my current directory
+# Binds to prefix + p
+bind p attach -c "#{pane_current_path}"
+```
