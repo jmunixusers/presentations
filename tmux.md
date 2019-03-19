@@ -1,7 +1,7 @@
 # TMUX
 ## What is tmux?
 Tmux stands for terminal multiplexer. Anyone who has taken 261 might recognize
-the word multiplexer, but just in case you dont; Multiplexers take one thing and
+the word multiplexer, but just in case you dont; multiplexers take one thing and
 split it into many. In 361 it's refering to circuts, here we're refering to your
 terminal.
 
@@ -34,7 +34,7 @@ BAM, 2 terminals!
 
 #### Why?
 Note that you are not pressing `CTRL` + `b` + `%`. This is because tmux works off
-a prefix hotkey system, where `CTRL` + `b` is the default 'prefix' input. This
+a 'prefix' hotkey system, where `CTRL` + `b` is the default 'prefix' input. This
 simply means that (by default) tmux wont pay attention to any keystroke not
 preceded by the prefix.
 
@@ -66,7 +66,7 @@ Quick ref:
 ## Opening new windows
 To open a new window in tmux, type prefix followed by `c`. You will be greeted
 with a new terminal as well as a new entry in the bottom information bar.
-this bar shows open windows and their names. by default the names are generated
+this bar shows open windows and their names. By default the names are generated
 from whatever the last active terminal in use was on that window, they can be
 changed by entering prefix + `,`. This will prompt for a new name to call the
 window. 
@@ -137,4 +137,6 @@ This means you will keep creating new tmux sessions and slowly but surely load
 stu with terminal sessions simply waiting for you to return.
 
 So make sure to close sessions and periodically check for open ones.
+
+## Configuration
 
