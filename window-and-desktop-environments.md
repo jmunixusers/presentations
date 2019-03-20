@@ -125,17 +125,92 @@ way as X over network connections. There have been attempts to get this working
 in Wayland, but has yet to be implemented in any meaningful way.
 
 ## Examples
-For some visuals as well as some reccomendations, I've included some good and
-perhaps some strange examples of each type of WM/DE below.
+For some visuals as well as some reccomendations, I've included some examples
+of window managers and desktop managers below I see people using below.
 ### Window Managers
 #### X Server
 ##### Stacking
 [2bwm](https://github.com/venam/2bwm) (External)
 - 2 border window manager
+- Minimalist look in a floating window manager
+- Can be controlled entirely with the keyboard
+- Extremely lightweight
+- Lacks task or status bar out of the box
+
+[Openbox](http://openbox.org) (External)
+- Minimalist, customizable
+- Configured using xml files
+- GUI theming available through `obconf`
 
 ##### Tiling
+[Bspwm](https://github.com/baskerville/bspwm) (External)
+- Based on binary space partitioning
+- Responds to X events, and messages it receives on the dedicated socket `bspc`
+- Configured with shell commands through a `bspwmrc`
+- does not handle keyboard inputs itself, instead relies on a secondary program
+like `Sxhkd`
+
+[i3](https://i3wm.org) (External)
+- Similar to Bspwm, but i3 takes in keyboard input itself
+- can be integrated into the GNOME desktop environment
+- includes an application menu through `dmenu` out of the box
+- configurable, though not much decoration is added to windows by itself
+
+##### Dynamic
+[awesome](https://awesomewm.org) (External)
+- highly configurable
+- targeted at power users
+- extensible using lua programing language
+- uses async libraries, making it less subject to latency
+- everything can be performed with the keyboard
+- tags instead of workspaces, each window can have multiple tags at a time
+
+[dwm](https://dwm.suckless.org) (External)
+- Written by dmenu author
+- small, fast, and simple
+- no frills design, single c file
+- configuration is done by editing and recompiling said c program
+- elitest mentality, because customization is difficult only power users will
+use it, keeping 'novices asking stupid questions' out.
+
+[xmonad](https://xmonad.org) (External)
+- Written and configured and haskell
+- Must be recompiled for configuration changes
+- Extensive keyboard shortcuts
 
 #### Wayland
 ##### Stacking
 [KWin](https://techbase.kde,org/Projects/KWin) (External)
 - Standard KDE window manager since KDE 4.0
+
+##### Tiling
+[Sway](https://swaywm.org) (External)
+- Drop in replacement for i3, but running on wayland.
+- Works with existing i3 config and keyboard shortcuts.
+- replaces i3lock with swaylock, and swayidle
+
+### Desktop Environments
+##### GNOME
+Designed by The GNOME Project and composed entirely of FOSS, GNOME is a software 
+suite designed as part of the GNU Project and  has recently been brought up to
+Wayland.
+
+GNOME is split into two main session types, GNOME and GNOME Classic, as well
+as a version running on the X client; GNOME on Xorg. GNOME is the most current
+version at 3, while GNOME Classic intends to keep the interface of GNOME 2, this
+basically means that it is a more customized GNOME Shell than a truley distinct
+mode.
+
+##### KDE Plasma
+The Current Generation of KDE's grapical environment, KDE uses the X server but
+Wayland support is currently under development. Basic wayland support was
+provieded in the 5.5 release.
+
+KDE seems to be up and coming in the public opinion for its good out of the box
+looks and nice packaging, where GNOME comes with a lot of extra bloat and can be
+hard to customize in it's current iteration.
+
+## How do I choose?
+Honestly, just go try some out. Depending on what distro you are on, WM installs
+can be fast and simple, and KDE Plasma is a very fast install if you are on
+Debian 
