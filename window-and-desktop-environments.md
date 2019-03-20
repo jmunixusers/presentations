@@ -54,9 +54,9 @@ out, such as window managers or toolbars. The downsides are that a full desktop
 environment is normally a heavier load on the system, as well as not being
 as streamlined for each individual user's needs.
 
-## The Specifics
+## WM types
 Window managers generally fall into one of three types based on how they manage
-windows by default. Those three types are Stacking, Tiling, and Dynamic.
+windows by default. Those three types are Stacking, Tiling, and Dynamic:
 
 ### Stacking
 Also referred to as floating windows, this is the type of environment many
@@ -72,3 +72,54 @@ want more advanced operations and views, they tend to fall short.
 Tiling window managers generally work like [Tmux](tmux.md) for your whole
 system. They are designed so that no window overlaps another, and any new
 window subdivides the available space to keep it that way.
+
+This is a far offshoot from stacking window managers, as the mouse becomes near
+useless for general navagation of a system, as much work is offloaded to
+keyboard shortcuts instead. This means that tiling window managers have a far
+steeper learning curve than stacking managers, but (should) require less hand
+movement and can be faster to navagate as a result.
+
+### Dynamic
+Dynamic window managers are simply window managers with the functionality of
+both previous types of managers. This allows for, say, windows to be tiled in
+the background, and floated in front.
+
+To be honest, I've never really given a dynamic WM a try, I had awesome
+installed once upon a time but wasn't smart enough to figure it out all those
+years ago. From what I can tell from screenshots and the like, it is very easy
+to make them look good with a background and colorscheme, as seen by WMs like
+[awesome](https://awesomewm.org) and their prevalence on
+[linux theming subreddits](https://www.reddit.com/r/unixporn), but seem to
+make actual data on screen hard to read compared to tiling managers.
+
+## Backends
+### X
+Window managers and desktop environments historically have run on the X server,
+a basic framework for a GUI environment. X doesn't define any visual styling,
+but simply gives the tools required to create visuals. The current version of X,
+X11, has been in use since september 1987. It was developed by the Massachusetts
+Institute of Technology and has been taken over by the X.Org Foundation, who
+maintains the X.Org Server as FOSS under the MIT License.
+
+X was specifically designed with the ability to be used over network connections
+using X forwarding. This means that a full desktop can be accessed by someone
+not physically in front of the computer running the X server. The downside of
+this approach is that no data can be sent from the X client to the X server,
+as the client is assumed to only keyboard, mouse, and display as input/ouput.
+
+Sadly, X is beginning to become a monolithic project to maintain and change,
+and with it's growing age, some are looking for a replacement.
+
+### Wayland
+Arguably the biggest competitor to X, Wayland is being developed by the authors
+of X, but under a different name as to not create expectations of values carried
+over from X.
+
+Wayland seeks to throw out many of the functionality requirements of X, as well
+as to streamline and improve the experience for a modern compositor. Wayland can
+be made compatible with X, through the use of XWayland which is just an X server
+running as a Wayland client.
+
+The main functionality that Wayland lacks is the ability to be used in the same
+way as X over network connections. There have been attempts to get this working
+in Wayland, but has yet to be implemented in any meaningful way.
