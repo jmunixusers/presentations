@@ -13,9 +13,9 @@ This is a collection of presentation notes from previous UUG meetings.
 * [LaTeX](LaTeX.md)
 * [Let's Encrypt](LetsEncrypt.md)
 * [Manpages](Manpages.md)
+* [Tmux](tmux.md)
 * [Vim](https://crosse.github.io/vim_tutorial/) (External)
 * [Vim + Markdown](Vim.md)
-* [Tmux](tmux.md)
 
 ## Lightning Talks
 * [Adventures in /proc](AdventuresInProc.md)
