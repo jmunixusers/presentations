@@ -123,3 +123,19 @@ running as a Wayland client.
 The main functionality that Wayland lacks is the ability to be used in the same
 way as X over network connections. There have been attempts to get this working
 in Wayland, but has yet to be implemented in any meaningful way.
+
+## Examples
+For some visuals as well as some reccomendations, I've included some good and
+perhaps some strange examples of each type of WM/DE below.
+### Window Managers
+#### X Server
+##### Stacking
+[2bwm](https://github.com/venam/2bwm) (External)
+- 2 border window manager
+
+##### Tiling
+
+#### Wayland
+##### Stacking
+[KWin](https://techbase.kde,org/Projects/KWin) (External)
+- Standard KDE window manager since KDE 4.0
