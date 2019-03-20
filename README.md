@@ -13,6 +13,7 @@ This is a collection of presentation notes from previous UUG meetings.
 * [LaTeX](LaTeX.md)
 * [Let's Encrypt](LetsEncrypt.md)
 * [Manpages](Manpages.md)
+* [Routing](https://github.com/ripleymj/routerlab) (External)
 * [Tmux](tmux.md)
 * [Vim](https://crosse.github.io/vim_tutorial/) (External)
 * [Vim + Markdown](Vim.md)
