@@ -213,4 +213,15 @@ hard to customize in it's current iteration.
 ## How do I choose?
 Honestly, just go try some out. Depending on what distro you are on, WM installs
 can be fast and simple, and KDE Plasma is a very fast install if you are on
-Debian 
+a Debian or Arch derivitive.
+
+For compiling this list, I made heavy use of the
+[AUR](https://wiki.archlinux.org/index.php/Window_manager), so everything
+listed here is certainly arch-compatible, and likely has Debian support as well.
+
+Another good place to look for inspiration is
+[the unixporn subreddit](https://www.reddit.com/r/unixporn), which is a place
+where users will post screenshots of their setup, as well as (hopefully) steps
+to configure your system like they have. While I wouldn't recommend simply
+copying someone else's setup, seeing what other people are doing can give you
+great ideas for things you didnt even know you wanted/needed.
