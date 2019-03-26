@@ -28,9 +28,10 @@
         1. Use "/" as folder name if you want all files to be stored in S3
         2. Pick a bucket name (do not create bucket in S3 first)
         3. Use Access key ID and secret access key from IAM
-        4. Leave everything else at the defaults and click checkmark
-        5. Add new files to external storage folder (may need to enable folder sync in client)
-        6. Confirm new files are present in new S3 bucket
+        4. Set region if desired
+        5. Leave everything else at the defaults and click checkmark
+        6. Add new files to external storage folder (may need to enable folder sync in client)
+        7. Confirm new files are present in new S3 bucket
 5. Set up permanent IP (optional)
     1. Allocate new Elastic IP and assign to your EC2 NextCloud instance
     2. Re-connect via SSH to new IP (previous step will kill old connection)
