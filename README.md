@@ -15,6 +15,7 @@ This is a collection of presentation notes from previous UUG meetings.
 * [Manpages](Manpages.md)
 * [NextCloud on AWS](NextCloudAWS.md)
 * [Routing](https://github.com/ripleymj/routerlab) (External)
+* [Tmux](tmux.md)
 * [Vim](https://crosse.github.io/vim_tutorial/) (External)
 * [Vim + Markdown](Vim.md)
 
