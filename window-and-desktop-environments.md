@@ -22,24 +22,24 @@ start applications or configure the WM itself.
 For this presentation, we will talk about window managers as standalone, even
 though all desktop environments include a window manager, just for ease of
 distinction. Many window managers are not bundled with a desktop environment and
-give the user complete freedom over teh choice of other applications to be used.
+give the user complete freedom over the choice of other applications to be used.
 This allows the user to create a more customized environment, tailored to their
 own specific needs. When using a standalone window manager, 'extras' like
 desktop icons, toolbars, wallpapers, or widgets must be added with additional
 dedicated applications.
 
-The benefits of using a window manager and seperate applications to add what you
+The benefits of using a window manager and separate applications to add what you
 need are obviously that you get a more streamlined and customized experience,
-where you can add what you want and ignore what you dont, while also providing
+where you can add what you want and ignore what you don't, while also providing
 more customizability to your setup. The downside is everything is left up to
-you. Nothing comes set up  or is even garenteed to work out of the box on your
+you. Nothing comes set up  or is even guaranteed to work out of the box on your
 machine. Configuration is also generally through the use of config files that
 can be scattered throughout the system and have all sorts of different syntax.
 
 ### Desktop Environments
 A desktop environment (DE) bundles together a variety of components to provide
 a common graphical user interface that includes all the usual trappings of a
-regular user expeirence. These generally include a window manager, desktop
+regular user experience. These generally include a window manager, desktop
 background, icons, toolbar, and perhaps even desktop widgets. 
 
 From here, the user is free to customize their GUI environment in many ways.
@@ -47,9 +47,9 @@ Desktop environments generally provide nicer and more easy to use configurations
 for their apps, as they will generally be more integrated into graphical
 elements instead of configuration files and the like.
 
-The benefits to Destkop environments are that they have a much more unified
+The benefits to desktop environments are that they have a much more unified
 interface and generally work right after install, or take very few steps to get
-to a working state. Many times, parts of destkop environments can be swapped
+to a working state. Many times, parts of desktop environments can be swapped
 out, such as window managers or toolbars. The downsides are that a full desktop
 environment is normally a heavier load on the system, as well as not being
 as streamlined for each individual user's needs.
@@ -60,11 +60,11 @@ windows by default. Those three types are Stacking, Tiling, and Dynamic:
 
 ### Stacking
 Also referred to as floating windows, this is the type of environment many
-people will be used to from windows or OSX. Stacking environments make heavy use
+people will be used to from Windows or OSX. Stacking environments make heavy use
 of the mouse to move and resize windows, and generally have very little in the
 way of keyboard bindings for those who want them. 
 
-The benefit of stacking window managers generally the shallow learning curve,
+The benefit of stacking window managers is the shallow learning curve,
 and user-friendlyness of their controls and operations. Though for users who
 want more advanced operations and views, they tend to fall short.
 
@@ -74,7 +74,7 @@ system. They are designed so that no window overlaps another, and any new
 window subdivides the available space to keep it that way.
 
 This is a far offshoot from stacking window managers, as the mouse becomes near
-useless for general navagation of a system, as much work is offloaded to
+useless for general navigation of a system, as much work is offloaded to
 keyboard shortcuts instead. This means that tiling window managers have a far
 steeper learning curve than stacking managers, but (should) require less hand
 movement and can be faster to navagate as a result.
@@ -97,7 +97,7 @@ make actual data on screen hard to read compared to tiling managers.
 Window managers and desktop environments historically have run on the X server,
 a basic framework for a GUI environment. X doesn't define any visual styling,
 but simply gives the tools required to create visuals. The current version of X,
-X11, has been in use since september 1987. It was developed by the Massachusetts
+X11, has been in use since September 1987. It was developed by the Massachusetts
 Institute of Technology and has been taken over by the X.Org Foundation, who
 maintains the X.Org Server as FOSS under the MIT License.
 
@@ -108,7 +108,7 @@ this approach is that no data can be sent from the X client to the X server,
 as the client is assumed to only keyboard, mouse, and display as input/ouput.
 
 Sadly, X is beginning to become a monolithic project to maintain and change,
-and with it's growing age, some are looking for a replacement.
+and with its growing age, some are looking for a replacement.
 
 ### Wayland
 Arguably the biggest competitor to X, Wayland is being developed by the authors
@@ -147,30 +147,30 @@ of window managers and desktop managers below I see people using below.
 - Based on binary space partitioning
 - Responds to X events, and messages it receives on the dedicated socket `bspc`
 - Configured with shell commands through a `bspwmrc`
-- does not handle keyboard inputs itself, instead relies on a secondary program
+- Does not handle keyboard inputs itself, instead relies on a secondary program
 like `Sxhkd`
 
 [i3](https://i3wm.org) (External)
 - Similar to Bspwm, but i3 takes in keyboard input itself
-- can be integrated into the GNOME desktop environment
-- includes an application menu through `dmenu` out of the box
-- configurable, though not much decoration is added to windows by itself
+- Can be integrated into the GNOME desktop environment
+- Includes an application menu through `dmenu` out of the box
+- Configurable, though not much decoration is added to windows by itself
 
 ##### Dynamic
 [awesome](https://awesomewm.org) (External)
-- highly configurable
-- targeted at power users
-- extensible using lua programing language
-- uses async libraries, making it less subject to latency
-- everything can be performed with the keyboard
-- tags instead of workspaces, each window can have multiple tags at a time
+- Highly configurable
+- Targeted at power users
+- Extensible using lua programing language
+- Uses async libraries, making it less subject to latency
+- Everything can be performed with the keyboard
+- Tags instead of workspaces, each window can have multiple tags at a time
 
 [dwm](https://dwm.suckless.org) (External)
 - Written by dmenu author
-- small, fast, and simple
-- no frills design, single c file
-- configuration is done by editing and recompiling said c program
-- elitest mentality, because customization is difficult only power users will
+- Small, fast, and simple
+- No frills design, single c file
+- Configuration is done by editing and recompiling said c program
+- Elitest mentality, because customization is difficult only power users will
 use it, keeping 'novices asking stupid questions' out.
 
 [xmonad](https://xmonad.org) (External)
@@ -185,9 +185,9 @@ use it, keeping 'novices asking stupid questions' out.
 
 ##### Tiling
 [Sway](https://swaywm.org) (External)
-- Drop in replacement for i3, but running on wayland.
+- Drop in replacement for i3, but running on Wayland.
 - Works with existing i3 config and keyboard shortcuts.
-- replaces i3lock with swaylock, and swayidle
+- Replaces i3lock with swaylock, and swayidle
 
 ### Desktop Environments
 ##### GNOME
@@ -198,22 +198,22 @@ Wayland.
 GNOME is split into two main session types, GNOME and GNOME Classic, as well
 as a version running on the X client; GNOME on Xorg. GNOME is the most current
 version at 3, while GNOME Classic intends to keep the interface of GNOME 2, this
-basically means that it is a more customized GNOME Shell than a truley distinct
+basically means that it is a more customized GNOME Shell than a truly distinct
 mode.
 
 ##### KDE Plasma
-The Current Generation of KDE's grapical environment, KDE uses the X server but
-Wayland support is currently under development. Basic wayland support was
-provieded in the 5.5 release.
+The current generation of KDE's graphical environment, KDE uses the X server but
+Wayland support is currently under development. Basic Wayland support was
+provided in the 5.5 release.
 
 KDE seems to be up and coming in the public opinion for its good out of the box
 looks and nice packaging, where GNOME comes with a lot of extra bloat and can be
-hard to customize in it's current iteration.
+hard to customize in its current iteration.
 
 ## How do I choose?
 Honestly, just go try some out. Depending on what distro you are on, WM installs
 can be fast and simple, and KDE Plasma is a very fast install if you are on
-a Debian or Arch derivitive.
+a Debian or Arch derivative.
 
 For compiling this list, I made heavy use of the
 [AUR](https://wiki.archlinux.org/index.php/Window_manager), so everything
