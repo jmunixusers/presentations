@@ -18,7 +18,7 @@
 be referred to as `..`
 - The home directory can be referred to as `~`
 - The last command can be referred to with `!!`, which is especially useful if 
-  you forget to add `sudo` in front of a command that needs priveledge elevation.
+  you forget to add `sudo` in front of a command that needs privilege elevation.
 
 ### Clearing the Screen
 
@@ -87,7 +87,7 @@ Standard out, shortened to stdout, is sometimes the terminal window, but it
 can also be a file. If you type `echo "test"`, the output will be sent to the
 terminal window. `echo "test" > test.txt` will output to the specified file. If 
 you'd like to append a file rather than overwriting it, try `echo "test" >> 
-test.txt"
+test.txt"`
 
 #### Standard Error
 
@@ -143,7 +143,7 @@ variable types, and there's no need to declare a variable before you assign it.
 ```bash
 #!/bin/bash
 
-$STR="Hello, world!"
+STR="Hello, world!"
 echo "$STR"
 ```
 
