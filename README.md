@@ -27,3 +27,6 @@ This is a collection of presentation notes from previous UUG meetings.
 
 ## Virtual Machine
 Virtual machine documentation is kept in a [separate folder](vm/)
+
+_Please note that external repository links are potentially maintained by
+separate authors under their own licenses._
