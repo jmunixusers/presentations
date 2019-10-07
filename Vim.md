@@ -205,6 +205,23 @@ The last few things that markdown does are numbered and bulleted lists
 2 this will show up as 3
 8325 this will show up as 4
 
-bulleted lists can start with a -
+Bulleted lists can start with a -
 or a *
 
+## Extra Vim stuff
+Just some nice plugins that I have started using. None of these change vim's
+behavior by very much, just add some nice features:
+
+[vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+is basically a column that tells you what has been added, removed, or modified
+in the current git tree. Nothing game-changing, but can be nice.
+
+[vim-closer](https://github.com/rstacruz/vim-closer) is a simple plugin to
+automagically close your brackets, parenthesis, and similar characters when you
+might forget. **Very** useful for javascript.
+
+[NerdTree](https://github.com/scrooloose/nerdtree) is a replacement for the 
+default vim directory navagation, with some added niceties. The major ones are
+color coding of files based on type, option to pop-out nerdtree to the side of
+your current window, and git integration with
+[nerdtree-git](https://github.com/Xuyuanp/nerdtree-git-plugin)
