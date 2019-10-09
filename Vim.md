@@ -13,7 +13,7 @@ require the user to remove their hands from the home row.
 ### Getting started with Vim
 
 To start Vim without opening a specific file simply type `Vim` on the terminal.
-To open a file, write `Vim filename`, in the case of this file, one would type
+To open a file, write `vim filename`, in the case of this file, one would type
 `Vim Vim.md`, like you likely already have.
 
 To quit Vim, simply hit `esc` a couple of times, then type `:q` and hit enter.
