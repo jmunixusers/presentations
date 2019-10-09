@@ -146,14 +146,56 @@ this is then followed by any text you want to search for. You can then page
 through all results using `n` and `N` to go forwards and backwards respectively.
 
 ##### Find/replace
-TODO:
+Vim's substitute command isn't as easy as some other text editors, but with some
+practice it isn't that bad.
+
+The basic syntax is `:s/<find>/<replace>`. Writing the command like this will
+only replace the first instance of `<find>` on the current line your cursor is
+on though. Hardly useful. Lets take a look at a few expansions, replacing foo
+and bar:
+```vim
+:s%/foo/bar " replace the first instance of foo on each line with bar
+:s%/foo/bar/g " replace every instance of foo with bar
+:5, 12s/foo/bar/g " replace every foo with bar in lines 5-12
+```
+
+This is another one of those commands that can be used with the visual tool,
+so if you enter visual mode and begin selecting, then type `:`, you will notice
+that `:'<,'>` is populated automatically, this means that Vim is going to use
+the text selected already for the range of the next action. We can then use
+`:'<,'>s/foo/bar/g` to do a find and replace in selection.
+
+See? Not so bad.
+
+### Visual block
+One thing I want to mention but don't have a good place to is the visual block
+mode. It is useful sometimes and something you might not find out about for a
+while unless someone tells you so I'll just bring it up here.
+
+Say, for instance you have a couple of lines with similar text and you want to
+do a bulk insert in the middle of the line. While you could do a small vimscript
+to do this, I don't know how to write vimscript. So the solution I use is the
+visual block mode.
+
+Hitting `ctrl+v` whisks you away to the strange world of visual block mode. In
+this mode you can do what it sounds like: select blocks of text instead of
+lines.
+
+Visual block mode works basically like regular visual mode with some minute
+differences:
+- You can simply enter insert mode from this mode, but you must use `I` or
+similar instead of regular `i`. I have no clue why.
+- Any action you do on one line will be replicated across all selected ones.
+- Text won't look like it's being inserted on every line, but it will be when
+you exit insert mode.
 
 ### Finally
 Vim is a very powerful text editing tool, and if you get used to it you will
 never want to go back to anything less. There are great resources out there for
 commands and shortcuts, the one I've been using for writing this guide is 
 [Vimsheet.com](www.Vimsheet.com). There are many plugins for Vim but I wouldn't
-reccommend getting any until you are more comfortable with Vim.
+really recommend any until you are comfortable with the basic features of Vim
+and understand what you need.
 
 ## Markdown
 
@@ -172,10 +214,10 @@ plain text formatting syntax.' As far as we're concerned, markdown is a useful
 tool for quickly writing code documentation, readmes for github, and converting
 to HTML.
 
-a lot of markdown's features are above, so we will touch base on a lot of those
+A lot of markdown's features are above, so we will touch base on a lot of those
 things but mostly go over things I haven't used yet.
 
-Headers use the # to denote the level of header. the more # the smaller the
+Headers use the # to denote the level of header. The more #s the smaller the
 header.
 header 1
 header 2
@@ -186,7 +228,7 @@ required (you can also use two spaces at the end of the line, but this is less
 readable).
 Links can be internal and external, and are created with brackets of the text
 to be displayed followed by parenthesis of the link. Images can be linked in
-same way with an explination point in front. something like
+same way with an explination point in front. Something like
 
 ![asdf](./sample.jpg)
 
@@ -199,7 +241,7 @@ Characters that markdown would normally read as syntax must be escaped with the
 inline code is denoted by surrounding it with \` characters (the one below the
 escape key)
 
-block code is denoted by three \` characters, and syntax highlighting works by
+Block code is denoted by three \` characters, and syntax highlighting works by
 putting the code type on the first line.
 
 //code//java
@@ -209,7 +251,7 @@ if(bool.toString().equals("true")) {
 //code//
 
 The last few things that markdown does are numbered and bulleted lists
-1 numbered lists start with 1. but any number after doesn't matter
+1 numbered lists start with 1. But any number after doesn't matter
 2 this will show up as 2
 2 this will show up as 3
 8325 this will show up as 4
@@ -221,16 +263,18 @@ or a *
 Just some nice plugins that I have started using. None of these change Vim's
 behavior by very much, just add some nice features:
 
-[Vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-is basically a column that tells you what has been added, removed, or modified
-in the current git tree. Nothing game-changing, but can be nice.
+[Vim-gitgutter](https://github.com/airblade/vim-gitgutter) is basically a column
+that tells you what has been added, removed, or modified in the current git
+tree. Nothing game-changing, but can be nice.
 
 [Vim-closer](https://github.com/rstacruz/vim-closer) is a simple plugin to
 automagically close your brackets, parenthesis, and similar characters when you
 might forget. **Very** useful for javascript.
 
-[NerdTree](https://github.com/scrooloose/nerdtree) is a replacement for the 
-default Vim directory navagation, with some added niceties. The major ones are
-color coding of files based on type, option to pop-out nerdtree to the side of
+[NERDTree](https://github.com/scrooloose/nerdtree) is a replacement for the 
+default Vim directory navigation, with some added niceties. The major ones are
+color coding of files based on type, option to pop-out NERDTree to the side of
 your current window, and git integration with
 [nerdtree-git](https://github.com/Xuyuanp/nerdtree-git-plugin)
+
+Again, would hold off on these until you are used to Vim's basic functionality.
