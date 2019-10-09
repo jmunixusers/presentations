@@ -106,6 +106,12 @@ A vimrc is basically a configuration file for Vim. It contains basic Vim
 functions that are called every time Vim is started, instead of needing to run
 them all manually.
 
+#### Useful features
+Some useful features that are not enabled by default on vim are line numbers and
+syntax highlighting (if not enabled by default). These can be enabled with
+`:set number`, and `:set syn`. These can aslo be added to the vimrc when you get
+more comfortable and are ready to set that up.
+
 #### Simple macros
 The `c` key while in normal mode will allow you to delete a selection and
 immediately start inserting text, c stands for change after all. Though c on its
