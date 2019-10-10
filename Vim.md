@@ -3,9 +3,9 @@
 ## Vim
 
 Vim is described as a 'highly configurable text editor for efficiently creating
-and changing any kind of text'
+and changing any kind of text'.
 
-Vim is included under the alias vi on most UNIX systems, as well as OS X
+Vim is included under the alias `vi` on most UNIX systems, as well as OS X.
 
 Vim is designed with the intent to have functions easily accessible and to never
 require the user to remove their hands from the home row.
@@ -42,7 +42,7 @@ written to the bottom of the terminal.
 ##### Insert
 
 While in insert mode, Vim acts as a basic text editor, type on the keyboard and
-text appears in the file. Cursor movement can be achived with the arrow keys.
+text appears in the file. Cursor movement can be achieved with the arrow keys.
 Insert mode can be accessed with the `i` key, and will start the insertion at
 the exact character that the cursor is on. If you wish to start at the character
 after, use the `a` key instead
@@ -52,7 +52,7 @@ after, use the `a` key instead
 ##### Visual
 
 Visual mode is akin to selecting text in a graphical editor, though with some
-more features. For now, Enter visual mode with `v` selecting the current
+more features. For now, enter visual mode with `v` selecting the current
 character, and move the cursor to select more text.
 - `v` enter visual mode on a character-by-character basis
 - `V` enter visual mode on a line-by-line basis
@@ -92,13 +92,13 @@ Advanced movement will be described more later.
 
 ### Getting more advanced
 Something to remember while using Vim, if you want to do some simple changes 
-to text or movement in Vim, theres a good chance that it exists, and you should
+to text or movement in Vim, there's a good chance that it exists, and you should
 check online to see what the command is.
 
 I'll also point to [my vimrc](https://github.com/Advill/Dotfiles/blob/master/config/nvim/init.vim)
 ~~where I have a fairly barebones config that makes the most of default Vim
-options.~~ I have added quite a bit to my Vim config over the past year. However
-Most things that are not basic Vim functions look more complicated, and should
+options.~~ I have added quite a bit to my Vim config over the past year. However,
+most things that are not basic Vim functions look more complicated, and should
 be fairly simple to breeze over. Most everything is commented and if you can't
 figure something out feel free to ask me.
 
@@ -109,14 +109,14 @@ them all manually.
 #### Useful features
 Some useful features that are not enabled by default on vim are line numbers and
 syntax highlighting (if not enabled by default). These can be enabled with
-`:set number`, and `:set syn`. These can aslo be added to the vimrc when you get
+`:set number`, and `:set syn`. These can also be added to the vimrc when you get
 more comfortable and are ready to set that up.
 
 #### Simple macros
 The `c` key while in normal mode will allow you to delete a selection and
-immediately start inserting text, c stands for change after all. Though c on its
-own will wait for a secondary input to tell it what it is removing. Using keys
-from the more complicated movement section we can do commands like:
+immediately start inserting text, c stands for change after all. Though `c` on
+its own will wait for a secondary input to tell it what it is removing. Using
+keys from the more complicated movement section we can do commands like:
 - `cw` change word: delete until the next space character, and insert
 - `c$` delete until the end of the line, and begin inserting
 
@@ -160,9 +160,9 @@ only replace the first instance of `<find>` on the current line your cursor is
 on though. Hardly useful. Lets take a look at a few expansions, replacing foo
 and bar:
 ```vim
-:s%/foo/bar " replace the first instance of foo on each line with bar
-:s%/foo/bar/g " replace every instance of foo with bar
-:5, 12s/foo/bar/g " replace every foo with bar in lines 5-12
+:%s/foo/bar " replace the first instance of foo on each line with bar
+:%s/foo/bar/g " replace every instance of foo with bar
+:5,12s/foo/bar/g " replace every foo with bar in lines 5-12
 ```
 
 This is another one of those commands that can be used with the visual tool,
