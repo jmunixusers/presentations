@@ -42,7 +42,7 @@ written to the bottom of the terminal.
 ##### Insert
 
 While in insert mode, Vim acts as a basic text editor, type on the keyboard and
-text appears in the file. Cursor movement can be acheived with the arrow keys.
+text appears in the file. Cursor movement can be achieved with the arrow keys.
 Insert mode can be accessed with the `i` key, and will start the insertion at
 the exact character that the cursor is on. If you wish to start at the character
 after, use the `a` key instead
