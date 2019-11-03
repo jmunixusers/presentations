@@ -3,7 +3,7 @@
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) is an init daemon for Linux that is
 used on many distributions (such as Arch Linux, Debian, and RHEL). It significantly changes the
 way that daemons have been started in the past. systemd introduces the concept of "unit files,"
-which are declarative confirguations with a standard syntax that are a significant departure from
+which are declarative configurations with a standard syntax that are a significant departure from
 the previous practice of using arbitrary shell scripts to start daemons. It incorporates easy ways
 to do things like specifying the environment for a service or limiting the syscalls that can be
 made by processes started by the service. systemd also provides a ton of helpful CLI commands to
