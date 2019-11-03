@@ -2,11 +2,12 @@
 
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/) is an init daemon for Linux that is
 used on many distributions (such as Arch Linux, Debian, and RHEL). It significantly changes the
-way that daemons have been started in the past. systemd leverages unit files, declarative
-configuration files for a service; in the past, shell scripts were often used to start a daemon.
-It incorporates easy ways to do things like specifying the environment for a service or limiting
-the syscalls that can be made by processes started by the service. systemd also provides a ton
-of helpful CLI commands to analyze the state of your system.
+way that daemons have been started in the past. systemd introduces the concept of "unit files,"
+which are declarative confirguations with a standard syntax that are a significant departure from
+the previous practice of using arbitrary shell scripts to start daemons. It incorporates easy ways
+to do things like specifying the environment for a service or limiting the syscalls that can be
+made by processes started by the service. systemd also provides a ton of helpful CLI commands to
+analyze the state of your system.
 
 ## CLI commands
 
@@ -53,7 +54,7 @@ Documentation for all options can be found with `man 5 systemd.service`
 
 ## Timer unit files
 
-Timer unit files are a replacement for traditional `crontab` entries. They can be depended on by
+Timer unit files are a replacement for traditional `crontab` entries. They can be a dependency of
 services or can depend on services (or actually any type of `unit` files).
 
 An example Timer unit file from Arch Linux is:
@@ -73,7 +74,7 @@ WantedBy=timers.target
 ```
 
 This timer will run every day. If the system isn't on at exactly one day since the previous run,
-it will run as soon as possible. It will run with 23-25 hours (daily + AccuracySec=1h) from the
+it will run as soon as possible. It will run within 23-25 hours (daily + AccuracySec=1h) of the
 last time it ran.
 
 ## Mount unit files
@@ -81,7 +82,7 @@ last time it ran.
 Instead of specifying entries in `fstab(5)`, you can instruct systemd to mount different
 filesystems.
 (*Note: A well-configured systemd will automatically turn fstab entries into .mount units*).
-These can be great for if a service or timer depends on a particular file system to be mounted,
+These can be great when a service or timer depends on a particular file system to be mounted,
 including an NFS share. You can also declaratively state that your mount file depends on NFS and
 networking being ready! The automatically-generated mount unit for a `/boot` or EFI partition
 might look something like:
