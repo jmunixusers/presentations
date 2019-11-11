@@ -59,8 +59,8 @@ echo "I'm still in `pwd`"
 #### Brace expansion
 Bash allows you to expand things inside braces pretty reasonably:
 ```bash
-echo {A, B}     # A B
-echo {A, B}.js  # A.js B.js
+echo {A,B}     # A B
+echo {A,B}.js  # A.js B.js
 echo {1..5}     # 1 2 3 4 5
 ```
 
@@ -69,6 +69,7 @@ The last type allows step size with another `..` set:
 echo {0..50..5}
 
 #### eval
+```
 
 Brace expansions do not work directly in strings however, but we can use the
 `eval` command to fix that:
@@ -83,9 +84,15 @@ second as the actual command. Here, bash expands the brace expansion syntax
 before sending to echo.
 
 #### Conditionals
-The `[[ ... ]]` command is an alias for `test` and returns either 0 (true) or 1
-(false), much of the description is listed in `man 1 test`. `[[ ... ]]` is
-a superset of the `test` functionality, with a few added functions.
+The `[ ... ]` command is an alias for `test` (`/bin/test`) and returns either 0
+(true) or 1 (false), much of the description is listed in `man 1 test`.
+`[[ ... ]]` is a superset of the `test` functionality, with a few added
+functions, though this functionality is not POSIX standard and therefore varies
+based on the system. I will be working based on `bash`'s implementation of `[[`
+(found
+[here](https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html#index-_005b_005b)).
+But your results may vary if using something else.
+
 
 Some useful operators are: 
 - `[[ -n STRING ]]`: String is nonzero
@@ -134,9 +141,8 @@ if(func() && meth())
 ```
 statements using `||` will stop executing as soon as a `true` value is found,
 and conversely, `&&` stops as soon as a false is found. Bash has a similar
-feature but does not require a surrounding if statement to work. (I guess java
-doesn't technically either but it's bad practice to do that sort of thing)
-
+feature that is used to control execution since every bash function returns a
+'boolean' based on whether the exectuion succeedes.
 ```bash
 git commit && git push
 # if commit returns 0, push after. Don't push otherwise
@@ -174,7 +180,7 @@ done
 
 There is also an easy way to do text input from a file in a loop:
 ```bash
-< file.txt | wile read line; do
+< file.txt | while read line; do
   echo $line
 done
 ```
@@ -191,8 +197,9 @@ func() {
 Bash functions don't have returns in the normal sense. A function that prints to
 stdout without being captured will simply print directly to stdout, however
 calling the function as if it is a executable like we did above will print it
-in the same way. The `return` keyword exists in bash, but it is used to define
-the return value of the function. 0 is success and returned by default, and
+in the same way. The `return` keyword exists in bash, but since every function
+or script in bash must give a return code, it is used to define the return code
+of the function instead of any value. 0 is success and returned by default, and
 any other number from 1-255 is valid but considered failure. This return value
 can be accessed after the function finishes with the `$?` variable. 
 
@@ -216,8 +223,6 @@ variables without naming conflicts will stay in scope.
 These are fairly simple, albeit with strange definitions, so I'm just going to
 write out how to use them.
 
-```bash
-
 ##### Arrays
 ```bash
 Arr=('one' 'two' 'three')
@@ -226,7 +231,7 @@ echo ${Arr[0]}      # "one"
 echo ${Arr[1]}      # "two"
 echo ${Arr[2]}      # "three"
 echo ${Arr[@]}      # all elements, space-separated
-echo ${#Arr[@]}     # all elements, space-separated
+echo ${#Arr[@]}     # length of array
 echo ${#Arr}        # String length of 1st element
 echo ${#Arr[3]}     # String length of Nth element
 echo ${Arr[@]:1:2}  # range from position 1, length 2
@@ -235,7 +240,8 @@ for i in "${arrayName[@]}"; do
   echo $i
 done
 ```
-##### Dictionaries
+##### Associative Arrays
+AKA dictionaries
 ```bash
 declare -A dict
 
