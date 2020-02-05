@@ -54,7 +54,7 @@ git stores all of the data about your repository.
 You now have to tell `git` where your code should be pushed to. We are using
 GitHub for this and we'll now we will use that command from earlier.
 
-    git add remote origin https://github.com/YOURUSERNAME/REPONAME.git
+    git remote add origin https://github.com/YOURUSERNAME/REPONAME.git
 
 This has created a .git folder, with all the information about your
 repository.
