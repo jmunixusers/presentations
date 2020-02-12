@@ -9,6 +9,7 @@ This is a collection of presentation notes from previous UUG meetings.
 * [Command Line](CommandLine.md)
 * [Containers - Intro](containers/intro.md)
 * [Containers - Building](containers/building.md)
+* [Containers - Kubernetes](containers/kubernetes.md)
 * [Git](Git.md)
 * [Git 201](https://github.com/jmunixusers/git-201) (External)
 * [Intel Pin](https://github.com/lam2mo/uug-pin) (External)
