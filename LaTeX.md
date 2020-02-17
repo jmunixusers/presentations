@@ -28,7 +28,7 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
 * Document info: `\title`, `\author`, `\date`, `\maketitle`
 * Page numbers: `\pagenumbering{roman}`, `\thispagestyle{empty|plain}`, `\pagestyle{empty|plain}`
 * Organization: `\section`, `\subsection`, `\subsubsection`
-   * Others: `\tableofcontents`, `\label`, `\ref`
+   * Others: `\tableofcontents`, `\label`, `~\ref`
    * Use asterisk to toggle numbering
 * Comments w/ `%`
 
@@ -47,7 +47,7 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
    * Requires `\usepackage{graphicx}`
    * Options: `[scale=0.5]`, `[width=1in]`, `\begin{center}`
 * Floating figures: `\figure`
-   * Options: `\caption`, `\label` (needs to go at the end)
+   * Options: `\caption`, `\label` (needs to go at the end), `~\ref`
    * Works for verbatims or graphics, too
 * Tables: `\tabular`, `\hline`, `[l|c|r]`, `\multicolumn{n}{cols}{text}`
 
@@ -67,8 +67,9 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
 
 * Special BibTeX file format (`.bib`)
 * Download references from [ACM Digital Library](https://dl.acm.org) and/or [IEEE Xplore](http://ieeexplore.ieee.org)
+* Integrates with [Zotero](https://www.zotero.org/)
 * `\bibliographystyle{plain}`, `\bibliography{fname}`
-* `\cite{key}`
+* `~\cite{key}`
 
 ## Large documents
 
