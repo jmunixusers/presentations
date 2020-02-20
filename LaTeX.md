@@ -118,6 +118,12 @@ Fun fact: LaTeX is Turing-complete!
    * `\begin{frame}`
    * `\frametitle`
    * Sections (same as usual, now with visual indicators)
+* TikZ ([docs](http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf))
+  * [Overleaf guide](https://www.overleaf.com/learn/latex/TikZ_package)
+  * `\begin{tikzpicture}`
+  * `(x1,y1) -- (x2,y2)`
+  * `\draw`, `\draw[->]`, `\filldraw`
+  * `\node`
 
 ## Common headaches
 
