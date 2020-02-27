@@ -78,7 +78,7 @@ vagrant box add laravel/homestead
 
 - You will need to make a choice of what provider you want, enter 2 for virtualbox:
 
-![provider](./images/laravel/provider-choice.png)
+![provider](provider-choice.png)
 
 
 - Next type into your terminal:
@@ -101,7 +101,7 @@ ssh-keygen -t rsa -C “your_email@example.com”
 
 - Open the homestead directory in your preferred text editor, change homestead.yaml to the following::
 
-![homestead.yaml](./images/laravel/HomesteadYaml.png) 
+![homestead.yaml](HomesteadYaml.png) 
 
 - In the terminal type:
 ``` 
@@ -153,7 +153,7 @@ function homestead() {
 ## Laravel File Structure
 
 
-![Application Structure](./images/laravel/application-structure.png)
+![Application Structure](application-structure.png)
 
 
 The important files created in the root are:
@@ -250,4 +250,4 @@ The vendor directory contains Composer dependencies related files of your applic
 
 ## Example App in Browser
 
-![laravel ap example](./images/laravel/laravel-home.png)
+![laravel ap example](laravel-home.png)

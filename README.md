@@ -27,8 +27,9 @@ This is a collection of presentation notes from previous UUG meetings.
 
 ## Lightning Talks
 * [Adventures in /proc](AdventuresInProc.md)
-* [Laravel](Laravel.md)
+* [Laravel](laravel/Laravel.md)
 * [osquery](osquery.md)
+* [Salt](saltstack/Salt.md)
 
 ## Virtual Machine
 Virtual machine documentation is kept in a [separate folder](vm/)
