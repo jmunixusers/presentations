@@ -5,17 +5,13 @@ marp: true
 
 ---
 
-# Follow along:
+# Follow along
 
 ## <https://github.com/jmunixusers/cs-vm-build>
 
 ---
 
-# History
-
----
-
-# Early encounters
+# History and Early Encounters
 
 - In the early 2000’s, students were primarily using desktops with big CRT (tube) monitors
 - Virtualization barely existed
@@ -28,7 +24,7 @@ marp: true
 
 ---
 
-# Early encounters
+# History and Early Encounters
 
 - Windows XP lacked the ability to resize partitions or dual-boot
 - The arrival of laptops brought an explosion of uncooperative hardware
@@ -59,7 +55,7 @@ marp: true
 
 # Approaching today
 
-- 2-3 years ago, the UUG starting building a VM appliance
+- Around 2015, the UUG starting building a VM appliance
 - Figured if there was no value in watching the installer, we should just skip it
 - Everything was set up manually from a few rough notes
 - VM snapshots kept the whole project from collapsing
@@ -70,7 +66,7 @@ marp: true
 
 # The modern era
 
-- Last year, Dr. Mayfield approached the UUG about bringing together our VM and the CS101 class
+- In 2017, Dr. Mayfield approached the UUG about bringing together our VM and the CS101 class
 - Software required for 101 grew the VM from ~2GB to 3GB+
 - Shortly after, there was talk of adding another GB of CS354 robotics content
 - We wanted to keep everybody working together, but…
@@ -87,16 +83,11 @@ marp: true
 - Make it your own workspace, users configure their own preferences on first boot, give it their own name, and set their own password
 - Least surprise
   - Never modify preferences like appearance, fonts, colors, etc
-  - Never remove applications, which is why we don’t offer a class “uninstall” option
-  - Never modify something during packaging that removes an typical ability of Mint/Ubuntu
-- Keep it lightweight
-  - Fast downloads, fits on a flash drive, doesn’t clog up laptop hard drives
-- Prefer JMU mirror, faster downloads from mirror.cs.jmu.edu
-- Working to make our setup work between VM and laptops
-
----
-
-# VM Skeleton
+  - Never remove programs, which is why we don’t offer a class "uninstall" option
+  - Never modify something during packaging that removes a typical ability of Mint/Ubuntu
+- Keep it lightweight for fast downloads, fits on a flash drive, and doesn’t fill laptop hard drives
+- Prefer JMU mirror and faster downloads from mirror.cs.jmu.edu
+- Try to keep our setup working between the VM and laptops
 
 ---
 
@@ -107,7 +98,8 @@ marp: true
 ---
 
 # Script it!
-```
+
+```batch
 VBoxManage createvm --name "%VM%" --ostype Ubuntu_64 --register
 VBoxManage modifyvm "%VM%" --cpus 2 --memory 2048 --vram 64
 VBoxManage storagectl "%VM%" --name "SATA Controller" --add sata --bootable on --portcount=4
@@ -152,8 +144,8 @@ Move quick, get the GRUB menu
 - A Python script for turning YAML files into Python scripts
 - Designed to efficiently manage thousands of machines
 - Extensible interface and community (Ansible Galaxy) hub to extend its capabilities in limitless ways
-- Recently acquired by RedHat and developed as open-source core with commercially supported edition
-- MTBIAGSD - “Mean time between idea and getting shit done”
+- Acquired by RedHat and developed as open-source core with commercial support
+- MTBIAGSD - "Mean time between idea and getting shit done"
 - Project founders believe that you should be able to start getting real work done within an hour of encountering Ansible
 
 ---
@@ -172,7 +164,7 @@ Move quick, get the GRUB menu
 
 - A role contains tasks, handlers, files, templates, and variables
 - A playbook is a series of tasks
-- A handler is a step that only runs if a designated tasks reports that it “changed”
+- A handler is a step that only runs if a designated tasks reports that it "changed"
   - Example - restart a service only if you modify its configuration
 - Tasks, handlers, and variables use YAML syntax
 - Templates and variable interpolation use Jinja2 syntax
@@ -182,17 +174,14 @@ Move quick, get the GRUB menu
 
 # Our misuse of Ansible
 
----
-
-# Quick reminder:
-## <https://github.com/jmunixusers/cs-vm-build>
+Quick reminder: <https://github.com/jmunixusers/cs-vm-build>
 
 ---
 
 # Misusing Ansible
 
 - We only modify one host at a time - your laptop
-- We use the “local” connection type, not SSH or WinRM
+- We use the "local" connection type, not SSH or WinRM
 - Roles encapsulate one of:
   - Multi-step installations for applications used across multiple classes - Eclipse, jGRASP
   - An assortment of simple steps unique to one class - basic-prog-pkgs
@@ -204,93 +193,103 @@ Move quick, get the GRUB menu
 
 # Role overview
 
-```
+```yml
 - roles:
-  - { role: common, tags: always }
+  - { role: common, tags: always, icon_mode: user }
+  - { role: user, tags: always }
   - { role: wireless-printing, tags: always }
   - { role: filezilla, tags: always }
   - { role: basic-prog-pkgs, tags: ["cs101"] }
-  - { role: adv-prog-pkgs, tags: ["cs261"] }
+  - { role: adv-prog-pkgs, tags: ["cs261", "cs361"] }
   - { role: robot-pkgs, tags: ["cs354"] }
   - { role: eclipse, tags: ["cs101", "cs149", "cs159"] }
   - { role: jgrasp, tags: ["cs149"] }
-  - { role: drjava, tags: ["cs149"] }
   - { role: finch, tags: ["cs101"] }
-  - { role: task-shortcuts, tags: always, icon_mode: user }
   - { role: y86, tags: ["cs261"] }
+  - { role: programming-langs, tags: ["cs430"] }
+  - { role: vscode, tags: ["cs149"] }
 ```
 
 ---
 
-# Step-by-step playbooks - roles/drjava/tasks/main.yml
+# Step-by-step playbooks - roles/jgrasp/tasks/main.yml
 
+```yml
+- name: Install jGRASP dependencies
+  apt:
+    name: lsb-core
+    state: latest
+- name: Check jGRASP
+  stat:
+    path: '{{ jgrasp.zip }}'
+  register: st
 ```
+
+---
+
+# Step-by-step playbooks - roles/jgrasp/tasks/main.yml continued
+
+```yml
 - block:
-  - name: Create DrJava directory
-    file:
-      path: '{{ drjava.install_path }}'
-      state: directory
-  - name: Fetch DrJava jar
-    get_url:
-      url: '{{ drjava.url }}'
-      dest: '{{ drjava.jar }}'
-      force: yes
-when: st.stat.checksum|default("") != drjava.hash
+    - name: Fetch jGRASP zip
+      get_url:
+        url: '{{ jgrasp.url }}'
+        dest: '{{ jgrasp.zip }}'
+        checksum: 'sha1:{{ jgrasp.hash }}'
+        force: yes
+    - name: Remove old jGRASP directory
+      file:
+        path: '{{ jgrasp.install_path }}'
+        state: absent
+    - name: Unpack jGRASP zip
+      unarchive:
+        dest: '{{ global_base_path }}'
+        src: '{{ jgrasp.zip }}'
+  when: st.stat.checksum|default("") != jgrasp.hash
 ```
+
 ---
 
-# Step-by-step playbooks - roles/drjava/tasks/main.yml continued
+# Step-by-step playbooks - roles/jgrasp/tasks/main.yml continued
 
-```
-- name: Install DrJava menu shortcut
+```yml
+- name: Install jGRASP desktop icon
   template:
-    src: drjava.desktop.j2
-    dest: /usr/local/share/applications/drjava.desktop
+    src: jgrasp.desktop.j2
+    dest: /usr/local/share/applications/jgrasp.desktop
     mode: 0644
   notify:
     - Update desktop menu
-- name: Install DrJava start script
-  template:
-    src: drjava.sh.j2
-    mode: 0755
-    dest: '{{ drjava.install_path }}/drjava.sh'
 ```
+
 ---
 
-# Playbook variables - roles/drjava/vars/main.yml
+# Playbook variables - roles/jgrasp/vars/main.yml
 
-```
-drjava:
-  url: 'https://sourceforge.net/projects/drjava/files/1.%20DrJava%20Stable%20Releases/drjava-beta-20160913-225446.jar/download'
-  hash: '3f0f4ade34b4e330d9a039368ddd04b424c43f43'
-  install_path: '{{ global_base_path }}/drjava'
-  jar: '{{ global_base_path }}/drjava/drjava.jar'
+```yml
+jgrasp:
+  url: 'https://www.jgrasp.org/dl4g/jgrasp/jgrasp206_02.zip'
+  hash: '9b636f5b1c7687ad8dc4207ff2ad1723fd00c501'
+  zip: '{{ global_base_path }}/jgrasp.zip'
+  install_path: '{{ global_base_path }}/jgrasp'
 ```
 
 ---
 
 # Playbooks with lists - roles/basic-prog-pkgs/tasks/main.yml
 
-```
+```yml
 - name: Install introductory development packages
-  apt: name={{ item }} state=latest
-  with_items:
-    - artha
-    - bless
-    - chromium-browser
-    - fonts-crosextra-caladea
-    - fonts-crosextra-carlito
-    - geany
-    - idle-python3.6
-    - libreoffice
+  apt:
+    name: '{{ basic_prog_pkgs_intro_development }}'
+    state: latest
 ```
 
 ---
 
 # Making it usable
 
-
-` $ ansible-pull -U https://github.com/jmunixusers/cs-vm-build -C master -t common local.yml`
+`$ ansible-pull -U https://github.com/jmunixusers/cs-vm-build -C master -t common local.yml`
 
 - We’re targeting first-week CS students
 - CLIs are hard/scary/intimidating/new
@@ -317,24 +316,31 @@ drjava:
 
 ---
 
-# Coming soon...
+# Testing
 
-- Automagic PR testing
-- Button for opening log directories
-- Button for reporting issues
-- Telemetry (opt-in)
-- uugconfigd?
-
----
-
-# SHIP IT!
+- Pull requests are now automatically linted by GitHub Actions
+- All pull requests require an independent review, helping spot errors early on
+- A lot of QA still relies on manual testing
+- Full CI/CD remains a goal, but would be expensive or abusive of free-tier services
 
 ---
 
-# Lots and lots of flash drives
+# SHIP IT! Lots and lots of flash drives
 
 ![bg contain](image07a.jpg)
 ![bg contain right](image07b.jpg)
+
+---
+
+# On-going projects
+
+- GUI tool improvements
+  - Automagic PR testing
+  - Button for opening log directories
+  - Button for reporting issues
+  - Codebase modernization
+- Telemetry (opt-in)
+  - Statistics reporting on class role usage would help guide future development
 
 ---
 
