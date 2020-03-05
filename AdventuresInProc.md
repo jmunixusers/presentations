@@ -3,6 +3,7 @@
 /proc is a bridge to read kernel data and configure parameters.
 
 ## Common Utilities
+
 You can find many of the data sources that common utilities use.
 
 - `/proc/cpuinfo` - `lscpu`
@@ -12,6 +13,7 @@ You can find many of the data sources that common utilities use.
 - `/proc/net/tcp` and `/proc/net/dev` - `ip`, `netstat`, and `ifconfig`
 
 ## In-depth kernel data
+
 You can also get far more in-depth data directly from the kernel.
 
 - `/proc/meminfo`
@@ -19,7 +21,9 @@ You can also get far more in-depth data directly from the kernel.
 - `/proc/kcore`
 
 ## Process statistics
-Data on individual processes can be queried from `/proc/$PID` or `/proc/self`. Much of this data is available from flags to `ps` or `lsof`.
+
+Data on individual processes can be queried from `/proc/$PID` or `/proc/self`.
+Much of this data is available from flags to `ps` or `lsof`.
 
 - `cmdline`
 - `cwd` - symlink to the running binary
@@ -29,6 +33,7 @@ Data on individual processes can be queried from `/proc/$PID` or `/proc/self`. M
 - `maps` - library addresses
 
 ## Interacting with the kernel
+
 Some parameters can be modified directly through `/proc`, in addition to something like `sysctl`.
 
 - `/proc/sys/vm/swappiness` - `sysctl -w vm.swappiness`
