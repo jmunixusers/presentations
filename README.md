@@ -7,7 +7,7 @@ This is a collection of presentation notes from previous UUG meetings.
 
 ## Full Length Meetings
 
-* [Arduino - Morse Code] (https://github.com/nuttercd/ArduinoDemo) (External)
+* [Arduino - Morse Code](https://github.com/nuttercd/ArduinoDemo) (External)
 * [Command Line](CommandLine.md)
 * [Containers - Intro](containers/intro.md)
 * [Containers - Building](containers/building.md)
