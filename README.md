@@ -33,6 +33,7 @@ This is a collection of presentation notes from previous UUG meetings.
 * [Laravel](laravel/Laravel.md)
 * [osquery](osquery.md)
 * [Salt](saltstack/Salt.md)
+* [TLS](TLS.md)
 
 ## Virtual Machine
 Virtual machine documentation is kept in a [separate folder](vm/)
