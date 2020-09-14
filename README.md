@@ -13,7 +13,7 @@ This is a collection of presentation notes from previous UUG meetings.
 * [Containers - Building](containers/building.md)
 * [Containers - Kubernetes](containers/kubernetes.md)
 * [Elasticsearch](elastic/index.md)
-* [Git](Git.md)
+* [Git 101](git101/index.md)
 * [Git 201](https://github.com/jmunixusers/git-201) (External)
 * [How to build a VM](BuildAVM/index.md)
 * [Intel Pin](https://github.com/lam2mo/uug-pin) (External)
