@@ -66,7 +66,7 @@ marp: true
 - `print /x <expr>` - same as above but print in hexadecimal
 - `ptype <expr>` - print the type of a variable or expression
 - `display <expr>` - print value after every pause
-- `info regs` - print values of all machine registers
+- `info reg` - print values of all machine registers
 - `info locals` - print values of all local variables
 - `backtrace` - print stack trace (list of active functions on the stack)
   - (`up` and `down` to cycle through function call sites)
