@@ -13,6 +13,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12'
+      - name: Auth login
+        run: |
+          echo ${{ github.sha }}
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+      - name: Check auth status
+        run: |
+          gh auth status
       - name: Install Ubuntu dependencies
         run: |
           sudo apt-get -y install chromium-browser
