@@ -1,0 +1,49 @@
+---
+name: Build PDF Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Build:
+    name: Build PDF release bundle
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Install Ubuntu dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install chromium-browser
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install marp
+        run: |
+          npm install --save-dev @marp-team/marp-cli
+      - name: Build PDFs
+        run: |
+          for input in `grep -l 'marp: true' *.md */*.md`
+          do
+            output=`echo -n $input | sed -e 's/.md$//g'`
+            echo "$output.pdf"
+            npx marp --allow-local-files "$input" -o "$output.pdf"
+          done
+      - name: Zip PDFs
+        run: |
+          find . -name "*pdf" -exec zip -g PDF.zip {} \;
+      - name: Set GitHub auth token
+        run: |
+          gh config set -h github.com oauth_token "${{ secrets.GITHUB_TOKEN }}"
+      - name: Create updated release
+        run: |
+          gh release delete presentation-latest -y || true
+          git push --delete origin presentation-latest || true
+          gh release create presentation-latest PDF.zip
