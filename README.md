@@ -1,7 +1,7 @@
 # JMU UUG Presentations
 This is a collection of presentation notes from previous UUG meetings.
 
-For slides rendered to PDF or presentation notes for offline reading, download the [PDF bundle](https://urldefense.proofpoint.com/v2/url?u=https-3A__github.com_jmunixusers_presentations_releases_download_presentation-2Dlatest_PDF.zip&d=DwIFAg&c=eLbWYnpnzycBCgmb7vCI4uqNEB9RSjOdn_5nBEmmeq0&r=mViWwgbSiVLhCGiO9Z8qEZQsAou42O8YdImT6H2vetA&m=MuxyRaq95bpbbcGIEV3VK-OUYUGxMIfVGdhvNa9H-Ps&s=QhkzRMyyK1t92-aRWvb2d3HoWoLYeqNr8vd9rqsn4mI&e=).
+For slides rendered to PDF or presentation notes for offline reading, download the [PDF bundle](https://github.com/jmunixusers/presentations/releases/download/presentation-latest/PDF.zip).
 
 ## Special Events
 * [InstallFest](InstallFest.md)
