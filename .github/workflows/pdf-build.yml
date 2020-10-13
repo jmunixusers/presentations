@@ -31,8 +31,7 @@ jobs:
           npm install --save-dev @marp-team/marp-cli markdown-pdf
       - name: Build PDFs
         run: |
-          for input in *.md */*.md;
-          do
+          for input in *.md */*.md; do
             output=`echo -n $input | sed -e 's/\.md$/.pdf/g'`
             echo "Input: $input, output $output";
             if [[ $(grep -l 'marp: true' $input) ]];
