@@ -23,23 +23,22 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-
+          key: "${{ runner.os }}-node-"
           restore-keys: |
-            ${{ runner.os }}-node-
+            "${{ runner.os }}-node-"
       - name: Install marp
         run: |
           npm install --save-dev @marp-team/marp-cli markdown-pdf
       - name: Build PDFs
         run: |
           for input in *.md */*.md; do
-            output=`echo -n $input | sed -e 's/\.md$/.pdf/g'`
-            echo "Input: $input, output $output";
-            if [[ $(grep -l 'marp: true' $input) ]];
-            then
+            output="${input%.md}.pdf"
+            echo "Input: $input, output $output"
+            if [[ "$(grep -l 'marp: true' "$input")" ]]; then
               npx marp --allow-local-files "$input" -o "$output"
             else
               npx markdown-pdf "$input" -o "$output"
-            fi;
+            fi
             zip -g PDF.zip "$output"
           done
       - name: Set GitHub auth token
