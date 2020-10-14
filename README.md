@@ -1,6 +1,8 @@
 # JMU UUG Presentations
 This is a collection of presentation notes from previous UUG meetings.
 
+For slides rendered to PDF or presentation notes for offline reading, download the [PDF bundle](https://github.com/jmunixusers/presentations/releases/download/presentation-latest/PDF.zip).
+
 ## Special Events
 * [InstallFest](InstallFest.md)
 * [Internship Panel](InternshipQA.md)

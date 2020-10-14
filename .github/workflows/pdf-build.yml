@@ -6,6 +6,7 @@ on:
       - main
 jobs:
   Build:
+    if: github.repository == 'jmunixusers/presentations'
     name: Build PDF release bundle
     runs-on: ubuntu-18.04
     steps:
@@ -22,23 +23,24 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-
+          key: "${{ runner.os }}-node-"
           restore-keys: |
-            ${{ runner.os }}-node-
+            "${{ runner.os }}-node-"
       - name: Install marp
         run: |
-          npm install --save-dev @marp-team/marp-cli
+          npm install --save-dev @marp-team/marp-cli markdown-pdf
       - name: Build PDFs
         run: |
-          for input in `grep -l 'marp: true' *.md */*.md`
-          do
-            output=`echo -n $input | sed -e 's/.md$//g'`
-            echo "$output.pdf"
-            npx marp --allow-local-files "$input" -o "$output.pdf"
+          for input in *.md */*.md; do
+            output="${input%.md}.pdf"
+            echo "Input: $input, output $output"
+            if [[ "$(grep -l 'marp: true' "$input")" ]]; then
+              npx marp --allow-local-files "$input" -o "$output"
+            else
+              npx markdown-pdf "$input" -o "$output"
+            fi
+            zip -g PDF.zip "$output"
           done
-      - name: Zip PDFs
-        run: |
-          find . -name "*pdf" -exec zip -g PDF.zip {} \;
       - name: Set GitHub auth token
         run: |
           gh config set -h github.com oauth_token "${{ secrets.GITHUB_TOKEN }}"
