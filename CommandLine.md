@@ -3,7 +3,7 @@
 ## How to Get Help with a Command
 
 - `man` Will open the manual page for a command. For example: `man cat`
-- `apropos` or `man -k` will find a man page for a specific topic. For example, 
+- `apropos` or `man -k` will find a man page for a specific topic. For example,
 `apropos copy`
 
 ## How to Operate the Terminal
@@ -14,10 +14,10 @@
 - The tab key will complete a command
 - `history` will show the most recent commands
 - Ctrl-r will search through the history
-- The current directory can be referred to as `.` and the parent directory can 
+- The current directory can be referred to as `.` and the parent directory can
 be referred to as `..`
 - The home directory can be referred to as `~`
-- The last command can be referred to with `!!`, which is especially useful if 
+- The last command can be referred to with `!!`, which is especially useful if
   you forget to add `sudo` in front of a command that needs privilege elevation.
 
 ### Clearing the Screen
@@ -43,7 +43,7 @@ be referred to as `..`
   - `-R` recursively include the contents of directories
   - `-h` human-readable size units when used with `-l`
   - `-U` don't sort (useful for large directories)
-- `touch` create a new empty file if the file has not been created, update the 
+- `touch` create a new empty file if the file has not been created, update the
 timestamp if it has been created
 - `nano`, `vi` open a file in a text editor
 - `mkdir` create a directory
@@ -61,8 +61,8 @@ timestamp if it has been created
 
 ### Wildcards
 
-We have two main wildcard characters that we can use. `?` is a one character, 
-and `*` can match any number of characters. It's worth noting that `*` excludes 
+We have two main wildcard characters that we can use. `?` is a one character,
+and `*` can match any number of characters. It's worth noting that `*` excludes
 files and directories beginning with a `.`
 
 ## Input/Ouput
@@ -73,43 +73,44 @@ Normally, every program has three streams; input, output, and error.
 
 #### Standard In
 
-Standard in, sometimes shortened to stdin, is usually the keyboard, but 
-sometimes it can be a file. To see this, if you just type `cat` it will simply 
-return any input that you give it. In this mode, standard in is the keyboard. If 
-you give cat a filename, like `cat /etc/passwd` or `cat < /etc/passwd` the file 
-specified is the standard in. Note that angle brackets `< >` can be used to 
-redirect input and output. Also note that cat is short for "concatenate", 
+Standard in, sometimes shortened to stdin, is usually the keyboard, but
+sometimes it can be a file. To see this, if you just type `cat` it will simply
+return any input that you give it. In this mode, standard in is the keyboard. If
+you give cat a filename, like `cat /etc/passwd` or `cat < /etc/passwd` the file
+specified is the standard in. Note that angle brackets `< >` can be used to
+redirect input and output. Also note that cat is short for "concatenate",
 because you can specify multiple files and it will concatenate them.
 
 #### Standard Out
 
-Standard out, shortened to stdout, is sometimes the terminal window, but it 
+Standard out, shortened to stdout, is sometimes the terminal window, but it
 can also be a file. If you type `echo "test"`, the output will be sent to the
-terminal window. `echo "test" > test.txt` will output to the specified file. If 
-you'd like to append a file rather than overwriting it, try `echo "test" >> 
+terminal window. `echo "test" > test.txt` will output to the specified file. If
+you'd like to append a file rather than overwriting it, try `echo "test" >>
 test.txt"`
 
 #### Standard Error
 
 The output of a file could be valid output or it could be an error message.
 Standard error, shortened to stderr, is where these error messages are sent.
-`find / -iname '*stuff*'` will result in many error messages unless we redirect 
+`find / -iname '*stuff*'` will result in many error messages unless we redirect
 standard error. That can be done with `find / -iname '*stuff*' 2> /dev/null`
 
 ### Piping and the UNIX Philosophy
 
 Pipes allow you to use the output of one program as the input for another.
-This allows for the stringing together of many commands. 
+This allows for the stringing together of many commands.
 
-The pipe is the very thing that shaped the UNIX philosophy, which is best summarized as 
+The pipe is the very thing that shaped the UNIX philosophy, which is best summarized as
+
 1. Write programs that do one thing and do it well
 2. Write programs so that they can work together
-3. Write programs that handle text streams, because they are a universal 
+3. Write programs that handle text streams, because they are a universal
 interface
 
 The best illustration of the UNIX philosophy is Jon Bentley's challenge. He
-challenged Donald Knuth and Doug McIlroy to write a program that reads a file of 
-text, determine the n most frequently used words, and print out a sorted list of 
+challenged Donald Knuth and Doug McIlroy to write a program that reads a file of
+text, determine the n most frequently used words, and print out a sorted list of
 those words along with their frequencies.
 
 Don Knuth's solution was over 10 pages of Pascal, but McIlroy's solution can be
@@ -128,7 +129,7 @@ This can also be extended to the most occurences of multiple words in sequence.
 ## Scripting
 
 If we'd like to write longer programs, it's useful to make scripts so we can
-take advantage of conditional statements, loops, and arguments. 
+take advantage of conditional statements, loops, and arguments.
 
 A shell script should be started with a `#!` and then the path to the scripting
 interpreter's binary file. If there's no "shebang line" the sh interpreter will
@@ -149,9 +150,9 @@ echo "$STR"
 
 ### Arguments
 
-Arguments in bash are referred to as `$1` as the first argument, `$2` as the 
-second argument, and so on. `$*` and `$@` both refer to all elements, but when 
-double quoted, `$*` places all arguments in a single string, whereas `$@` gives 
+Arguments in bash are referred to as `$1` as the first argument, `$2` as the
+second argument, and so on. `$*` and `$@` both refer to all elements, but when
+double quoted, `$*` places all arguments in a single string, whereas `$@` gives
 each element its own string.. `$#` is the number of arguments.
 
 ```bash
@@ -197,7 +198,7 @@ for i in some set of things; do
 done
 ```
 
-The syntax of while loops is 
+The syntax of while loops is
 
 ```bash
 while condition; do
@@ -250,4 +251,3 @@ main() {
 
 main "$@"
 ```
-
