@@ -160,4 +160,3 @@ Fun fact: LaTeX is Turing-complete!
 * [Lilypond](http://www.lilypond.org/) - LaTeX-like language for musical notation
 * [LaTeX math jokes](http://tex.stackexchange.com/questions/18326/latex-math-jokes)
 * [Coffee stains and the Simpsons](http://divisbyzero.com/2010/07/13/coffee-stains-and-the-simpsons-in-your-latex-document/)
-
