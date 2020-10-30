@@ -18,7 +18,7 @@
 be referred to as `..`
 - The home directory can be referred to as `~`
 - The last command can be referred to with `!!`, which is especially useful if
-  you forget to add `sudo` in front of a command that needs privilege elevation.
+you forget to add `sudo` in front of a command that needs privilege elevation.
 
 ### Clearing the Screen
 
@@ -29,8 +29,7 @@ be referred to as `..`
 
 - `pwd` displays the full path for the current directory
 - `cd` change directory
-  - `cd some/file/path` will change the working directory to the specified
- directory.
+  - `cd some/file/path` will change the working directory to the specified directory.
   - `cd` with no arguments, as well as `cd ~` will change to your home directory
   - `cd /` change to the root directory
   - `cd ..` change to the parent directory
@@ -175,7 +174,8 @@ else
 done
 ```
 
-The `elif` and `else` are not required, but `done` is necessary to end conditional statements. An example of this would be
+The `elif` and `else` are not required, but `done` is necessary to end
+conditional statements. An example of this would be
 
 ```bash
 #!/bin/bash

@@ -1,9 +1,11 @@
 # JMU UUG Presentations
+
 This is a collection of presentation notes from previous UUG meetings.
 
 For slides rendered to PDF or presentation notes for offline reading, download the [PDF bundle](https://github.com/jmunixusers/presentations/releases/download/presentation-latest/PDF.zip).
 
 ## Special Events
+
 * [InstallFest](InstallFest.md)
 * [Internship Panel](InternshipQA.md)
 
@@ -33,6 +35,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 * [Window Managers and Desktop Environments](window-and-desktop-environments.md)
 
 ## Lightning Talks
+
 * [Adventures in /proc](AdventuresInProc.md)
 * [Laravel](laravel/Laravel.md)
 * [osquery](osquery.md)
@@ -40,6 +43,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 * [TLS](TLS.md)
 
 ## Virtual Machine
+
 Virtual machine documentation is kept in a [separate folder](vm/)
 
 _Please note that external repository links are potentially maintained by

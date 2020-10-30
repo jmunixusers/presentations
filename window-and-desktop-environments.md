@@ -1,6 +1,9 @@
 # WM/DEs
-*By Michael McGloin*
+
+By Michael McGloin
+
 ## Introduction
+
 Coming from Windows/OSX, the idea of being able to change the default system
 user interface can be a strange one. Both systems go to great lengths to make
 their user experience acceptable for all users, but because of this it lacks
@@ -13,6 +16,7 @@ made up of **window managers** and **desktop environments**.
 
 ## The Basics
 ### Window Managers
+
 Window managers (WM) are (generally) X-based clients that control the appearance
 and behavior of frames (windows) where various graphical applications are drawn.
 The manager determines the border, titlebar, size, and ability to resize
@@ -37,10 +41,11 @@ machine. Configuration is also generally through the use of config files that
 can be scattered throughout the system and have all sorts of different syntax.
 
 ### Desktop Environments
+
 A desktop environment (DE) bundles together a variety of components to provide
 a common graphical user interface that includes all the usual trappings of a
 regular user experience. These generally include a window manager, desktop
-background, icons, toolbar, and perhaps even desktop widgets. 
+background, icons, toolbar, and perhaps even desktop widgets.
 
 From here, the user is free to customize their GUI environment in many ways.
 Desktop environments generally provide nicer and more easy to use configurations
@@ -55,20 +60,23 @@ environment is normally a heavier load on the system, as well as not being
 as streamlined for each individual user's needs.
 
 ## WM types
+
 Window managers generally fall into one of three types based on how they manage
 windows by default. Those three types are Stacking, Tiling, and Dynamic:
 
 ### Stacking
+
 Also referred to as floating windows, this is the type of environment many
 people will be used to from Windows or OSX. Stacking environments make heavy use
 of the mouse to move and resize windows, and generally have very little in the
-way of keyboard bindings for those who want them. 
+way of keyboard bindings for those who want them.
 
 The benefit of stacking window managers is the shallow learning curve,
 and user-friendlyness of their controls and operations. Though for users who
 want more advanced operations and views, they tend to fall short.
 
 ### Tiling
+
 Tiling window managers generally work like [Tmux](tmux.md) for your whole
 system. They are designed so that no window overlaps another, and any new
 window subdivides the available space to keep it that way.
@@ -80,6 +88,7 @@ steeper learning curve than stacking managers, but (should) require less hand
 movement and can be faster to navagate as a result.
 
 ### Dynamic
+
 Dynamic window managers are simply window managers with the functionality of
 both previous types of managers. This allows for, say, windows to be tiled in
 the background, and floated in front.
@@ -94,6 +103,7 @@ make actual data on screen hard to read compared to tiling managers.
 
 ## Backends
 ### X
+
 Window managers and desktop environments historically have run on the X server,
 a basic framework for a GUI environment. X doesn't define any visual styling,
 but simply gives the tools required to create visuals. The current version of X,
@@ -111,6 +121,7 @@ Sadly, X is beginning to become a monolithic project to maintain and change,
 and with its growing age, some are looking for a replacement.
 
 ### Wayland
+
 Arguably the biggest competitor to X, Wayland is being developed by the authors
 of X, but under a different name as to not create expectations of values carried
 over from X.
@@ -125,12 +136,16 @@ way as X over network connections. There have been attempts to get this working
 in Wayland, but has yet to be implemented in any meaningful way.
 
 ## Examples
+
 For some visuals as well as some reccomendations, I've included some examples
 of window managers and desktop managers below I see people using below.
+
 ### Window Managers
 #### X Server
 ##### Stacking
+
 [2bwm](https://github.com/venam/2bwm) (External)
+
 - 2 border window manager
 - Minimalist look in a floating window manager
 - Can be controlled entirely with the keyboard
@@ -138,12 +153,15 @@ of window managers and desktop managers below I see people using below.
 - Lacks task or status bar out of the box
 
 [Openbox](http://openbox.org) (External)
+
 - Minimalist, customizable
 - Configured using xml files
 - GUI theming available through `obconf`
 
 ##### Tiling
+
 [Bspwm](https://github.com/baskerville/bspwm) (External)
+
 - Based on binary space partitioning
 - Responds to X events, and messages it receives on the dedicated socket `bspc`
 - Configured with shell commands through a `bspwmrc`
@@ -151,13 +169,16 @@ of window managers and desktop managers below I see people using below.
 like `Sxhkd`
 
 [i3](https://i3wm.org) (External)
+
 - Similar to Bspwm, but i3 takes in keyboard input itself
 - Can be integrated into the GNOME desktop environment
 - Includes an application menu through `dmenu` out of the box
 - Configurable, though not much decoration is added to windows by itself
 
 ##### Dynamic
+
 [awesome](https://awesomewm.org) (External)
+
 - Highly configurable
 - Targeted at power users
 - Extensible using lua programing language
@@ -166,6 +187,7 @@ like `Sxhkd`
 - Tags instead of workspaces, each window can have multiple tags at a time
 
 [dwm](https://dwm.suckless.org) (External)
+
 - Written by dmenu author
 - Small, fast, and simple
 - No frills design, single c file
@@ -174,24 +196,30 @@ like `Sxhkd`
 use it, keeping 'novices asking stupid questions' out.
 
 [xmonad](https://xmonad.org) (External)
+
 - Written and configured and haskell
 - Must be recompiled for configuration changes
 - Extensive keyboard shortcuts
 
 #### Wayland
 ##### Stacking
+
 [KWin](https://techbase.kde,org/Projects/KWin) (External)
+
 - Standard KDE window manager since KDE 4.0
 
 ##### Tiling
+
 [Sway](https://swaywm.org) (External)
+
 - Drop in replacement for i3, but running on Wayland.
 - Works with existing i3 config and keyboard shortcuts.
 - Replaces i3lock with swaylock, and swayidle
 
 ### Desktop Environments
-##### GNOME
-Designed by The GNOME Project and composed entirely of FOSS, GNOME is a software 
+#### GNOME
+
+Designed by The GNOME Project and composed entirely of FOSS, GNOME is a software
 suite designed as part of the GNU Project and  has recently been brought up to
 Wayland.
 
@@ -201,7 +229,8 @@ version at 3, while GNOME Classic intends to keep the interface of GNOME 2, this
 basically means that it is a more customized GNOME Shell than a truly distinct
 mode.
 
-##### KDE Plasma
+#### KDE Plasma
+
 The current generation of KDE's graphical environment, KDE uses the X server but
 Wayland support is currently under development. Basic Wayland support was
 provided in the 5.5 release.
@@ -211,6 +240,7 @@ looks and nice packaging, where GNOME comes with a lot of extra bloat and can be
 hard to customize in its current iteration.
 
 ## How do I choose?
+
 Honestly, just go try some out. Depending on what distro you are on, WM installs
 can be fast and simple, and KDE Plasma is a very fast install if you are on
 a Debian or Arch derivative.

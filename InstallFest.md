@@ -7,7 +7,7 @@ department.
 
 The image is provided as a virtual machine intended to be used with
 VirtualBox, which allows you to install it on your computer with no
-impact to your existing operating system. 
+impact to your existing operating system.
 
 In order to get the most use out of the image, it is important to follow
 the steps in the "Configuring" section below when going through the
@@ -98,4 +98,3 @@ in and at your desktop or at a welcome screen (if you're at the welcome
 screen, sign in with the username and password you chose during
 configuration). You can click the "stu-home" link on the desktop to
 automatically mount your home folder on stu within the virtual machine.
-

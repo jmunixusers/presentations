@@ -51,4 +51,3 @@ If you're using Google Cloud Platform:
 3. Create Google Cloud bucket
 4. Configure S3 external storage in NextCloud
     1. Hostname: storage.googleapis.com
-
