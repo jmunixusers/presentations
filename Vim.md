@@ -26,14 +26,14 @@ with `:wq`, saving and quitting at the same time.
 
 #### Modes of Vim
 
-Before we jump into movement, we should quickly go over 3 modes of Vim; 
+Before we jump into movement, we should quickly go over 3 modes of Vim;
 normal, insert and visual. You can enter these modes at any time while not in
 another mode, and can get out of them by hitting the `esc` key.
 
 ##### Normal
 
 Normal mode is the default mode of Vim, and the mode Vim goes to when the
-escape key is pressed. In this mode, you can freely move the cursor, do some 
+escape key is pressed. In this mode, you can freely move the cursor, do some
 limited text manipulation, enter commands, search, and enter the other two modes.
 
 Any Vim command that is not a simple keypress will start with a `:` and is
@@ -46,6 +46,7 @@ text appears in the file. Cursor movement can be achieved with the arrow keys.
 Insert mode can be accessed with the `i` key, and will start the insertion at
 the exact character that the cursor is on. If you wish to start at the character
 after, use the `a` key instead
+
 - `i` enter insert mode at current character
 - `a` enter insert mode after current character
 
@@ -54,6 +55,7 @@ after, use the `a` key instead
 Visual mode is akin to selecting text in a graphical editor, though with some
 more features. For now, enter visual mode with `v` selecting the current
 character, and move the cursor to select more text.
+
 - `v` enter visual mode on a character-by-character basis
 - `V` enter visual mode on a line-by-line basis
 
@@ -61,19 +63,21 @@ This mode acts like the copy-paste mode of Vim.
 
 Some commands from normal mode can actually be done in visual mode, and if
 those commands take a selection of text as an argument, the selection will
-automatically be whatever is selected. This allows for a simple	'replace in
+automatically be whatever is selected. This allows for a simple 'replace in
 selection function.'
 
 #### Basic movement
 
 Moving Vim's cursor can be accomplished with the arrow keys, in a way similar to
 that of 'normal' text editors, or with the use of the `h` `j` `k` and `l` keys
+
 - `h` moves the cursor left
 - `j` moves the cursor down
 - `k` moves the cursor up
 - `l` moves the cursor right
 
 Some more complicated movement can be achieved with other keys
+
 - `w` jump one word ahead
 - `b` jump one word backwards
 - `0` start of line
@@ -91,7 +95,8 @@ end of the line.
 Advanced movement will be described more later.
 
 ### Getting more advanced
-Something to remember while using Vim, if you want to do some simple changes 
+
+Something to remember while using Vim, if you want to do some simple changes
 to text or movement in Vim, there's a good chance that it exists, and you should
 check online to see what the command is.
 
@@ -107,16 +112,19 @@ functions that are called every time Vim is started, instead of needing to run
 them all manually.
 
 #### Useful features
+
 Some useful features that are not enabled by default on vim are line numbers and
 syntax highlighting (if not enabled by default). These can be enabled with
 `:set number`, and `:set syn`. These can also be added to the vimrc when you get
 more comfortable and are ready to set that up.
 
 #### Simple macros
+
 The `c` key while in normal mode will allow you to delete a selection and
 immediately start inserting text, c stands for change after all. Though `c` on
 its own will wait for a secondary input to tell it what it is removing. Using
 keys from the more complicated movement section we can do commands like:
+
 - `cw` change word: delete until the next space character, and insert
 - `c$` delete until the end of the line, and begin inserting
 
@@ -132,10 +140,12 @@ Undo and redo in Vim are used by `u` and `ctrl+r` respectively, and `.` can
 repeat the last used command.
 
 #### Cut/paste
+
 The visual mode is mostly used for cutting and pasting, however **Vim does not
 share the same clipboard as the rest of the system.** (at least by default)
 
 In visual mode, when you have a selection of text, these are the commands:
+
 - `d` cuts the selection of text. Note that this has the same behavior whenever
 text is mass-deleted even while not in visual mode, it is saved to the text
 buffer.
@@ -146,12 +156,14 @@ anywhere else in the system.
 Note that p can be used anytime not in insert mode.
 
 #### Find
+
 The last part of Vim I will go over in  this document is the find tool, it works
 like it does in any other text editor but it is accessed with a simple `/`
 this is then followed by any text you want to search for. You can then page
 through all results using `n` and `N` to go forwards and backwards respectively.
 
 ##### Find/replace
+
 Vim's substitute command isn't as easy as some other text editors, but with some
 practice it isn't that bad.
 
@@ -159,6 +171,7 @@ The basic syntax is `:s/<find>/<replace>`. Writing the command like this will
 only replace the first instance of `<find>` on the current line your cursor is
 on though. Hardly useful. Lets take a look at a few expansions, replacing foo
 and bar:
+
 ```vim
 :%s/foo/bar " replace the first instance of foo on each line with bar
 :%s/foo/bar/g " replace every instance of foo with bar
@@ -174,6 +187,7 @@ the text selected already for the range of the next action. We can then use
 See? Not so bad.
 
 ### Visual block
+
 One thing I want to mention but don't have a good place to is the visual block
 mode. It is useful sometimes and something you might not find out about for a
 while unless someone tells you so I'll just bring it up here.
@@ -189,6 +203,7 @@ lines.
 
 Visual block mode works basically like regular visual mode with some minute
 differences:
+
 - You can simply enter insert mode from this mode, but you must use `I` or
 similar instead of regular `i`. I have no clue why.
 - Any action you do on one line will be replicated across all selected ones.
@@ -196,9 +211,10 @@ similar instead of regular `i`. I have no clue why.
 you exit insert mode.
 
 ### Finally
+
 Vim is a very powerful text editing tool, and if you get used to it you will
 never want to go back to anything less. There are great resources out there for
-commands and shortcuts, the one I've been using for writing this guide is 
+commands and shortcuts, the one I've been using for writing this guide is
 [Vimsheet.com](www.Vimsheet.com). There are many plugins for Vim but I wouldn't
 really recommend any until you are comfortable with the basic features of Vim
 and understand what you need.
@@ -266,6 +282,7 @@ Bulleted lists can start with a -
 or a *
 
 ## Extra Vim stuff
+
 Just some nice plugins that I have started using. None of these change Vim's
 behavior by very much, just add some nice features:
 
@@ -277,7 +294,7 @@ tree. Nothing game-changing, but can be nice.
 automagically close your brackets, parenthesis, and similar characters when you
 might forget. **Very** useful for javascript.
 
-[NERDTree](https://github.com/scrooloose/nerdtree) is a replacement for the 
+[NERDTree](https://github.com/scrooloose/nerdtree) is a replacement for the
 default Vim directory navigation, with some added niceties. The major ones are
 color coding of files based on type, option to pop-out NERDTree to the side of
 your current window, and git integration with
