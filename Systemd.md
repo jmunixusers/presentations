@@ -31,7 +31,7 @@ analyze the state of your system.
 Service unit files end with `.service` and specify a service (or daemon) to run. Service files
 look something like the following:
 
-```
+```ini
 [Unit]
 Description=Do the Foo
 Requires=network.target
@@ -59,7 +59,7 @@ services or can depend on services (or actually any type of `unit` files).
 
 An example Timer unit file from Arch Linux is:
 
-```
+```ini
 [Unit]
 Description=Daily rotation of log files
 Documentation=man:logrotate(8) man:logrotate.conf(5)
@@ -87,7 +87,7 @@ including an NFS share. You can also declaratively state that your mount file de
 networking being ready! The automatically-generated mount unit for a `/boot` or EFI partition
 might look something like:
 
-```
+```ini
 [Unit]
 Description=EFI System Partition Automount
 Documentation=man:systemd-gpt-auto-generator(8)
@@ -108,7 +108,7 @@ Note that systemd will ensure that the file system is `fsck(8)`'d before it is m
 There are all kinds of other unit files far too complicated to start describing here. Some really
 interesting ones include:
 
- - slices
- - targets
- - devices
- - sockets
+- slices
+- targets
+- devices
+- sockets
