@@ -7,9 +7,9 @@ more in-depth topics involving Linux, check our main
 
 ## Links
 
- * [Virtual machine introduction](welcome-to-vm.md)
- * [VirtualBox extension pack installation](virtualbox-extension-pack.md)
- * [Virtual machine troubleshooting](common-troubleshooting.md)
+* [Virtual machine introduction](welcome-to-vm.md)
+* [VirtualBox extension pack installation](virtualbox-extension-pack.md)
+* [Virtual machine troubleshooting](common-troubleshooting.md)
 
 ## General information
 

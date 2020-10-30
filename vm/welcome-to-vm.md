@@ -39,7 +39,7 @@ included below.
 
 To install a particular package, run
 
-```
+```bash
 sudo apt update
 sudo apt install PACKAGE
 ```
@@ -48,13 +48,13 @@ where `PACKAGE` is the name of the package you want to install.
 
 To remove a particular package, run
 
-```
+```bash
 sudo apt remove PACKAGE
 ```
 
 To find package that corresponds to the software you want, run
 
-```
+```bash
 apt search KEYWORD
 ```
 
@@ -62,7 +62,7 @@ where `KEYWORD` is the software to search for.A
 
 To update all software on your system, run
 
-```
+```bash
 sudo apt update
 sudo apt upgrade
 ```
@@ -118,7 +118,7 @@ you can use `ssh`.
 
 To connect to stu, open up a terminal window and type
 
-```
+```bash
 ssh EID@stu.cs.jmu.edu
 ```
 
@@ -133,7 +133,7 @@ that you don't need to use your password.
 
 To generate a key, run
 
-```
+```bash
 ssh-keygen -t rsa
 ```
 
@@ -142,7 +142,7 @@ Follow the prompts, using the default location, and choose a password
 
 Then run
 
-```
+```bash
 ssh-add
 ```
 
@@ -150,7 +150,7 @@ to add the key to your SSH agent.
 
 Finally, copy the key to stu using the following command:
 
-```
+```bash
 ssh-copy-id EID@stu.cs.jmu.edu
 ```
 
@@ -168,9 +168,7 @@ particular course. If you get an error while configuring the virtual machine,
 try to have any files in `/opt/vmtools/logs` on your VM ready if possible when
 creating an issue.
 
-
 ## Getting involved with the UUG
-
 
 To learn more about how to use your new VM or being a part of a community of
 users of open-source software, come to a meeting of the Unix Users Group on
@@ -178,4 +176,3 @@ Wednesday nights at 6:30PM in ISAT 246.
 
 Follow us on Twitter [@jmunixusers](https://twitter.com/jmunixusers) or see
 upcoming events on [BeInvolved](https://beinvolved.jmu.edu/organization/uug).
-
