@@ -75,7 +75,7 @@ marp: true
 
 ## Memory Examination
 
-- `x/<N><u><f> <addr>` - examine memory at given address 
+- `x/<N><u><f> <addr>` - examine memory at given address
   - *N* is the number of units to display
   - *u* is the unit type:
     - `b` (byte)
