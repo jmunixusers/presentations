@@ -1,10 +1,10 @@
 # Bash scripting
-### A little bit of background
+## A little bit of background
 A lot of the background for bash in general is given
 [in the bash talk](CommandLine.md), so we won't retread all of that ground, but
 forgive me if I repeat some things.
 
-### Source-ing vs Executing
+## Source-ing vs Executing
 There are two ways to run a shell script. The easy way through `source` and the
 slightly-more-work way of `chmod` and `./`. **There is a difference though!**
 
@@ -22,20 +22,22 @@ not change your current working directory after returning.
 
 Anyways it's generally good practice to use `./`. Here's how you do it if you
 don't know:
+
 ```bash
 chmod +x yourfile.sh
 ./yourfile.sh
 ```
 
 ## Syntax
-#### Variables
+### Variables
 Setting a variable is as easy as
+
 ```bash
 VARIABLE="foo"
 echo $VARIABLE
 ```
 
-#### Variable replacements
+### Variable replacements
 Replacing values in strings in bash is very simple, just takes putting the
 variable name in the string as long as you are surrounding your string with `"`.
 `'` describes a literal string however, and will not replace variables or
@@ -48,16 +50,18 @@ echo '$VARIABLE bar'
 # $VARIABLE bar
 ```
 
-#### Expressions in strings
+### Expressions in strings
 Putting an expression inside a string is similarly easy: simply surround the
 expression with `$(expression)`, or `` `expression` ``
+
 ```bash
 echo "I'm in $(pwd)"
 echo "I'm still in `pwd`"
 ```
 
-#### Brace expansion
+### Brace expansion
 Bash allows you to expand things inside braces pretty reasonably:
+
 ```bash
 echo {A,B}     # A B
 echo {A,B}.js  # A.js B.js
@@ -65,10 +69,11 @@ echo {1..5}     # 1 2 3 4 5
 ```
 
 The last type allows step size with another `..` set:
+
 ```bash
 echo {0..50..5}
 
-#### eval
+### eval
 ```
 
 Brace expansions do not work directly in strings however, but we can use the
@@ -83,7 +88,7 @@ eval echo "{1..5}.js"   # 1.js 2.js 3.js 4.js 5.js
 second as the actual command. Here, bash expands the brace expansion syntax
 before sending to echo.
 
-#### Conditionals
+### Conditionals
 The `[ ... ]` command is an alias for `test` (`/bin/test`) and returns either 0
 (true) or 1 (false), much of the description is listed in `man 1 test`.
 `[[ ... ]]` is a superset of the `test` functionality, with a few added
@@ -93,8 +98,8 @@ based on the system. I will be working based on `bash`'s implementation of `[[`
 [here](https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html#index-_005b_005b)).
 But your results may vary if using something else.
 
+Some useful operators are:
 
-Some useful operators are: 
 - `[[ -n STRING ]]`: String is nonzero
 - `[[ -z STRING ]]`: String is zero
 - `[[ STRING1 = STRING2 ]]`: Strings are equal
@@ -127,22 +132,26 @@ else
   echo "We have $NUM problems!"
 fi
 ```
+
 Note the `fi` syntax, this will be a recurring theme in bash for other control
 structures.
 
 ### Conditional execution
 Remember how programming languages like java will lazily execute if statement
 conditions, let's use the java example:
+
 ```java
 if(foo() || bar())
   //code
 if(func() && meth())
   //code
 ```
+
 statements using `||` will stop executing as soon as a `true` value is found,
 and conversely, `&&` stops as soon as a false is found. Bash has a similar
 feature that is used to control execution since every bash function returns a
 'boolean' based on whether the exectuion succeedes.
+
 ```bash
 git commit && git push
 # if commit returns 0, push after. Don't push otherwise
@@ -150,9 +159,10 @@ git push || echo "Push failed!"
 # if push returns 0, continue, otherwise print failure
 ```
 
-#### Loops
+### Loops
 Basic loops can be C style or more python-esque, with no change in
 functionality:
+
 ```bash
 # C like
 for ((i = 0 ; i < 10 ; i++)); do
@@ -164,6 +174,7 @@ for i in {1..10}; do
   echo $i
 done
 ```
+
 These two loops do not do the same thing however. The C-style iterator goes
 0-9, and the other goes 1-10 inclusive. The second is also compatible with step
 size in the same way as the first. This also iterates in a similar way to
@@ -172,6 +183,7 @@ simply set i equal to each index in the array and iterate for that index. So
 `for i in {a, b, c, d, e}; do` would work as expected.
 
 While loops also exist and look like you'd expect:
+
 ```bash
 while true; do
   ...
@@ -179,13 +191,14 @@ done
 ```
 
 There is also an easy way to do text input from a file in a loop:
+
 ```bash
 < file.txt | while read line; do
   echo $line
 done
 ```
 
-#### Functions
+### Functions
 Functions are pretty simple, defined with either just declaring `myfunc() { ...`
 or with the `function` keyword.
 
@@ -194,6 +207,7 @@ func() {
   echo "bar"
 }
 ```
+
 Bash functions don't have returns in the normal sense. A function that prints to
 stdout without being captured will simply print directly to stdout, however
 calling the function as if it is a executable like we did above will print it
@@ -201,12 +215,13 @@ in the same way. The `return` keyword exists in bash, but since every function
 or script in bash must give a return code, it is used to define the return code
 of the function instead of any value. 0 is success and returned by default, and
 any other number from 1-255 is valid but considered failure. This return value
-can be accessed after the function finishes with the `$?` variable. 
+can be accessed after the function finishes with the `$?` variable.
 
 Arguments in bash functions also don't work like other languages. You never
 define parameters in the `()` part of a method declaration, this means you need
 to check the number of paramaters passed to the function. This is done with
 some more variables:
+
 - `$0` the function's name
 - `$#` the number of parameters passed
 - `$1, $2, ...` the actual parameter values
@@ -219,11 +234,12 @@ This is the same syntax for command line arguments inside the script as a whole.
 You need to pass any command line args into the function, but other global
 variables without naming conflicts will stay in scope.
 
-#### Data structures
+### Data structures
 These are fairly simple, albeit with strange definitions, so I'm just going to
 write out how to use them.
 
-##### Arrays
+### Arrays
+
 ```bash
 Arr=('one' 'two' 'three')
 
@@ -240,8 +256,10 @@ for i in "${arrayName[@]}"; do
   echo $i
 done
 ```
-##### Associative Arrays
+
+### Associative Arrays
 AKA dictionaries
+
 ```bash
 declare -A dict
 
@@ -264,6 +282,7 @@ for key in "${!dict[@]}"; do
   echo "${dict[$key]}"
 done
 ```
+
 ## Examples
 
 Lets do some quick examples to show some simple things you can do with bash.
