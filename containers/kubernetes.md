@@ -9,12 +9,14 @@ marp: true
 
 ---
 # How did we get here?
+
 - Two weeks ago, we talked about containers in general and how they allow encapsulation of an application
 - Last week, we did some samples of building a Docker web application on laptops
 - Tonight we'll look at how Kubernetes allows us to automate cloud application deployments
 
 ---
 # Why Kubernetes?
+
 - Kubernetes manages a cluster of servers
 - It accepts requests to deploy containers
 - It tracks resource consumption, and intelligently places containers
@@ -24,12 +26,14 @@ marp: true
 
 ---
 # Tonights demo - full disclosure
+
 This demo was mostly stolen, but ~~ruined~~ modified to work with a group. The original is available here: <https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build>
 
 There are many Kubernetes examples available, but they require several accounts from different providers, or having admin credentials to a cluster.
 
 ---
 # Demo logistics
+
 - You should receive and accept an invitation to collaborate on the `k8sdemo` repository
 - Clone the repository to your computer. **DO NOT FORK AND CLONE TONIGHT**
   - `git clone https://github.com/ripleymj/k8sdemo`
@@ -42,12 +46,14 @@ There are many Kubernetes examples available, but they require several accounts 
 
 ---
 # Deployment time
+
 - Push your branch back to GitHub
   - `git push origin uug-YOURNAME`
 - Let's watch the magic happen
 
 ---
 # What just happened?!?
+
 - Google Cloud has a trigger watching the repository for any branch name `uug-*`
 - The trigger will attempt to run a `cloudbuild.yaml` file in the repository
 - Cloud Build will run `test_app.py` to verify your `app.py` application
@@ -57,11 +63,13 @@ There are many Kubernetes examples available, but they require several accounts 
 
 ---
 # Let's make some changes
+
 - Edit your `kubernetes.yaml.tpl` and change replicas to 3
 - Add, commit, and push your changes
 - Watch the cluster adjust when it re-deploys
 
 ---
 # Now make some changes to your site
+
 - Add, commit, push again
 - Watch Kubernetes do a gradual deployment

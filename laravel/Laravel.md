@@ -4,7 +4,6 @@
 
 [Laravel Docs](https://laravel.com/docs/5.5)
 
-
 ## What is Homestead
 
 - Homestead is a pre-packaged vagrant box that provides you will all the development tools that you need by default
@@ -14,7 +13,6 @@
 - Laravel homestead isn’t limited to the Laravel framework.
 
 - You can generally development any PHP web application using homestead.
-
 
 ## Advantages of Homestead
 
@@ -26,21 +24,19 @@
 
 - Easily share your vagrantfile with others
 
-
 ## Introduction to PHP and Laravel
 
 - PHP, very much like node.js or ruby is a back-end language. It is especially suited for web development.
 
-- Laravel is a front-end framework for PHP. 
+- Laravel is a front-end framework for PHP.
 
-- Writing PHP and Laravel feels very similar to writing Ruby and Rails respectively. 
-
+- Writing PHP and Laravel feels very similar to writing Ruby and Rails respectively.
 
 An example of this can be seen here when we make controllers for websites:
 
-
 ### Rails
-```
+
+```ruby
 class ForumsController < ApplicationController
 
   def index
@@ -51,7 +47,8 @@ end
 ```
 
 ### Laravel
-```
+
+```php
 <?php
 
 class FarmController extends Controller{
@@ -67,12 +64,12 @@ class FarmController extends Controller{
 ## How to Setup and Install
 
 - First we need to install virtual box and vagrant:
-    - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
-    - [Vagrant](https://www.vagrantup.com/downloads.html)
+  - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+  - [Vagrant](https://www.vagrantup.com/downloads.html)
 
 - Once these two are installed type the following in your terminal:
 
-```
+```bash
 vagrant box add laravel/homestead
 ```
 
@@ -80,44 +77,45 @@ vagrant box add laravel/homestead
 
 ![provider](provider-choice.png)
 
-
 - Next type into your terminal:
 
-```
+```bash
 git clone https://github.com/laravel/homestead.git Homestead
 ```
 
 - To Initialize our homestead we need to cd into the homestead directory and type:
 
-```
+```bash
 bash init.sh
 ```
 
-- Create an ssh key if it doesn’t exist: 
+- Create an ssh key if it doesn’t exist:
 
-```
+```bash
 ssh-keygen -t rsa -C “your_email@example.com”
 ```
 
 - Open the homestead directory in your preferred text editor, change homestead.yaml to the following::
 
-![homestead.yaml](HomesteadYaml.png) 
+![homestead.yaml](HomesteadYaml.png)
 
 - In the terminal type:
-``` 
+
+```bash
 sudo nano /etc/hosts
 ```
 
-  - At the end of the file add the following:
-```
-192.168.10.10 homestead.app
-```
-  - Press ctrl + X followed by Y and then enter to save your changes.
+- At the end of the file add the following:
 
+  ```bash
+  192.168.10.10 homestead.app
+  ```
+
+- Press ctrl + X followed by Y and then enter to save your changes.
 
 ## Vagrant Global Aliases
 
-```
+```bash
 # Some shortcuts for easier navigation & access
 alias ..="cd ..";
 alias vm="ssh vagrant@127.0.0.1 -p 2222";
@@ -125,15 +123,14 @@ alias vm="ssh vagrant@127.0.0.1 -p 2222";
 # Homestead shortcut
 function homestead() {
   ( cd ~/Homestead && vagrant $* )
-} 
+}
 ```
 
-  - To up vagrant box use: homestead up
+- To up vagrant box use: homestead up
 
-  - To stop vagrant box use: homestead halt
+- To stop vagrant box use: homestead halt
 
-  - To log into vagrant box use: homestead ssh
-
+- To log into vagrant box use: homestead ssh
 
 ## Creating Your First Project
 
@@ -147,14 +144,11 @@ function homestead() {
 
 - Laravel uses a MVC architecture
 
-- To view the created app load homestead.app in the browser, which has been linked to ```192.168.10.10``` in the host file
-
+- To view the created app load homestead.app in the browser, which has been linked to `192.168.10.10` in the host file
 
 ## Laravel File Structure
 
-
 ![Application Structure](application-structure.png)
-
 
 The important files created in the root are:
 
@@ -179,25 +173,25 @@ Upon installing following directories will be created
 - tests
 - vendor
 
-#### App Directory
+### App Directory
 
 App Folder is one of major folder / directory in Laravel Framework, In Laravel Most of logics are written in App folder. This folder / directory contains below folders.
 
 - Console
 - Exceptions
 - Http
-    - Controllers
-    - Middleware
+  - Controllers
+  - Middleware
 - Providers
 
-#### Bootstrap Directory
+### Bootstrap Directory
 
 The bootstrap directory of Laravel contains files are used for bootstrapping and configuring Laravel Framework itself. This directory is also contains a cache directory which holds all framework generated files for performance optimization and
 
 - bootstrap
-    - cache
+  - cache
 
-#### Config Directory
+### Config Directory
 
 This directory contains all configration related files of laravel Framework. This directory consist of below files
 

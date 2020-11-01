@@ -181,6 +181,7 @@ done
 
 # Salt Installation (Ubuntu Example)
 
+<!-- markdownlint-disable MD029 -->
 1. Run the following command to import the SaltStack repository key:
 
   ```bash
@@ -201,6 +202,7 @@ done
   sudo apt-get install salt-master
   sudo apt-get install salt-minion
   ```
+<!-- markdownlint-enable MD029 -->
 
 Once installed all Salt components are controlled through systemd unit files
 

@@ -7,6 +7,7 @@ Just a random collection of ideas to set the tone for the next few weeks
 
 ---
 # What is the right size of a computer?
+
 - We spend a lot of time clustering servers together to solve big problems
 - We spend even more time subdividing servers to work on a lot of little problems
 - We almost never look at a server and think it's the right size
@@ -15,6 +16,7 @@ Just a random collection of ideas to set the tone for the next few weeks
 ---
 # Bare Metal Servers
 ![bg contain right:33%](image1.png)
+
 - Let's frame this conversation in terms of four layers
 - Resource allocation is very static and often requires a credit card to adjust
 - Library versions can conflict between applications
@@ -22,6 +24,7 @@ Just a random collection of ideas to set the tone for the next few weeks
 ---
 # Virtual Machines
 ![bg contain right:33%](image2.png)
+
 - Traditional subdivision used a hypervisor layer to create fake hardware
   - Foundations of this approach can be traced back to IBM S/370 LPARs in 1972
   - VMware brought it to Intel machines in 1998
@@ -32,6 +35,7 @@ Just a random collection of ideas to set the tone for the next few weeks
 ---
 # Containers
 ![bg contain right:33%](image3.png)
+
 - People found themselves running huge numbers of nearly identical Linux machines
 - Even for different distros, the kernel was nearly identical
 - Namespaces allow the kernel to lie to applications, and believe they're running alone
@@ -47,6 +51,7 @@ Just a random collection of ideas to set the tone for the next few weeks
 
 ---
 # A study of containerization shouldn't be limited to Linux
+
 - FreeBSD introduced "jails" in 2000
 - Solaris introduced "zones" in 2004
 - Both of these have a much more thorough design, coming from operating systems with much more control of the entire development process
@@ -60,6 +65,7 @@ Just a random collection of ideas to set the tone for the next few weeks
 
 ---
 # Linux containers don't really "exist"
+
 - Unlike better designed systems like FreeBSD or Solaris, containers are not a kernel object on Linux
 - A Linux container is an illusion created by an automation system like Docker, that ties together various pieces like namespaces and cgroups
 - Without a proper definition of their boundaries, there have been issues with host information leaking into containers or applications escaping
@@ -67,12 +73,14 @@ Just a random collection of ideas to set the tone for the next few weeks
 
 ---
 # What are namespaces?
+
 - You've probably only thought of Linux in terms of one global namespace
 - All users and programs share one view of the system
 - Namespaces can restrict a user or application's view of the system
 
 ---
 # What namespaces are there?
+
 - Mount - the view of filesystems and directories
 - Process ID - the view of running processes and map fake process IDs to real PIDs (PID 1, etc)
 - Network - what IP address is in use
@@ -82,6 +90,7 @@ Just a random collection of ideas to set the tone for the next few weeks
 
 ---
 # cgroups
+
 - CPU - assign CPU cores and time shares
 - Memory - limit RAM allocation
 - Network IO - limit network bandwidth
@@ -91,6 +100,7 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 
 ---
 # Enter Docker
+
 - chroot introduced in 1979
 - cgroups introduced in 2006
 - Mount namespaces in 2002, others in 2006
@@ -99,6 +109,7 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 
 ---
 # Redhat's `docker` Concerns
+
 - `docker` is implemented as one giant daemon binary, controlled by messages sent via a filesystem socket
 - Containers are launched as children of this daemon, making it difficult to update while running
 - Docker had little interest in fundamentally changing their architecture
@@ -110,6 +121,7 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 
 ---
 # Docker vs docker vs containers
+
 - Multiple implementations have lead to the Linux Foundation launching the Open Container Initiative
 - Packaging and description of containers are now standardized
 - `docker` and `podman` among other friends like runC, CRI-O, or containerd
@@ -117,6 +129,7 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 
 ---
 # How is a container built? Dockerfile
+
 - Describes the base layer of the container
 - Describes the steps used to build the container
 - Describes the network requirements of the container
@@ -124,6 +137,7 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 
 ---
 # How is a container built? Filesystem layers
+
 - Each step of the Dockerfile build creates a layer
 - Files deleted in later steps persist in the early layers
 - Docker attempts to cache each layer, but one miss and all later layers must be rebuilt
@@ -131,7 +145,8 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 
 ---
 # Dockerfile worst case scenario
-```
+
+```dockerfile
 FROM ubuntu:18.04
 
 COPY index.html /var/www/html # frequent changes here invalidate layers
@@ -147,7 +162,8 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
 ---
 # Dockerfile better example
-```
+
+```dockerfile
 FROM ubuntu:18.04
 
 # Only preserve the Apache package
@@ -164,6 +180,7 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 ---
 # Kubernetes
 ![bg contain left:33%](k8s-logo.png)
+
 - Kubernetes is a scheduling engine for containers
 - Originated at Google, inspired by their internal project Borg
 - Logo is a reference to the Greek word helmsman/pilot, but the seven sided wheel is also a tribute to Seven of Nine, the friendly Borg
@@ -171,6 +188,7 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
 ---
 # Kubernetes Components
+
 - Kubernetes is a scheduling engine that relies on a plugin ecosystem to build solutions
 - Deployment files describe the resource needs of each container
 - Replicas are distributed around the cluster
@@ -183,6 +201,7 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
 ---
 # Kubernetes Objects
+
 - Pods - a group of containers sharing a namespace
 - ReplicaSets - defines the number of running copies of an application
 - Services - provides a common entry point a group of replicas
@@ -192,6 +211,7 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
 ---
 # Kubernetes Distros
+
 - Amazon/Google/Azure have managed solutions
 - Redhat Openshift
 - Rancher Kubernetes
@@ -199,6 +219,7 @@ CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
 
 ---
 # The End
+
 - Docker hands-on demo hopefully next week
 - Kubernetes hands-on the week after
 - Questions?

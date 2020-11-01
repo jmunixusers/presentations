@@ -72,6 +72,7 @@ What is Elastic?
 
 ---
 # Logstash
+
 - Intermediary between input data and Elasticsearch database
 - ETL (extract, transform, load) pipeline for data cleanup
 - Written in JRuby, but being converted to full Java
@@ -195,10 +196,10 @@ What is Elastic?
 
 ---
 # Demo time
-http://elastic.ripleymj.net:5601
+<http://elastic.ripleymj.net:5601>
 ssh ec2-user@elastic1.ripleymj.net Packetbeat, metricbeat, auditbeat
 ssh ec2-user@elastic2.ripleymj.net Metricbeat, packetbeat, auditbeat, filebeat
- | http://elastic2.ripleymj.net/manual
+ | <http://elastic2.ripleymj.net/manual>
 Remote Desktop ec2-user@elastic-win.ripleymj.net
 
 Password: uugsupersecret

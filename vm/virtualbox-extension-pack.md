@@ -24,7 +24,7 @@ can agree)
 you. Press "OK".
 1. Ensure that the virtual machine has been shut down completely
 1. Open the settings for the virtual machine by right-clicking on it in the
-VirtualBox window. 
+VirtualBox window.
 1. Click USB on the left side of the window
 1. Choose either the USB 2.0 (EHCI) or USB 3.0 (xHCI) controller and press OK.
 

@@ -8,24 +8,28 @@ Take a moment to create a GitHub account, or verify your password. Feel free to
 post your username in chat so we can get a little social network going.
 
 ## Roadmap
+
 - 101 Git theory and solo usage
 - 201 Git with a friend
 - 301 Git with a group / advanced GitHub
 
 ---
 # What is git?
+
 - Git is a distributed version control system
 - Git was started by Linus Torvalds out of frustration with existing systems
 - Theories on git’s naming origin vary widely
 
 ---
 # What is version control?
+
 - A system for tracking changes to files
 - A system for tracking the author of changes
 - A system for coordinating changes
 
 ---
 # "Distributed"?
+
 - Everyone has a complete copy of the repository
 - Any change can be made to the repository copy
 - Changes can be synchronized between copies
@@ -37,6 +41,7 @@ a common history in an orderly manner
 
 ---
 # What’s the alternative?
+
 - Centralized systems like Subversion are also available
 - Repositories are cached locally, but are not authoritative copies
 - Committing requires a connection to the central repository
@@ -44,6 +49,7 @@ a common history in an orderly manner
 
 ---
 # Git ecosystem survey
+
 - StackOverflow conducts an annual survey of developer trends
 - Until 2018 they asked about version control preferences
 - Now they just ask what services you use with git
@@ -62,6 +68,7 @@ a common history in an orderly manner
 
 ---
 # So what about GitHub?
+
 - A social network for git users
 - A place to keep a backup repository copy
 - A means to exchange changes between people
@@ -71,6 +78,7 @@ a common history in an orderly manner
 
 ---
 # So what about GitHub?
+
 - Remember that git is a tool, and GitHub is a provider of git services
 - Other services:
   - Azure Repos, Google Cloud Source, AWS CodeCommit
