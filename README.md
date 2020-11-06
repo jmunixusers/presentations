@@ -38,6 +38,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 ## Lightning Talks
 
 * [Adventures in /proc](AdventuresInProc.md)
+* [GPL](GPL.md)
 * [Laravel](laravel/Laravel.md)
 * [osquery](osquery.md)
 * [Salt](saltstack/Salt.md)
