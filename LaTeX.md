@@ -50,6 +50,8 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
   * Options: `\caption`, `\label` (needs to go at the end), `~\ref`
   * Works for verbatims or graphics, too
 * Tables: `\tabular`, `\hline`, `[l|c|r]`, `\multicolumn{n}{cols}{text}`
+  * [Excel2LaTeX](http://excel2latex.com)
+  * [TableConvert Online](https://tableconvert.com/?output=latex)
 
 ## Mathematics
 
