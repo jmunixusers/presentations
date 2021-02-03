@@ -148,7 +148,7 @@ Fun fact: LaTeX is Turing-complete!
 
 * [Overleaf tutorial](https://www.overleaf.com/tutorial)
 * [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
-* [TEXbook](http://www.ctex.org/documents/shredder/src/texbook.pdf)
+* [TEXbook](https://ctan.org/pkg/texbook?lang=en)
 * Quick-reference cards:
   * [General LaTeX](http://wch.github.io/latexsheet/)
   * [AMS LaTeX](http://www.math.brown.edu/~jhs/ReferenceCards/LaTeXRefCard.v2.0.pdf)
