@@ -50,6 +50,8 @@ Note: LaTeX is pronounced "lah-tech" or "lay-tech", NOT "lay-techs"!
   * Options: `\caption`, `\label` (needs to go at the end), `~\ref`
   * Works for verbatims or graphics, too
 * Tables: `\tabular`, `\hline`, `[l|c|r]`, `\multicolumn{n}{cols}{text}`
+  * [Excel2LaTeX](http://excel2latex.com)
+  * [TableConvert Online](https://tableconvert.com/?output=latex)
 
 ## Mathematics
 
@@ -148,7 +150,7 @@ Fun fact: LaTeX is Turing-complete!
 
 * [Overleaf tutorial](https://www.overleaf.com/tutorial)
 * [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
-* [TEXbook](http://www.ctex.org/documents/shredder/src/texbook.pdf)
+* [TEXbook](https://ctan.org/pkg/texbook?lang=en)
 * Quick-reference cards:
   * [General LaTeX](http://wch.github.io/latexsheet/)
   * [AMS LaTeX](http://www.math.brown.edu/~jhs/ReferenceCards/LaTeXRefCard.v2.0.pdf)
