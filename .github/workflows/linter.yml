@@ -1,0 +1,24 @@
+---
+name: Lint Presentations
+
+on:
+  pull_request
+
+jobs:
+  build:
+    name: Lint Presentations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Install node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - name: Install markdownlint
+        run: |
+          npm --save-dev install markdownlint markdownlint-cli
+      - name: Lint markdown files
+        run: |
+          npx markdownlint *md */*.md
