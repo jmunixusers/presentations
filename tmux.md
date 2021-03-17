@@ -3,7 +3,7 @@
 
 Tmux stands for terminal multiplexer. Anyone who has taken 261 might recognize
 the word multiplexer, but just in case you dont; multiplexers take one thing and
-split it into many. In 361 it's referring to circuits, here we're referring to
+split it into many. In 261 it's referring to circuits, here we're referring to
 your terminal.
 
 ## Why should I use it?
@@ -16,7 +16,7 @@ through every one until they get to the exact window they want.
 * Whenever my roommate groans about having to open a second ssh window to have
 two files open at the same time.
 
-Both of these problems are easily solved with Tmux, and they dont even require
+Both of these problems are easily solved with Tmux, and they don't even require
 much technical overhead.
 
 ## Using Tmux
@@ -26,10 +26,10 @@ To start Tmux, simply type `Tmux` on the command line.
 Wow! A bottom bar!
 
 What you have now is simply a regular terminal running inside what Tmux calls
-a 'session'. sessions contian windows and windows contain terminals. None of
+a 'session'. Sessions contain windows and windows contain terminals. None of
 this is complicated in theory and Tmux doesn't complicate it in practice either.
 
-## Splitting your veiw
+## Splitting your view
 
 We will start with the most useful part of Tmux, before we go into how it works.
 
@@ -53,8 +53,9 @@ And like magic, your cursor moves to the left terminal. This works for all arrow
 keys exactly like you would imagine.
 
 To split your current terminal vertically, simply enter the prefix followed by
-`"`. This makes it easy to remember which one splits which way because they
-divide the keyboard in the direction they divide your terminal.
+`"` (denoted from here on as prefix + `"`). This makes it easy to remember
+which one splits which way because they divide the keyboard in the direction
+they divide your terminal.
 
 Try splitting the terminal a couple times and moving around with the arrow keys.
 
@@ -72,14 +73,14 @@ Quick ref:
 
 ## Opening new windows
 
-To open a new window in Tmux, type prefix followed by `c`. You will be greeted
+To open a new window in Tmux, type prefix + `c`. You will be greeted
 with a new terminal as well as a new entry in the bottom information bar.
-this bar shows open windows and their names. By default the names are generated
+This bar shows open windows and their names. By default the names are generated
 from whatever the last active terminal in use was on that window, they can be
 changed by entering prefix + `,`. This will prompt for a new name to call the
 window.
 
-This is not strictly neccessary, and may even be a waste of time unless you
+This is not strictly necessary, and may even be a waste of time unless you
 have 6+ windows at a time you are continuously working out of, but it is an
 option.
 
@@ -113,12 +114,12 @@ to return to them later
 
 To list all current sessions use prefix + `s`. If you have attempted to use Tmux
 before you might even see a few sessions open! You can hit enter on the current
-attatched one to re-enter where you left off.
+attached one to re-enter where you left off.
 
 If you do you can type prefix + `:`, which will open Tmux command entry, and
 type `kill-session -a`. This will simply kill all sessions besides the current.
 
-Let's detach from the current session. Enter the prefix followed by `d` to
+Let's detach from the current session. Enter the prefix + `d` to
 manually detach from the current session, you will return to the command line
 with a line of output from Tmux that we don't particularly care about.
 
@@ -132,6 +133,7 @@ work even if you are using sessions.
 
 * prefix + `:` : Tmux command
 * prefix + `s` : list sessions
+* prefix + `d` : detach from current session
 * `Tmux a` : open Tmux and attach to last session
 * `:kill-session -a` : kill all other sessions besides the currently open one.
 
