@@ -8,18 +8,19 @@ jobs:
   Build:
     if: github.repository == 'jmunixusers/presentations'
     name: Build PDF release bundle
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@master
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: '16'
       - name: Install Ubuntu dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get -y install chromium-browser
+          sudo snap install chromium
+          sudo apt-get -q update
+          sudo apt-get -qq -y install pandoc texlive-xetex
       - uses: actions/cache@v2
         with:
           path: ~/.npm
@@ -28,7 +29,7 @@ jobs:
             "${{ runner.os }}-node-"
       - name: Install marp
         run: |
-          npm install --save-dev @marp-team/marp-cli markdown-pdf
+          npm install --save-dev @marp-team/marp-cli
       - name: Build PDFs
         run: |
           for input in *.md */*.md; do
@@ -37,15 +38,15 @@ jobs:
             if [[ "$(grep -l 'marp: true' "$input")" ]]; then
               npx marp --allow-local-files "$input" -o "$output"
             else
-              npx markdown-pdf "$input" -o "$output"
+              directory=$(dirname "$input")
+              pandoc --pdf-engine=xelatex --resource-path .:"$directory" -o "$output" "$input"
             fi
             zip -g PDF.zip "$output"
           done
-      - name: Set GitHub auth token
-        run: |
-          gh config set -h github.com oauth_token "${{ secrets.GITHUB_TOKEN }}"
       - name: Create updated release
         run: |
           gh release delete presentation-latest -y || true
           git push --delete origin presentation-latest || true
           gh release create presentation-latest PDF.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
