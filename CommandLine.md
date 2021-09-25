@@ -112,10 +112,14 @@ challenged Donald Knuth and Doug McIlroy to write a program that reads a file of
 text, determine the n most frequently used words, and print out a sorted list of
 those words along with their frequencies.
 
+Download the complete works of Shakespeare to demonstrate this.
+
+`curl -o shakespeare.txt https://www.gutenberg.org/files/100/100-0.txt`
+
 Don Knuth's solution was over 10 pages of Pascal, but McIlroy's solution can be
 written as one simple line.
 
-`tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed ${1}q`
+`cat shakespeare.txt | tr -cs A-Za-z '\n' | tr A-Z a-z | sort | uniq -c | sort -rn | sed ${1}q`
 
 This can also be extended to the most occurences of multiple words in sequence.
 
