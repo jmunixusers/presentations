@@ -5,7 +5,8 @@ marp: true
 
 ## Warmup
 Take a moment to create a GitHub account, or verify your password. Feel free to
-post your username in chat so we can get a little social network going.
+post your username in Teams chat so we can get a little social network going.
+Follow me @ripleymj.
 
 ## Roadmap
 
@@ -52,19 +53,24 @@ a common history in an orderly manner
 
 - StackOverflow conducts an annual survey of developer trends
 - Until 2018 they asked about version control preferences
-- Now they just ask what services you use with git
+- In 2020, they asked what services you use with git
+- Now git is just one of a dozen tools surveyed
 
 ---
-![height:15cm](vc-tools.png)
+![height:15cm](2018-vc-tools.png)
 <https://insights.stackoverflow.com/survey/2018>
 
 ---
-![height:15cm](commit-freq.png)
+![height:15cm](2018-commit-freq.png)
 <https://insights.stackoverflow.com/survey/2018>
 
 ---
-![height:15cm](collab-tools.png)
+![height:15cm](2020-collab-tools.png)
 <https://insights.stackoverflow.com/survey/2020>
+
+---
+![height:15cm](2021-other-tools.png)
+<https://insights.stackoverflow.com/survey/2021>
 
 ---
 # So what about GitHub?
@@ -99,7 +105,8 @@ a common history in an orderly manner
 - Branches allow different authors to pursue different paths
   - Like an actual tree, branches can go their own way, but the trunk must be shared
 - Never delete a commit: use a revert to undo, but that change is then logged
-- Some leeway if your changes haven't been pushed and become visible to others
+- Some leeway to rewrite history if your changes haven't been pushed and become
+visible to others, or working on a private branch
 
 ---
 # A note on branching and language
@@ -109,7 +116,8 @@ a common history in an orderly manner
 that code back into the primary branch
 - Terminology and language matter, and git's use of the term `master` is
 considered insensitive and has been deprecated
-- Consider naming your primary branch `main` or `develop` on new projects
+- git and GitHub will both default to `main` now, but you may find older repos
+that never renamed
 
 ---
 # Help along the way
@@ -125,6 +133,67 @@ the git-command. For example:
 # Demo Time
 
 ---
+# Understanding GitHub security
+
+GitHub no longer allows plain password use from the command line
+
+1. Are you on a computer you frequently use?
+    - Yes? Use SSH keys
+    - No? ssh to stu, use SSH keys
+    - No? Generate a disposable token
+
+2. Do you already have SSH keys? `ls -l $HOME/.ssh` and look for id files
+    - Yes? Cool!
+    - No? Time to generate some
+
+---
+# Disposable "Personal Access" Token
+
+- Top-right menu -> Settings
+- Developer settings -> Personal Access Token -> Generate Token
+- Note optional, probably just seven days, only check `repo`
+- Click `Generate Token`, then copy that somewhere to use for the rest of this demo
+- No, seriously, paste that somewhere right now. You can't get it back and will
+have to make a new token
+- This is now your password on the command line for the next seven days
+- `git config --global credential.helper store` use carefully, but this can store your token in a plaintext file
+
+---
+# Generating SSH keys
+
+- `ssh-keygen -t ed25519 -C "your_email@example.com"`
+- Since you don't already have keys, accept the default file name - `.ssh/id_ed25519`
+- Password is optional depending how much you trust the computer's security.
+You'll be prompted for this password every time you use the key.
+
+---
+# Uploading SSH keys
+
+- Cat your public key, either `.ssh/id_ed25519.pub` or `.ssh/id_rsa.pub`
+- No, seriously, do not accidentally give away your private key non-.pub file
+- Top-right menu -> Settings
+- SSH and GPG keys
+- New Key, give it a name, and paste your pub file contents
+
+---
+# SSH key bonus feature
+
+- ssh keys can be used to expedite Linux logins
+- Use `ssh-copy-id username@hostname` to copy your local key to a server
+- Check `.ssh/authorized_keys` to see which keys you've already allowed
+- Valid and possibly preferred to have separate keys for server logins vs GitHub
+
+---
+# About GitHub URLs
+
+When connecting your local repository to GitHub, there are two types of URLs you can use.
+
+- If using a token, use `https://github.com` URLs
+- If using ssh keys, use `git@github.com` URLs
+
+This should make more sense in a few minutes. If you change your mind in the future, you can update URLs with `git remote set-url`.
+
+---
 # Creating a repository on the GitHub website
 
 Using the + button in the top right corner or the webpage, choose
@@ -132,7 +201,7 @@ Using the + button in the top right corner or the webpage, choose
 we will not be using a pre-provided README, .gitignore, or license.
 Remember the name; you will need this later!
 
-Select the HTTPS button towards the top of this guide, and notice the section
+Select the SSH button towards the top of this guide, and notice the section
 for `push an existing repository`. No need to do anything with this now.
 Just keep the page open.
 
@@ -158,7 +227,8 @@ Let's initialize your repository.
     git init
 
 If you run `ls -al`, you will now see a `.git` directory there. This is where
-git stores all of the data about your repository.
+git stores all of the data about your repository. Do not go in here and make
+changes without really knowing what you're doing.
 
 ---
 # Starting your first `git` repository
