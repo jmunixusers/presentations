@@ -37,7 +37,7 @@ Resolving deltas: 100% (77/77), done.
 ---
 # Step 3 - Confirm your origin
 
-Confirm the origin URL is set correctly.
+Confirm the origin URL is set correctly. (From here out, you should see your e-ID instead of `ripleymj`.)
 
 ```bash
 ~/history$ git remote get-url origin
@@ -59,7 +59,7 @@ upstream
 ---
 # Step 5 - Create a new branch
 
-Create a new branch by "checking it out", that roughly describes its purpose, like `add-YOURNAME`.
+Create a new branch by "checking it out" with a name that roughly describes its purpose, like `add-YOURNAME`.
 
 ```bash
 $ git checkout -b add-mike
@@ -72,7 +72,7 @@ $ git branch
 ---
 # Step 6 - Add yourself and commit
 
-Open the `Members.md` file in your favorite editor, and add/update a line for yourself. Please add yourself sorted by Years at JMU, then alphabetical by last name. Once you've made your change, add and commit the file like we've done before.
+Open the `Members.md` file in your favorite editor, and add/update a line for yourself. Please add yourself sorted by Years at JMU, then alphabetical by last name. Please use spaces instead of tabs, and try to keep the pipe symbols aligned. Once you've made your change, add and commit the file like we've done before.
 
 ```bash
 $ git add Members.md
@@ -162,6 +162,6 @@ Once your change has been merged and pulled back into `main`, you can "safely" d
 ---
 # Step 13b - Remove your development branch remotely
 
-To remote a branch you pushed to GitHub, you can prefix it with a colon. For example:
+To remove a branch you pushed to GitHub, you can prefix it with a colon. For example:
 
 `git push origin :add-yourname`
