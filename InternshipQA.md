@@ -5,13 +5,14 @@ internship. The goal is to avoid discussing the usual where did you work and
 how did you find an internship, and instead focus on the tools and processes
 used inside companies.
 
-* Quick intro - who are you? where did you work? what year are you?
+* Quick intro - who are you? what year are you?
+  * DO NOT ASK WHERE THEY WORKED - SAVE FOR THE END
 * Describe your project in seven words or less
 * Describe your team - size? fellow interns or full-timers? which schools for  
 interns? same office or remote?
-* How did your team communicate? Email, Slack, Skype, etc?
+* How did your team communicate? Email, Slack, Teams, Zoom, etc?
 * What was your primary programming language? Any relevant version info -  
-Python 2 vs 3, Java 6, 7, 8, C99, Fortran77?
+Python 2 vs 3, Java 8, 11, 17, C99, Fortran77?
 * Which build tools did you use? Make, ant, gradle?
 * In one word, which version control system?
 * Describe your workflow and review process
@@ -33,4 +34,8 @@ These are slightly more subjective and could be cut for time.
 * Was the development language a good fit for the project?
 * What's one thing you'd change?
 * What technology do you wish you'd known going in?
+
+Finale.
+
+* Where did you work?
 * Audience Q&A
