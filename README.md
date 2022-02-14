@@ -18,6 +18,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 * [Containers - Kubernetes](containers/kubernetes.md)
 * [Databases](databases/index.md)
 * [Debugging](debugging/index.md)
+* [Distributions (Debian)](distributions/debian.md)
 * [Elasticsearch](elastic/index.md)
 * [Git 101](git101/index.md)
 * [Git 201](https://github.com/jmunixusers/git-201) (External)
