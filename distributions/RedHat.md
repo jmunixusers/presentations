@@ -6,7 +6,7 @@ _class: lead
 unknown: unknown
 ---
 
-![w:1000](./Red-Hat-logo.png)
+![w:1000](RedHat-logo.png)
 
 #### Pioneer of the Open Source Model
 
