@@ -15,12 +15,12 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Install Ubuntu dependencies
         run: |
           sudo snap install chromium
           sudo apt-get -q update
-          sudo apt-get -qq -y install pandoc texlive-xetex
+          sudo apt-get -qq -y install pandoc texlive-xetex librsvg2-bin
       - uses: actions/cache@v2
         with:
           path: ~/.npm
@@ -39,7 +39,7 @@ jobs:
               npx marp --allow-local-files "$input" -o "$output"
             else
               directory=$(dirname "$input")
-              pandoc --pdf-engine=xelatex --resource-path .:"$directory" -o "$output" "$input"
+              pandoc --pdf-engine=xelatex -f markdown-implicit_figures --resource-path .:"$directory" -o "$output" "$input"
             fi
             zip -g PDF.zip "$output"
           done
