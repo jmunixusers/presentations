@@ -78,8 +78,9 @@ We'll get to that later
 
 - Unlike better designed systems like FreeBSD or Solaris, containers are not a kernel object on Linux
 - A Linux container is an illusion created by a tool like docker, that ties together various pieces like namespaces and cgroups
-- Without a proper definition of their boundaries, there have been issues with host information leaking into containers or applications escaping
+- Without a proper definition of their boundaries, there have been issues with host information leaking into containers or applications escaping their container
 - Linux security technologies like SELinux, AppArmor, capabilities, or seccomp help enforce container boundaries
+- Research is also underway to wrap containers with hardware virtualization
 
 ---
 # What are namespaces?
@@ -95,6 +96,7 @@ We'll get to that later
 - Process ID - the view of running processes and map fake process IDs to real PIDs (PID 1, etc)
 - Network - what IP address is in use
 - IPC - which message queues and semaphores are in use
+- Time - set the system clock
 - UTS - the hostname of the system
 - User ID - map fake user IDs to real UIDs (root UID 0, etc)
 
@@ -122,11 +124,19 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 
 - `docker` is implemented as one giant daemon binary, controlled by messages sent via a filesystem socket
 - Containers are launched as children of this daemon, making it difficult to update while running
+- Compromise of the daemon is essentially compromise of the system, with no audit records
+- Tight coupling of the daemon and user utility lead to breakage between versions
 - Docker had little interest in fundamentally changing their architecture
+
+---
+# The Red Hat container family
+
 - Red Hat has launched a collection of replacement utilities
   - `buildah` for building containers
   - `podman` for running containers
   - `skopeo` for inspecting, downloading, and uploading containers
+- Born in Red Hat's Boston office, so `buildah` is mocking the local accent
+- `podman` thinks slightly larger than a container and uses a "pod" as the namespace boundary. By default, containers are launched 1:1 with pods
 - These utilities run as the calling user, and launch containers directly under systemd
 
 ---
@@ -135,6 +145,7 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 - Multiple implementations have lead to the Linux Foundation launching the Open Container Initiative
 - Packaging and description of containers are now standardized
 - `docker` and `podman` among other friends like runC, CRI-O, or containerd
+- `podman` is designed as a rough superset of `docker`, and some people successfully alias them
 - Docker has a somewhat uncertain financial future, but `docker` is an Apache licensed project
 - Companies got a surprise bill for Docker Desktop last year
 
@@ -156,7 +167,7 @@ You can use cgroups today inside systemd unit files to help control uncooperativ
 # Demo logistics
 
 ---
-# Docker Hello World
+# Podman Hello World
 
 - `podman run hello-world`
 - `podman ps -a`
@@ -178,7 +189,7 @@ Trying to pull docker.io/library/hello-world:latest...
 ```
 
 - Container images have to be hosted by a registry, and Docker Hub remains a popular choice.
-- GitHub, the major clouds, Red Hat, etc all host their own registries.
+- GitHub, the major clouds, Red Hat, and others all host their own registries.
 - For added safety, you should consider including the registry prefix when downloading.
 - Beware of an image's origins, build process, and update schedule. There's a lot of garbage published on Docker Hub.
 
