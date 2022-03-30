@@ -1,0 +1,9 @@
+FROM ubuntu:20.04
+RUN apt-get update && apt-get -y -qq install curl
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+RUN npx -y create-react-app my-app
+COPY *js my-app/src/
+EXPOSE 3000/tcp
+WORKDIR /my-app
+CMD npm start
