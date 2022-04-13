@@ -13,8 +13,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 
 * [Arduino - Morse Code](https://github.com/nuttercd/ArduinoDemo) (External)
 * [Command Line](CommandLine.md)
-* [Containers](containers/index.md)
-* [Containers - Kubernetes](containers/kubernetes.md)
+* Containers - [Intro](containers/index.md), [Kubernetes](containers/kubernetes.md)
 * [Databases](databases/index.md)
 * [Debugging](debugging/index.md)
 * Distributions - [Debian](distributions/Debian.md), [Red Hat](distributions/RedHat.md)
