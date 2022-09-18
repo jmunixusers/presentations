@@ -1,11 +1,9 @@
 # UUG Routing Lab
 
-* [Step 0 - Booting up](#step-0)
-* [Step 1 - Connecting to a friend](#step-1)
-* [Step 2 - Establishing dynamic routing](#step-2)
-* [Step 3 - Redundant paths](#step-3)
-* [Step 4 - Path costs](#step-4)
-* [Step 5 - Breaking things](#step-5)
+* [Part 1 - Booting up](#part-1---booting-up)
+* [Part 2 - Connecting to a friend](#part-2---connecting-to-a-neighbor)
+* [Part 3 - Routing](#part-3---routing)
+* [Part 4 - Building a big network](#part-4---building-a-big-network)
 
 ## Background Information
 
