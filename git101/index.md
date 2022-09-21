@@ -1,14 +1,17 @@
 ---
 marp: true
 ---
-# Git 101
+# Git 101 - Warmup
 
-## Warmup
-Take a moment to create a GitHub account, or verify your password. Feel free to
-post your username in Teams chat so we can get a little social network going.
+![bg contain right](discord-qr.png)
+Take a moment to create a GitHub account, or verify your password.
+
+Please post your username in Discord (join code over there --> ) so we can get a little social network going.
+
 Follow me @ripleymj.
 
-## Roadmap
+---
+# Roadmap
 
 - 101 Git theory and solo usage
 - 201 Git with a friend
@@ -54,23 +57,24 @@ a common history in an orderly manner
 - StackOverflow conducts an annual survey of developer trends
 - Until 2018 they asked about version control preferences
 - In 2020, they asked what services you use with git
-- Now git is just one of a dozen tools surveyed
+- Then git was just one of a dozen tools surveyed
+- In 2022, the git questions returned
 
 ---
-![height:15cm](2018-vc-tools.png)
-<https://insights.stackoverflow.com/survey/2018>
+![height:15cm](2022-vcs-choice.png)
+<https://survey.stackoverflow.co/2022/>
 
 ---
-![height:15cm](2018-commit-freq.png)
-<https://insights.stackoverflow.com/survey/2018>
+![height:15cm](2022-vcs-tools.png)
+<https://survey.stackoverflow.co/2022/>
 
 ---
-![height:15cm](2020-collab-tools.png)
-<https://insights.stackoverflow.com/survey/2020>
+![height:15cm](2022-git-host-part1.png)
+<https://survey.stackoverflow.co/2022/>
 
 ---
-![height:15cm](2021-other-tools.png)
-<https://insights.stackoverflow.com/survey/2021>
+![height:15cm](2022-git-host-part2.png)
+<https://survey.stackoverflow.co/2022/>
 
 ---
 # So what about GitHub?
@@ -87,9 +91,9 @@ a common history in an orderly manner
 
 - Remember that git is a tool, and GitHub is a provider of git services
 - Other services:
-  - Azure Repos, Google Cloud Source, AWS CodeCommit
-  - Bitbucket
   - GitLab
+  - Bitbucket
+  - Azure Repos, AWS CodeCommit, Google Cloud Source
 - Other git implementations:
   - Eclipse EGit
   - GitHub Desktop
@@ -140,7 +144,7 @@ GitHub no longer allows plain password use from the command line
 1. Are you on a computer you frequently use?
     - Yes? Use SSH keys
     - No? ssh to stu, use SSH keys
-    - No? Generate a disposable token
+    - No? Generate a disposable personal token
 
 2. Do you already have SSH keys? `ls -l $HOME/.ssh` and look for id files
     - Yes? Cool!
@@ -184,26 +188,19 @@ You'll be prompted for this password every time you use the key.
 - Valid and possibly preferred to have separate keys for server logins vs GitHub
 
 ---
-# About GitHub URLs
+# Basic `git` configuration
 
-When connecting your local repository to GitHub, there are two types of URLs you can use.
+By default, `git` will have your name and email configured to be your login
+name@hostname. This is nice in some ways, but probably not your actual
+email address. Let's fix this. Make sure you substitute all of your own info
+in the following commands:
 
-- If using a token, use `https://github.com` URLs
-- If using ssh keys, use `git@github.com` URLs
+    git config --global user.name "Your Name"
+    git config --global user.email "your@email.address"
+    git config --global color.ui true
 
-This should make more sense in a few minutes. If you change your mind in the future, you can update URLs with `git remote set-url`.
-
----
-# Creating a repository on the GitHub website
-
-Using the + button in the top right corner or the webpage, choose
-"New Repository". Pick a name and optionally a description. For this tutorial,
-we will not be using a pre-provided README, .gitignore, or license.
-Remember the name; you will need this later!
-
-Select the SSH button towards the top of this guide, and notice the section
-for `push an existing repository`. No need to do anything with this now.
-Just keep the page open.
+Now `git` will always know who you are, and this information will be in all
+your commits.
 
 ---
 # Starting your first `git` repository
@@ -231,6 +228,28 @@ git stores all of the data about your repository. Do not go in here and make
 changes without really knowing what you're doing.
 
 ---
+# About GitHub URLs
+
+When connecting your local repository to GitHub, there are two types of URLs you can use.
+
+- If using a token, use `https://github.com` URLs
+- If using ssh keys, use `git@github.com` URLs
+
+This should make more sense in a few minutes. If you change your mind in the future, you can update URLs with `git remote set-url`.
+
+---
+# Creating a repository on the GitHub website
+
+Using the + button in the top right corner or the webpage, choose
+"New Repository". Pick a name and optionally a description. For this tutorial,
+we will not be using a pre-provided README, .gitignore, or license.
+Remember the name; you will need this later!
+
+Select the HTTPS or SSH button towards the top of this guide, and notice the section
+for `push an existing repository`. No need to do anything with this now.
+Just keep the page open.
+
+---
 # Starting your first `git` repository
 
 You now have to tell `git` where your code should be pushed to. We are using
@@ -239,21 +258,6 @@ GitHub for this. Run the following command, but change `YOURUSERNAME` to your
     git remote add origin https://github.com/YOURUSERNAME/REPONAME.git
 
 Remember later that you have named your GitHub URL `origin`.
-
----
-# Basic `git` configuration
-
-By default, `git` will have your name and email configured to be your login
-name@hostname. This is nice in some ways, but probably not your actual
-email address. Let's fix this. Make sure you substitute all of your own info
-in the following commands:
-
-    git config --global user.name "Your Name"
-    git config --global user.email "your@email.address"
-    git config --global color.ui true
-
-Now `git` will always know who you are, and this information will be in all
-your commits.
 
 ---
 # Making your first commit
