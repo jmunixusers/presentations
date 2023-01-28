@@ -11,7 +11,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 
 ## Full Length Meetings
 
-* [Arduino - Morse Code](https://github.com/nuttercd/ArduinoDemo) (External)
+* [Arduino - Morse Code](https://github.com/jmunixusers/ArduinoDemo) (External)
 * [Command Line](CommandLine.md)
 * Containers - [Intro](containers/index.md), [Kubernetes](containers/kubernetes.md)
 * [Databases](databases/index.md)
