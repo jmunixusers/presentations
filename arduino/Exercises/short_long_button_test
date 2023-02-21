@@ -1,0 +1,32 @@
+const int buttonPin = 3;
+
+int buttonState = 0;
+
+int count = 0;
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(buttonPin, INPUT);
+  Serial.begin(9600);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  buttonState = digitalRead(buttonPin);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+    count++;
+  }
+    else {
+      if (count > 25){
+        Serial.println("long");
+      } else if (count > 1 && count < 25){
+        Serial.println("short");
+      }
+      count = 0;
+    }
+    delay(10); 
+}
