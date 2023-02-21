@@ -1,0 +1,126 @@
+#include <SPI.h>
+#include <WiFiNINA.h>
+#include <PubSubClient.h>
+
+//Enter your details here
+const char ssid[] = "uugwifi";        // your network SSID (name)
+const char pass[] = "uugpassword";    // your network WPA password
+const char clientName[] = "CHANGEME";  // your MQTT client name
+const char topicName[] = "CHANGEME";   // your MQTT topic
+
+int status = WL_IDLE_STATUS;
+int buttonPin = 3;
+int buttonState = 0;
+int count = 0;
+IPAddress server(192, 168, 88, 2);
+
+// Initialize the Ethernet client library
+// with the IP address and port of the server
+WiFiClient ethClient;
+PubSubClient psclient(ethClient);
+
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  //Initialize serial and wait for port to open:
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB port only
+  }
+
+  // check for the WiFi module:
+  if (WiFi.status() == WL_NO_MODULE) {
+    Serial.println("Communication with WiFi module failed!");
+    // don't continue
+    while (true);
+  }
+
+  String fv = WiFi.firmwareVersion();
+  if (fv < WIFI_FIRMWARE_LATEST_VERSION) {
+    Serial.println("Please upgrade the firmware");
+  }
+
+  // attempt to connect to WiFi network:
+  while (status != WL_CONNECTED) {
+    Serial.print("Attempting to connect to SSID: ");
+    Serial.println(ssid);
+    status = WiFi.begin(ssid, pass);
+
+    // wait 10 seconds for connection:
+    delay(10000);
+  }
+  Serial.println("Connected to wifi");
+  printWiFiStatus();
+
+  Serial.println("\nStarting connection to server...");
+  psclient.setServer(server, 1883);
+  psclient.setCallback(callback);
+}
+
+void loop() {
+  if (!psclient.connected()) {
+    reconnect();
+  }
+
+  // process pending work for MQTT connection
+  psclient.loop();
+
+  buttonState = digitalRead(buttonPin);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+    count++;
+  }
+  else {
+    if (count > 25) {
+      Serial.println("long");
+      psclient.publish(topicName, "-");
+    } else if (count > 1 && count < 25) {
+      Serial.println("short");
+      psclient.publish(topicName, ".");
+
+    }
+    count = 0;
+  }
+  delay(10);
+
+}
+
+void printWiFiStatus() {
+  // print the SSID of the network you're attached to:
+  Serial.print("SSID: ");
+  Serial.println(WiFi.SSID());
+
+  // print your board's IP address:
+  IPAddress ip = WiFi.localIP();
+  Serial.print("IP Address: ");
+  Serial.println(ip);
+
+  // print the received signal strength:
+  long rssi = WiFi.RSSI();
+  Serial.print("signal strength (RSSI):");
+  Serial.print(rssi);
+  Serial.println(" dBm");
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  // callback is unused on the sending side
+}
+
+void reconnect() {
+  // Loop until we're reconnected
+  while (!psclient.connected()) {
+
+    Serial.print("Attempting MQTT connection...");
+    // Attempt to connect
+    if (psclient.connect(clientName)) {
+      Serial.println("connected");
+      // ... and resubscribe
+      psclient.subscribe(topicName);
+    } else {
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}

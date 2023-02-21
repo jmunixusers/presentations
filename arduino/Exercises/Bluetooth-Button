@@ -1,0 +1,115 @@
+#include <ArduinoBLE.h>
+
+// variables for button
+const int buttonPin = 3;
+int oldButtonState = LOW;
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial)
+    ;
+
+  // configure the button pin as input
+  pinMode(buttonPin, INPUT);
+
+  // initialize the Bluetooth® Low Energy hardware
+  BLE.begin();
+
+  Serial.println("Bluetooth® Low Energy Central - LED control");
+
+  // start scanning for peripherals
+  // BLE.scanForUuid("19b10000-e8f2-537e-4f6c-d104768a1214");
+  BLE.scanForName("YOUR TEAM HERE - 1 of 2");
+}
+
+void loop() {
+  // check if a peripheral has been discovered
+  BLEDevice peripheral = BLE.available();
+
+  if (peripheral) {
+    // discovered a peripheral, print out address, local name, and advertised service
+    Serial.print("Found ");
+    Serial.print(peripheral.address());
+    Serial.print(" '");
+    Serial.print(peripheral.localName());
+    Serial.print("' ");
+    Serial.print(peripheral.advertisedServiceUuid());
+    Serial.println();
+
+    // stop scanning
+    BLE.stopScan();
+
+    controlLed(peripheral);
+
+    // peripheral disconnected, start scanning again
+    BLE.scanForName("YOUR TEAM HERE - 2 of 2");
+  }
+}
+
+void controlLed(BLEDevice peripheral) {
+  // connect to the peripheral
+  Serial.println("Connecting ...");
+
+  if (peripheral.connect()) {
+    Serial.println("Connected");
+  } else {
+    Serial.println("Failed to connect!");
+    return;
+  }
+
+  // discover peripheral attributes
+  Serial.println("Discovering attributes ...");
+  if (peripheral.discoverAttributes()) {
+    Serial.println("Attributes discovered");
+  } else {
+    Serial.println("Attribute discovery failed!");
+    peripheral.disconnect();
+    return;
+  }
+
+  // retrieve the LED characteristic
+  BLECharacteristic ledCharacteristic = peripheral.characteristic("19b10001-e8f2-537e-4f6c-d104768a1214");
+
+  if (!ledCharacteristic) {
+    Serial.println("Peripheral does not have LED characteristic!");
+    peripheral.disconnect();
+    return;
+  } else if (!ledCharacteristic.canWrite()) {
+    Serial.println("Peripheral does not have a writable LED characteristic!");
+    peripheral.disconnect();
+    return;
+  }
+
+  long buttonPressedCount = 0;
+
+  while (peripheral.connected()) {
+    // while the peripheral is connected
+
+    // read the button pin
+    int buttonState = digitalRead(buttonPin);
+
+    if (oldButtonState != buttonState) {
+      // button changed
+      oldButtonState = buttonState;
+
+      if (!buttonState) {
+        if(buttonPressedCount > 250) {
+          ledCharacteristic.writeValue((byte)0x02);
+        } else {
+          ledCharacteristic.writeValue((byte)0x01);
+        }
+        Serial.print("button released ");
+        Serial.println(buttonPressedCount);
+
+        // button is released, write 0x00 to turn the LED off
+        ledCharacteristic.writeValue((byte)0x00);
+      }
+      buttonPressedCount = 0;
+    } else {
+      buttonPressedCount++;
+    }
+    delay(1);
+  }
+
+  Serial.println("Peripheral disconnected");
+}
