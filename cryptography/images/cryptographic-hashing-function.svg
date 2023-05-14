@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="739.9375"
+   height="536.38123"
+   id="svg1307">
+  <metadata
+     id="metadata203">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1309" />
+  <g
+     transform="translate(0.5,35.881249)"
+     id="g0001"
+     style="font-style:normal;fill-opacity:1;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans">
+    <text
+       x="38.502106"
+       y="-2"
+       id="text5"
+       style="font-size:28.79999924px;font-weight:bold;stroke:none">Input</text>
+    <text
+       x="524.03241"
+       y="-2"
+       id="text7"
+       style="font-size:28.79999924px;font-weight:bold;fill:#000000;stroke:none">Digest</text>
+    <rect
+       width="141.20421"
+       height="78"
+       x="12"
+       y="10"
+       id="rect9"
+       style="fill:#00ffff;stroke:#000000;stroke-width:0.99719399" />
+    <text
+       x="22"
+       y="55"
+       id="text11"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">Fox</text>
+    <rect
+       width="154"
+       height="75"
+       x="214"
+       y="12"
+       id="rect13"
+       style="fill:#ffff90;stroke:#000000" />
+    <text
+       x="224"
+       y="33"
+       id="text15"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">cryptographic</text>
+    <text
+       x="266"
+       y="56"
+       id="text17"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">hash</text>
+    <text
+       x="250"
+       y="79"
+       id="text19"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">function</text>
+    <rect
+       width="298.93976"
+       height="60"
+       x="428"
+       y="20"
+       id="rect21"
+       style="fill:#ff9ccf;stroke:#000000;stroke-width:0.98839635" />
+    <text
+       x="438"
+       y="44"
+       id="text23"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">DFCD 3454 BBEA 788A 751A</text>
+    <text
+       x="438"
+       y="67"
+       id="text25"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">696C 24D9 7009 CA99 2D17</text>
+    <path
+       d="m 152.89179,49 c 61.17891,0 61.17891,0 61.17891,0"
+       id="path28"
+       style="fill:none;stroke:#000000;stroke-width:1.51466465px" />
+    <g
+       transform="translate(214.0707,49)"
+       id="g2001">
+      <path
+         d="M 0,0 -16,6 -16,-6 0,0 z"
+         id="path31"
+         style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+    </g>
+    <g
+       transform="translate(368,49)"
+       id="g5997">
+      <path
+         d="M 0,0 C 60,0 60,0 60,0"
+         id="path34"
+         style="fill:none;stroke:#000000;stroke-width:1.5px" />
+      <g
+         transform="translate(60,0)"
+         id="g2002">
+        <path
+           d="M 0,0 -16,6 -16,-6 0,0 z"
+           id="path37"
+           style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+      </g>
+    </g>
+    <rect
+       width="141.20421"
+       height="78"
+       x="12"
+       y="110"
+       id="rect39"
+       style="fill:#00ffff;stroke:#000000;stroke-width:0.99719399" />
+    <text
+       x="22"
+       y="132"
+       id="text41"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">The red fox</text>
+    <text
+       x="22"
+       y="155"
+       id="text43"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">jumps over</text>
+    <text
+       x="22"
+       y="178"
+       id="text45"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">the blue dog</text>
+    <rect
+       width="154"
+       height="75"
+       x="214"
+       y="112"
+       id="rect47"
+       style="fill:#ffff90;stroke:#000000" />
+    <text
+       x="224"
+       y="133"
+       id="text49"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">cryptographic</text>
+    <text
+       x="266"
+       y="156"
+       id="text51"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">hash</text>
+    <text
+       x="250"
+       y="179"
+       id="text53"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">function</text>
+    <rect
+       width="298.93976"
+       height="60"
+       x="428"
+       y="120"
+       id="rect55"
+       style="fill:#ff9ccf;stroke:#000000;stroke-width:0.98839635" />
+    <text
+       x="438"
+       y="144"
+       id="text57"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">0086 46BB FB7D CBE2 823C</text>
+    <text
+       x="438"
+       y="167"
+       id="text59"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">ACC7 6CD1 90B1 EE6E 3ABC</text>
+    <path
+       d="m 152.89179,149 c 61.17891,0 61.17891,0 61.17891,0"
+       id="path63"
+       style="fill:none;stroke:#000000;stroke-width:1.51466465px" />
+    <g
+       transform="translate(214.0707,149)"
+       id="g65">
+      <path
+         d="M 0,0 -16,6 -16,-6 0,0 z"
+         id="path67"
+         style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+    </g>
+    <g
+       transform="translate(368,149)"
+       id="g69">
+      <path
+         d="M 0,0 C 60,0 60,0 60,0"
+         id="path71"
+         style="fill:none;stroke:#000000;stroke-width:1.5px" />
+      <g
+         transform="translate(60,0)"
+         id="g73">
+        <path
+           d="M 0,0 -16,6 -16,-6 0,0 z"
+           id="path75"
+           style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+      </g>
+    </g>
+    <rect
+       width="141.20421"
+       height="78"
+       x="12"
+       y="210"
+       id="rect77"
+       style="fill:#00ffff;stroke:#000000;stroke-width:0.99719399" />
+    <text
+       x="22"
+       y="232"
+       id="text79"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">The red fox</text>
+    <rect
+       width="12.066001"
+       height="19.116781"
+       x="98.415863"
+       y="240.5753"
+       id="rect4066-5"
+       style="font-style:normal;fill:#7effe5;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans" />
+    <text
+       x="22"
+       y="255"
+       id="text81"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">jumps ouer</text>
+    <text
+       x="22"
+       y="278"
+       id="text89"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">the blue dog</text>
+    <rect
+       width="154"
+       height="75"
+       x="214"
+       y="212"
+       id="rect91"
+       style="fill:#ffff90;stroke:#000000" />
+    <text
+       x="224"
+       y="233"
+       id="text93"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">cryptographic</text>
+    <text
+       x="266"
+       y="256"
+       id="text95"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">hash</text>
+    <text
+       x="250"
+       y="279"
+       id="text97"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">function</text>
+    <rect
+       width="298.93976"
+       height="60"
+       x="428"
+       y="220"
+       id="rect99"
+       style="fill:#ff9ccf;stroke:#000000;stroke-width:0.98839635" />
+    <text
+       x="438"
+       y="244"
+       id="text101"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">8FD8 7558 7851 4F32 D1C6</text>
+    <text
+       x="438"
+       y="267"
+       id="text103"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">76B1 79A9 0DA4 AEFE 4819</text>
+    <path
+       d="m 152.89179,249 c 61.17891,0 61.17891,0 61.17891,0"
+       id="path106"
+       style="fill:none;stroke:#000000;stroke-width:1.51466465px" />
+    <g
+       transform="translate(214.0707,249)"
+       id="g2003">
+      <path
+         d="M 0,0 -16,6 -16,-6 0,0 z"
+         id="path109"
+         style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+    </g>
+    <g
+       transform="translate(368,249)"
+       id="g6003">
+      <path
+         d="M 0,0 C 60,0 60,0 60,0"
+         id="path112"
+         style="fill:none;stroke:#000000;stroke-width:1.5px" />
+      <g
+         transform="translate(60,0)"
+         id="g2004">
+        <path
+           d="M 0,0 -16,6 -16,-6 0,0 z"
+           id="path115"
+           style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+      </g>
+    </g>
+    <rect
+       width="141.20421"
+       height="78"
+       x="12"
+       y="310"
+       id="rect117"
+       style="fill:#00ffff;stroke:#000000;stroke-width:0.99719399" />
+    <text
+       x="22"
+       y="332"
+       id="text119"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">The red fox</text>
+    <rect
+       width="23.608376"
+       height="19.116781"
+       x="98.556007"
+       y="339.85858"
+       id="rect4066"
+       style="fill:#7dffe5;fill-opacity:1;stroke:none" />
+    <text
+       x="22"
+       y="355"
+       id="text121"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">jumps oevr<tspan
+   id="tspan125"
+   style="font-weight:bold;fill:#ff0000;-inkscape-font-specification:Bitstream Vera Sans Bold" />
+</text>
+    <text
+       x="22"
+       y="378"
+       id="text129"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">the blue dog</text>
+    <rect
+       width="154"
+       height="75"
+       x="214"
+       y="312"
+       id="rect131"
+       style="fill:#ffff90;stroke:#000000" />
+    <text
+       x="224"
+       y="333"
+       id="text133"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">cryptographic</text>
+    <text
+       x="266"
+       y="356"
+       id="text135"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">hash</text>
+    <text
+       x="250"
+       y="379"
+       id="text137"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">function</text>
+    <rect
+       width="298.93976"
+       height="60"
+       x="428"
+       y="320"
+       id="rect139"
+       style="fill:#ff9ccf;stroke:#000000;stroke-width:0.98839635" />
+    <text
+       x="438"
+       y="344"
+       id="text141"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">FCD3 7FDB 5AF2 C6FF 915F</text>
+    <text
+       x="438"
+       y="367"
+       id="text143"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">D401 C0A9 7D9A 46AF FB45</text>
+    <path
+       d="m 152.89179,349 c 61.17891,0 61.17891,0 61.17891,0"
+       id="path146"
+       style="fill:none;stroke:#000000;stroke-width:1.51466465px" />
+    <g
+       transform="translate(214.0707,349)"
+       id="g2005">
+      <path
+         d="M 0,0 -16,6 -16,-6 0,0 z"
+         id="path149"
+         style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+    </g>
+    <g
+       transform="translate(368,349)"
+       id="g6009">
+      <path
+         d="M 0,0 C 60,0 60,0 60,0"
+         id="path152"
+         style="fill:none;stroke:#000000;stroke-width:1.5px" />
+      <g
+         transform="translate(60,0)"
+         id="g2006">
+        <path
+           d="M 0,0 -16,6 -16,-6 0,0 z"
+           id="path155"
+           style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+      </g>
+    </g>
+    <rect
+       width="141.20421"
+       height="78"
+       x="12"
+       y="410"
+       id="rect157"
+       style="fill:#00ffff;stroke:#000000;stroke-width:0.99719399" />
+    <text
+       x="22"
+       y="432"
+       id="text159"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">The red fox</text>
+    <rect
+       width="23.831121"
+       height="19.116781"
+       x="86.783463"
+       y="439.85858"
+       id="rect4086"
+       style="fill:#7dffe5;fill-opacity:1;stroke:none" />
+    <text
+       x="22"
+       y="455"
+       id="text161"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">jumps oer</text>
+    <text
+       x="22"
+       y="478"
+       id="text169"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">the blue dog</text>
+    <rect
+       width="154"
+       height="75"
+       x="214"
+       y="412"
+       id="rect171"
+       style="fill:#ffff90;stroke:#000000" />
+    <text
+       x="224"
+       y="433"
+       id="text173"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">cryptographic</text>
+    <text
+       x="266"
+       y="456"
+       id="text175"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">hash</text>
+    <text
+       x="250"
+       y="479"
+       id="text177"
+       style="font-size:19.20000076px;font-weight:normal;fill:#000000;stroke:none">function</text>
+    <rect
+       width="298.93976"
+       height="60"
+       x="428"
+       y="420"
+       id="rect179"
+       style="fill:#ff9ccf;stroke:#000000;stroke-width:0.98839635" />
+    <text
+       x="438"
+       y="444"
+       id="text181"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">8ACA D682 D588 4C75 4BF4</text>
+    <text
+       x="438"
+       y="467"
+       id="text183"
+       style="font-size:19.20000076px;font-weight:bold;fill:#000000;stroke:none;font-family:Courier">1799 7D88 BCF8 92B9 6A6C</text>
+    <path
+       d="m 152.89179,449 c 61.17891,0 61.17891,0 61.17891,0"
+       id="path187"
+       style="fill:none;stroke:#000000;stroke-width:1.51466465px" />
+    <g
+       transform="translate(214.0707,449)"
+       id="g189">
+      <path
+         d="M 0,0 -16,6 -16,-6 0,0 z"
+         id="path191"
+         style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+    </g>
+    <g
+       transform="translate(368,449)"
+       id="g193">
+      <path
+         d="M 0,0 C 60,0 60,0 60,0"
+         id="path195"
+         style="fill:none;stroke:#000000;stroke-width:1.5px" />
+      <g
+         transform="translate(60,0)"
+         id="g197">
+        <path
+           d="M 0,0 -16,6 -16,-6 0,0 z"
+           id="path199"
+           style="fill:#000000;stroke:#000000;stroke-width:1.5px" />
+      </g>
+    </g>
+  </g>
+</svg>
