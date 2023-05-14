@@ -22,7 +22,7 @@ unknown: unknown
 
 * Red Hat Inc. has rigid trademark rules restricting re-distribution of their officially RHEL versions but still provides its source code freely
 
----  
+---
 
 ## Philosophy
 

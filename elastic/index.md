@@ -188,18 +188,5 @@ What is Elastic?
   - Index picker
 
 ---
-# Demo time
-
----
 # Sysmon - a brief aside
 “System Monitor (Sysmon) is a Windows system service and device driver that, once installed on a system, remains resident across system reboots to monitor and log system activity to the Windows event log. It provides detailed information about process creations, network connections, and changes to file creation time. By collecting the events it generates using Windows Event Collection or SIEM agents and subsequently analyzing them, you can identify malicious or anomalous activity and understand how intruders and malware operate on your network.”
-
----
-# Demo time
-<http://elastic.ripleymj.net:5601>
-ssh ec2-user@elastic1.ripleymj.net Packetbeat, metricbeat, auditbeat
-ssh ec2-user@elastic2.ripleymj.net Metricbeat, packetbeat, auditbeat, filebeat
- | <http://elastic2.ripleymj.net/manual>
-Remote Desktop ec2-user@elastic-win.ripleymj.net
-
-Password: uugsupersecret
