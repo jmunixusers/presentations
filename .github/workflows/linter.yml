@@ -11,11 +11,11 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
       - name: Install markdownlint
         run: |
           npm --save-dev install markdownlint markdownlint-cli
