@@ -85,19 +85,19 @@ What is Elastic?
 | --- | --- | --- | --- | --- |
 | azure_event_hubs | generator | jms | redis | syslog |
 | beats | github | jmx | relp | tcp |
-| cloudwatch | google_pubsub | kafka | rss | twitter
-| couchdb_changes | graphite | kinesis | s3 | udp
-| dead_letter_queue | heartbeat | log4j | salesforce | unix
-| elasticsearch | http | lumberjack | snmptrap | varnishlog
-| exec | http_poller | meetup | sqlite | websocket
-| file | imap | pipe | sqs | wmi
+| cloudwatch | google_pubsub | kafka | rss | twitter |
+| couchdb_changes | graphite | kinesis | s3 | udp |
+| dead_letter_queue | heartbeat | log4j | salesforce | unix |
+| elasticsearch | http | lumberjack | snmptrap | varnishlog |
+| exec | http_poller | meetup | sqlite | websocket |
+| file | imap | pipe | sqs | wmi |
 
 ---
 # More Logstash inputs
 
 |  | | | | |
 | --- | --- | --- | --- | --- |
-| ganglia | irc | puppet_facter | stdin | xmpp
+| ganglia | irc | puppet_facter | stdin | xmpp |
 | gelf | jdbc | rabbitmq | stomp | |
 
 ---

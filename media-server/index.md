@@ -52,7 +52,7 @@ This sounds complicated, but in reality Sonarr and Radarr do a lot of the work f
 ---
 Here's a sample file directory structure to get you started:
 
-```
+```text
 data
 ├── torrents
 │   ├── movies
