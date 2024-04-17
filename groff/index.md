@@ -46,10 +46,12 @@ Mitch Feigenbaum - <https://mrf-dot.github.io>
 
 ## What you need
 
-1. Valid Groff Installation
-	- Linux: It's already installed
-	- Mac: `brew install groff`
-2. Text Editor (VIM recommended)
+1) Valid Groff Installation
+
+    - Linux: It's already installed
+    - Mac: `brew install groff`
+
+2) Text Editor (VIM recommended)
 
 ---
 
@@ -65,7 +67,7 @@ Mitch Feigenbaum - <https://mrf-dot.github.io>
 
 ## MAN Macro Set Quick Reference
 
-```
+```text
        Macro   Meaning                         Subsection
        ───────────────────────────────────────────────────────────────────
        .B      Bold                            Font style macros
@@ -191,6 +193,7 @@ Banana
 ```
 
 ### Ordered (numbered) list
+
 ```groff
 .nr a 0
 .IP \n+a
@@ -211,12 +214,12 @@ Banana
 .IP 1
 Point 1
 .RS
-.	IP 1.1
+. IP 1.1
 Nested point 1.1
-.	RS
-.		IP 1.1.1
+. RS
+.  IP 1.1.1
 Nested point 1.1.1
-.	RE
+. RE
 .RE
 ```
 
@@ -271,14 +274,14 @@ Now the rest of the paragraph can proceed.
 
 ---
 
-
-
 ## Text Style
+
 - Style is controlled by the `\f` command followed by square brackets
-	- `\f[B]` (bold)
-	- `\f[C]` (constant width [monospace])
-	- `\f[BI]` (bold *and* italic)
-	- `\f[R]` (Regular [Roman])
+  - `\f[B]` (bold)
+  - `\f[C]` (constant width [monospace])
+  - `\f[BI]` (bold *and* italic)
+  - `\f[R]` (Regular [Roman])
+
 ```groff
 \f[CBI]This text is monospaced, bold, and italic. \f[R]This text is regular.
 ```
@@ -305,7 +308,7 @@ Now the rest of the paragraph can proceed.
 
 ## Special characters
 
-```
+```text
 \(Do   Dollar $
 \(Eu   Euro €
 \(Po   British pound sterling £
@@ -353,6 +356,7 @@ Now the rest of the paragraph can proceed.
 ## EQN
 
 - All text between `.EQ` and `.EN` will be formatted as a mathematical equation
+
 ```groff
 Let's show off the power of EQN by writing the quadratic formula in groff!
 .EQ
@@ -365,14 +369,15 @@ x = {-b +- sqrt {b sup 2 - 4ac}} over 2a
 ## TBL
 
 - All text between `.TS` and `.TE` will be formatted as a table
+
 ```groff
 .TS
 allbox expand;
 l l.
-Email	mfeigenbaum23@gmail.com
-Github	https://github.com/mrf-dot
-Website	https://mrf-dot.github.io
-YouTube	https://www.youtube.com/channel/UCdJoCFI6t7DTzms9Cr3U0hQ
+Email mfeigenbaum23@gmail.com
+Github https://github.com/mrf-dot
+Website https://mrf-dot.github.io
+YouTube https://www.youtube.com/channel/UCdJoCFI6t7DTzms9Cr3U0hQ
 .TE
 ```
 
@@ -407,9 +412,9 @@ grog -Tpdf file.ms --run > file.pdf
 
 ```vim
 augroup Roff
-	autocmd!
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man,*.mla set filetype=groff
-	autocmd BufWritePost *.ms,*.me,*.mom,*.man,*.mla :execute '!grog -Tpdf % --run > %:t:r.pdf' | redraw
+ autocmd!
+ autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man,*.mla set filetype=groff
+ autocmd BufWritePost *.ms,*.me,*.mom,*.man,*.mla :execute '!grog -Tpdf % --run > %:t:r.pdf' | redraw
 augroup END
 ```
 
@@ -439,11 +444,11 @@ Follow along at <https://github.com/mrf-dot/proguide>
 ## Extra resources
 
 - Luke Smith makes a few good videos that show the basics of `groff` and `eqn`.
-	- Groff_MS tutorial - <https://www.youtube.com/watch?v=w8EKH_fjmXA>
-	- EQN tutorial - <https://www.youtube.com/watch?v=sp0qgpeG6EY>
+  - Groff_MS tutorial - <https://www.youtube.com/watch?v=w8EKH_fjmXA>
+  - EQN tutorial - <https://www.youtube.com/watch?v=sp0qgpeG6EY>
 - Manpages for groff
-	- The groff ms macro - <https://man7.org/linux/man-pages/man7/groff_ms.7.html>
-	- Insert mathematical and non-ASCII characters into groff - <https://man7.org/linux/man-pages/man7/groff_char.7.html>
-	- Use grog to infer compiler flags - <https://man7.org/linux/man-pages/man1/grog.1.html>
-	- Write mathematical formulae - <https://linux.die.net/man/1/eqn>
-	- Format tables - <https://linux.die.net/man/1/tbl>
+  - The groff ms macro - <https://man7.org/linux/man-pages/man7/groff_ms.7.html>
+  - Insert mathematical and non-ASCII characters into groff - <https://man7.org/linux/man-pages/man7/groff_char.7.html>
+  - Use grog to infer compiler flags - <https://man7.org/linux/man-pages/man1/grog.1.html>
+  - Write mathematical formulae - <https://linux.die.net/man/1/eqn>
+  - Format tables - <https://linux.die.net/man/1/tbl>
