@@ -58,7 +58,7 @@ Connor Sample - <https://tabulate.tech>
 
 ---
 
-![bg](archinstall.png)
+![bg](arch01.png)
 
 ---
 
@@ -75,23 +75,23 @@ Warning for the low resolution photos
 
 ---
 
-![bg](endeavour.png)
+![bg](arch02.png)
 
 ---
 
-![bg](arco.png)
+![bg](arch03.png)
 
 ---
 
-![bg](artix.png)
+![bg](arch04.png)
 
 ---
 
-![bg](garuda.png)
+![bg](arch05.png)
 
 ---
 
-![bg](manjaro.png)
+![bg](arch06.png)
 
 ---
 
