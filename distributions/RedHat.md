@@ -1,9 +1,5 @@
 ---
 marp: true
-title: Red Hat
-theme: gaia
-_class: lead
-unknown: unknown
 ---
 
 ![w:1000](RedHat-logo.png)
@@ -16,27 +12,11 @@ unknown: unknown
 
 * **Red Hat, Inc.** is the **company** behind the distribution, while **Red Hat Linux** & currently **Red Hat Enterprise Linux (RHEL)** is the **distribution**
 
-* Became biggest open source provider prior to be acquired by IBM
+* Became biggest open source provider prior to being acquired by IBM
 
-* Currently RHEL is a trusted partner to 90% of Fortune 500 companies
+* Currently RHEL is used by 90% of Fortune 500 companies
 
-* Red Hat Inc. has rigid trademark rules restricting re-distribution of their officially RHEL versions but still provides its source code freely
-
----
-
-## Philosophy
-
-* Committed to promotion, support, & defense of software freedom
-
-* Mission statement:
-
-  > *to be the catalyst in communities of customers, contributors, and partners creating better technology the open source way*
-
-* Strive for more inclusivity in programic language & documentation:
-
-  * Push for removal of controversial terms like "master" & "slave"
-
-* Give back to project and communities they engage with
+* Red Hat Inc. has rigid trademark rules restricting re-distribution of their official RHEL versions but still provides its source code
 
 ---
 
@@ -46,78 +26,57 @@ unknown: unknown
 
 * **1994**: First Red Hat Linux release
 
-  * Released in October & appropriately named as Halloween
+  * Released in October & code-named Halloween
 
 * **2002**: RHEL release
   
   * Pioneered the open source subscription model
   * Fully replaced Red Hat Linux in the following year
 
-* **2019**: Most recent version of RHEL: 8 (Ootpa)
+* **2022**: RHEL 9 released
 
-  * Current release: 8.5 as of 11/9/21
+  * Current release: 9.4 as of 9/11/2024
+
+* **2024**: RHEL 10 branched from Fedora 40
 
 ---
 
-## Popular Derivatives
+## Friends and neighbors
 
 RHEL has many **community-driven** distributions:
 
 * Fedora
+  * Cutting edge community distro
 
-* CentOS
+* CentOS Stream
+  * RHEL development branch just days/weeks ahead
+  * Focus point for community engagement
 
-There are also some **commercial** distributions of RHEL too:
+And is the basis for other products, like OpenShift and OpenStack
 
+---
+
+## Frenemies
+
+* Amazon Linux 1
+  * AL2 - RHEL/Fedora hybrid
+* AlmaLinux
 * Oracle Linux
+* Rocky Linux
+* Scientific Linux (defunct)
 
-* Amazon Linux (primary AWS distribution)
+Oracle, SuSE, and Rocky/CIQ focusing on OpenELA project
 
 ---
 
 ## Red Hat Enterprise Linux (RHEL)
 
-Enterprise? Red Hat is NOT free?
-
 * Still open source
-
-* Subscription packaging model:
-  * RHEL Server Standard
-  * RHEL Server Premium
-
-10+ Years of Support
-
+* Subscription packaging model
+* New versions roughly every five years
+* 10+ Years of Support
 * Stable & reliable, although maybe a little behind on the times
-
----
-
-## Fedora Linux
-
-Community-driven & free
-
-More experimental
-
-* Less stability
-
-* Short version lifespan
-
-  * Release every 6 months & 13 months of updates
-
-Red Hat typically starts with Fedora when making new releases & polishes it to their own standards
-
----
-
-## CentOS Linux
-
-Claimed to be middle ground between RHEL & Fedora
-
-Community-driven, free, & stable
-
-* Mainly just Red Hat with branding thrown out
-
-* Many CentOS board members also work for RedHat
-
-CentOS Stream is the new and upcoming version of CentOS that will be used as a development ground to make releases of Fedora into the new Red Hat releases
+* Extra Packages for Enterprise Linux (EPEL) is a community repo for popular, but unsupported software
 
 ---
 
@@ -137,41 +96,26 @@ The default package managers for Red Hat distros are both RPM (Red hat package m
 
 ## Desktop Environments
 
-Typically with the more common RHEL distros, they come with the following built in with the installer:
+* GNOME
 
-* **GNOME (Default)**
-* KDE
+That's it. Others available through EPEL:
 
-Others for Installation on CentOS & Fedora:
-
-* Cinnamon, MATE, XFCE, i3, Deepin Desktop
+* Cinnamon, KDE, MATE, XFCE, i3
 
 ---
+## RHEL for business
 
-## Community vs Enterprise Linux
-
-* Community:
-
-  * Free
-  * Great for beginners
-  * Great for experimentation
-
-* Enterprise:
-  
-  * Paid
-  * Supports long periods of time for servers
-  * Supports business desires
+Red Hat's Open Source Assurance program provides indemnity for copyright claims against the open-source components, while under a paid subscription
 
 ---
+## RHEL for government
 
-## There's Always More to Learn . . .
+Red Hat manages the paperwork and testing for compliance certification, such as:
 
-[RHEL Introduction](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux)
-
-[Red Hat Culture](https://www.redhat.com/en/about/our-culture)
-
-[25 Things You Should Know About Red Hat](https://www.redhat.com/en/blog/25-things-you-should-know-about-red-hat-0)
-
-[RHEL Releases](https://access.redhat.com/articles/3078)
-
-[Red Hat: What's the Best Linux Distro for You](https://www.redhat.com/en/topics/linux/whats-the-best-linux-distro-for-you)
+* Common Criteria security
+* FIPS 140-2 and FIPS 1403 encryption
+* DOD STIG
+* US Government Configuration Baseline (USGCB)
+* Section 508 accessibility
+* FISMA/ FedRAMP
+* HIPAA
