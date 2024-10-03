@@ -2,6 +2,7 @@
 marp: true
 class: invert
 ---
+
 <!--
 Presenter notes
 Slides:
@@ -46,12 +47,12 @@ Mitch Feigenbaum - <https://mrf-dot.github.io>
 
 ## What you need
 
-1) Valid Groff Installation
+1. Valid Groff Installation
 
-    - Linux: It's already installed
-    - Mac: `brew install groff`
+   - Linux: It's already installed
+   - Mac: `brew install groff`
 
-2) Text Editor (VIM recommended)
+2. Text Editor (VIM recommended)
 
 ---
 
@@ -230,13 +231,14 @@ Nested point 1.1.1
 - Displays will allow you to write prose (such as lines of code)
 - Keeps will try to keep the content within the blocks on the same page
 
-| With keep        | No keep  | Type of Display |
-| --------         | -------- | --------        |
-| `.DS L`          | `.LD`    | Left-justified  |
-| `.DS I [indent]` | `.ID`    | Indented        |
-| `.DS B`          | `.BD`    | Block-centered  |
-| `.DS C`          | `.CD`    | Centered        |
-| `.DS R`          | `.RD`    | Right-justified |
+| With keep        | No keep | Type of Display |
+| ---------------- | ------- | --------------- |
+| `.DS L`          | `.LD`   | Left-justified  |
+| `.DS I [indent]` | `.ID`   | Indented        |
+| `.DS B`          | `.BD`   | Block-centered  |
+| `.DS C`          | `.CD`   | Centered        |
+| `.DS R`          | `.RD`   | Right-justified |
+
 ---
 
 ## Displays and Keeps (cont.)
@@ -279,7 +281,7 @@ Now the rest of the paragraph can proceed.
 - Style is controlled by the `\f` command followed by square brackets
   - `\f[B]` (bold)
   - `\f[C]` (constant width [monospace])
-  - `\f[BI]` (bold *and* italic)
+  - `\f[BI]` (bold _and_ italic)
   - `\f[R]` (Regular [Roman])
 
 ```groff

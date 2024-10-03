@@ -1,28 +1,35 @@
 ---
 marp: true
-
 ---
+
 # ELK / Elastic Stack
 
 What is Elastic?
 
 ---
+
 # In the early days….
+
 ![bg contain right ](image01.png)
 
 ---
+
 # Along came Beats to the ELK family, giving us the ELK-B(ee)
 
 ![](image02.png)
 
 ---
+
 # Elastic Universe circa 2018
+
 ![](image03.png)
 
 ---
+
 ![bg](image04.png)
 
 ---
+
 # Licensing
 
 - Elastic is distributed under an Apache 2 “open core” model
@@ -31,6 +38,7 @@ What is Elastic?
 - Elastic has an interesting philosophy on openness
 
 ---
+
 # Elasticsearch
 
 - First and foremost, a search engine powered by Apache Lucene
@@ -46,6 +54,7 @@ What is Elastic?
 - Somebody realized early on that feeding log files into a common database and searching them was handy
 
 ---
+
 # Observability
 
 - APM - embed an agent into your web app to report transaction performance details
@@ -53,24 +62,28 @@ What is Elastic?
 - Metrics - collect numeric data about host performance including CPU, memory, disk, and network
 
 ---
+
 # Full Text
 
 - Site search - crawl your web site, and build a Google-like index
 - Workspace search - connect your cloud apps for unified search across Google Docs, Salesforce, ServiceNow, Sharepoint, JIRA, etc
 
 ---
+
 # Security
 
 - Endpoint - anti-virus agent runs on machines, gathers data, and applies policy
 - SIEM - aggregate security events from endpoint machines and network flow data
 
 ---
+
 # Not mentioned on the homepage - geospatial
 
 - Store points and polygons
 - Search by distance or intersection
 
 ---
+
 # Logstash
 
 - Intermediary between input data and Elasticsearch database
@@ -79,54 +92,61 @@ What is Elastic?
 - Skipping it tonight
 
 ---
+
 # Logstash Inputs
 
-|  | | | | |
-| --- | --- | --- | --- | --- |
-| azure_event_hubs | generator | jms | redis | syslog |
-| beats | github | jmx | relp | tcp |
-| cloudwatch | google_pubsub | kafka | rss | twitter |
-| couchdb_changes | graphite | kinesis | s3 | udp |
-| dead_letter_queue | heartbeat | log4j | salesforce | unix |
-| elasticsearch | http | lumberjack | snmptrap | varnishlog |
-| exec | http_poller | meetup | sqlite | websocket |
-| file | imap | pipe | sqs | wmi |
+|                   |               |            |            |            |
+| ----------------- | ------------- | ---------- | ---------- | ---------- |
+| azure_event_hubs  | generator     | jms        | redis      | syslog     |
+| beats             | github        | jmx        | relp       | tcp        |
+| cloudwatch        | google_pubsub | kafka      | rss        | twitter    |
+| couchdb_changes   | graphite      | kinesis    | s3         | udp        |
+| dead_letter_queue | heartbeat     | log4j      | salesforce | unix       |
+| elasticsearch     | http          | lumberjack | snmptrap   | varnishlog |
+| exec              | http_poller   | meetup     | sqlite     | websocket  |
+| file              | imap          | pipe       | sqs        | wmi        |
 
 ---
+
 # More Logstash inputs
 
-|  | | | | |
-| --- | --- | --- | --- | --- |
-| ganglia | irc | puppet_facter | stdin | xmpp |
-| gelf | jdbc | rabbitmq | stomp | |
+|         |      |               |       |      |
+| ------- | ---- | ------------- | ----- | ---- |
+| ganglia | irc  | puppet_facter | stdin | xmpp |
+| gelf    | jdbc | rabbitmq      | stomp |      |
 
 ---
+
 # Logstash Codecs - decode incoming data
-| | | |
-| --- | --- | --- |
-| avro | fluent | netflow |
-| cef | graphite | nmap |
-| cloudfront | gzip_lines | plain |
-| collectd | json | protobuf |
-| dots | json_lines | rubydebug |
-| edn | line | |
-| edn_lines | msgpack | |
-| es_bulk | multiline | |
+
+|            |            |           |
+| ---------- | ---------- | --------- |
+| avro       | fluent     | netflow   |
+| cef        | graphite   | nmap      |
+| cloudfront | gzip_lines | plain     |
+| collectd   | json       | protobuf  |
+| dots       | json_lines | rubydebug |
+| edn        | line       |           |
+| edn_lines  | msgpack    |           |
+| es_bulk    | multiline  |           |
 
 ---
+
 # Logstash filters - transform data
-| | | | | |
-| --- | --- | --- | --- | --- |
-| aggregate | dissect | geoip | metricize | throttle |
-| alter | dns | grok | metrics | tld |
-| cidr | drop | i18n | mutate | translate |
-| cipher | elapsed | jdbc_static | prune | truncate |
-| clone | elasticsearch | jdbc_streaming | range | urldecode |
-| csv | environment | json | ruby | useragent |
-| date | extractnumbers | json_encode | sleep | uuid |
-| de_dot | fingerprint | kv | split | xml |
+
+|           |                |                |           |           |
+| --------- | -------------- | -------------- | --------- | --------- |
+| aggregate | dissect        | geoip          | metricize | throttle  |
+| alter     | dns            | grok           | metrics   | tld       |
+| cidr      | drop           | i18n           | mutate    | translate |
+| cipher    | elapsed        | jdbc_static    | prune     | truncate  |
+| clone     | elasticsearch  | jdbc_streaming | range     | urldecode |
+| csv       | environment    | json           | ruby      | useragent |
+| date      | extractnumbers | json_encode    | sleep     | uuid      |
+| de_dot    | fingerprint    | kv             | split     | xml       |
 
 ---
+
 # Beats
 
 - Lightweight data shipping agents
@@ -136,48 +156,52 @@ What is Elastic?
 - Uniform configuration due to libbeat at the core
 
 ---
+
 # Beats
 
-|  | | | | |
-| --- | --- | --- | --- | --- |
-| Packetbeat | apexbeat | collectbeat | fastcombeat | etcdbeat |
-| Filebeat | burrowbeat | connbeat | flowbeat | execbeat |
-| Winlogbeat | hsnburrowbeat | consulbeat | gabeat | factbeat |
-| Metricbeat | cloudflarebeat | dockbeat | gcsbeat | fastcombeat |
-| Heartbeat | cloudfrontbeat | Elasticbeat | githubbeat | flowbeat |
-| Auditbeat | cloudtrailbeat | etcdbeat | gpfsbeat | gabeat |
-| amazonbeat | cloudwatchmetricbeat | execbeat | hackerbeat | gcsbeat |
-| apachebeat | cloudwatchlogsbeat | factbeat | Hsbeat | githubbeat |
+|            |                      |             |             |             |
+| ---------- | -------------------- | ----------- | ----------- | ----------- |
+| Packetbeat | apexbeat             | collectbeat | fastcombeat | etcdbeat    |
+| Filebeat   | burrowbeat           | connbeat    | flowbeat    | execbeat    |
+| Winlogbeat | hsnburrowbeat        | consulbeat  | gabeat      | factbeat    |
+| Metricbeat | cloudflarebeat       | dockbeat    | gcsbeat     | fastcombeat |
+| Heartbeat  | cloudfrontbeat       | Elasticbeat | githubbeat  | flowbeat    |
+| Auditbeat  | cloudtrailbeat       | etcdbeat    | gpfsbeat    | gabeat      |
+| amazonbeat | cloudwatchmetricbeat | execbeat    | hackerbeat  | gcsbeat     |
+| apachebeat | cloudwatchlogsbeat   | factbeat    | Hsbeat      | githubbeat  |
 
 ---
+
 # Beats
 
-|  | | | | |
-| --- | --- | --- | --- | --- |
-| gpfsbeat | journalbeat | mqttbeat | packagebeat | redisbeat |
-| hackerbeat | kafkabeat | mysqlbeat | phpfpmbeat | retsbeat |
-| hsbeat | kafkabeat2 | nagioscheckbeat | pingbeat | rsbeat |
-| httpbeat | krakenbeat | nginxbeat | prombeat | saltbeat |
-| hwsensorsbeat | lmsensorsbeat | nginxupstreambeat | prometheusbeat | serialbeat |
-| icingabeat | logstashbeat | nsqbeat | protologbeat | springbeat |
-| iobeat | mcqbeat | nvidiagpubeat | pubsubbeat | tracebeat |
-| jmxproxybeat | mongobeat | openconfigbeat | redditbeat | twitterbeat |
+|               |               |                   |                |             |
+| ------------- | ------------- | ----------------- | -------------- | ----------- |
+| gpfsbeat      | journalbeat   | mqttbeat          | packagebeat    | redisbeat   |
+| hackerbeat    | kafkabeat     | mysqlbeat         | phpfpmbeat     | retsbeat    |
+| hsbeat        | kafkabeat2    | nagioscheckbeat   | pingbeat       | rsbeat      |
+| httpbeat      | krakenbeat    | nginxbeat         | prombeat       | saltbeat    |
+| hwsensorsbeat | lmsensorsbeat | nginxupstreambeat | prometheusbeat | serialbeat  |
+| icingabeat    | logstashbeat  | nsqbeat           | protologbeat   | springbeat  |
+| iobeat        | mcqbeat       | nvidiagpubeat     | pubsubbeat     | tracebeat   |
+| jmxproxybeat  | mongobeat     | openconfigbeat    | redditbeat     | twitterbeat |
 
 ---
+
 # Beats
 
-| |
-| --- |
-| udpbeat |
-| udplogbeat |
-| unifiedbeat |
-| uwsgibeat |
-| varnishlogbeat |
+|                 |
+| --------------- |
+| udpbeat         |
+| udplogbeat      |
+| unifiedbeat     |
+| uwsgibeat       |
+| varnishlogbeat  |
 | varnishstatbeat |
-| vaultbeat |
-| wmibeat |
+| vaultbeat       |
+| wmibeat         |
 
 ---
+
 # Kibana
 
 - Web front end to query and visualize Elasticsearch data
@@ -188,5 +212,7 @@ What is Elastic?
   - Index picker
 
 ---
+
 # Sysmon - a brief aside
+
 “System Monitor (Sysmon) is a Windows system service and device driver that, once installed on a system, remains resident across system reboots to monitor and log system activity to the Windows event log. It provides detailed information about process creations, network connections, and changes to file creation time. By collecting the events it generates using Windows Event Collection or SIEM agents and subsequently analyzing them, you can identify malicious or anomalous activity and understand how intruders and malware operate on your network.”
