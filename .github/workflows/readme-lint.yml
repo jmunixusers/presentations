@@ -1,0 +1,59 @@
+---
+name: Check for presentation links in README
+
+on: pull_request
+
+jobs:
+  build:
+    name: Lint README
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Lint markdown files
+        run: |
+          # define excluded files and directories
+          excluded_dirs=(".git" ".github" ".")
+          excluded_files=("README.md" "LICENSE.md")
+
+          failures=0
+
+          # construct exclusion directories arguments for `find`
+          dir_exclude_args=()
+          for dir in "${excluded_dirs[@]}"; do
+              dir_exclude_args+=(! -name "$dir")
+          done
+
+          # construct exclusion files arguments for `find`
+          file_exclude_args=()
+          for file in "${excluded_files[@]}"; do
+              file_exclude_args+=(! -name "$file")
+          done
+
+          # find the top level presenatation folders
+          dirs=$(find . -maxdepth 1 -type d "${dir_exclude_args[@]}" | sed 's|^\./||')
+          # find the top level presenatation files
+          md_files=$(find . -maxdepth 1 -type f -name "*.md" "${file_exclude_args[@]}" | sed 's|^\./||')
+
+          # aggregate a list of all the links in the README
+          readme_entries=$(grep -oP '\[.*?\]\(\K[^)]+' README.md)
+
+          # make sure that each presenatation directory is linked in the README
+          for dir in $dirs; do
+              if ! echo "$readme_entries" | grep -q "^$dir"; then
+                  failures=$((failures + 1))
+                  echo "Missing README link for directory: $dir"
+              fi
+          done
+
+          # make sure that each presenatation file is linked in the README
+          for md in $md_files; do
+              if ! echo "$readme_entries" | grep -q "^$md"; then
+                  failures=$((failures + 1))
+                  echo "Missing README link for file: $md"
+              fi
+          done
+
+          # if nothing is missing, this will exit with status 0. if not, it'll exit with the number of missing links
+          exit $failures
