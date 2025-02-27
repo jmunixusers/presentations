@@ -14,7 +14,8 @@ jobs:
       - name: Lint markdown files
         run: |
           # define excluded files and directories
-          excluded_dirs=(".git" ".github" ".")
+          # zstd directory is just images from the `zstd.md` file
+          excluded_dirs=(".git" ".github" "." "zstd")
           excluded_files=("README.md" "LICENSE.md")
 
           failures=0
