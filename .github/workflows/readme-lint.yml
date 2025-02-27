@@ -44,7 +44,19 @@ jobs:
           for dir in $dirs; do
               if ! echo "$readme_entries" | grep -q "^$dir"; then
                   failures=$((failures + 1))
-                  echo "Missing README link for directory: $dir"
+
+                  # get the $dir/index.md file if it exists for warning logging
+                  primary_md_file="$dir/"
+                  if [[ -f "$dir/index.md" ]]; then
+                    primary_md_file="$dir/index.md"
+                  else
+                    # find the first markdown file within the directory and link to that if no index.md is present
+                    primary_md_file=$(find "$dir" -maxdepth 1 -type f -name "*.md" | head -n 1)
+                    # if nothing was found in find, fallback to the directory itself
+                    [[ -z "$primary_md_file" ]] && primary_md_file="$dir"
+                  fi
+
+                  echo "::warning file=$primary_md_file,title=Unlinked Directory::Missing link to this directory in README.md"
               fi
           done
 
@@ -52,7 +64,7 @@ jobs:
           for md in $md_files; do
               if ! echo "$readme_entries" | grep -q "^$md"; then
                   failures=$((failures + 1))
-                  echo "Missing README link for file: $md"
+                  echo "::warning file=$md,title=Unlinked File::Missing link to this file in README.md"
               fi
           done
 
