@@ -21,7 +21,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 - [Elasticsearch](elastic/index.md)
 - Git - [101](git101/index.md), [201](https://github.com/jmunixusers/git-201) (External), [301](git301/index.md)
 - [groff](groff/index.md)
-- [Homelabbing](homelab.md)
+- Homelabbing - [Part 1 (Theory)](homelab.md), [Part 2 (Demo)](homelab-2.md)
 - [How to build a VM](BuildAVM/index.md)
 - [Intel Pin](https://github.com/lam2mo/uug-pin) (External)
 - [LaTeX](LaTeX.md)
