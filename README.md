@@ -33,7 +33,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 - [NextCloud on AWS](NextCloudAWS.md)
 - [Regex](regex/index.md)
 - [scripting](Scripting.md)
-- [systemd](Systemd.md)
+- systemd - [notes](systemd-notes.md), [slides](systemd-slides.md)
 - [Tmux](tmux.md)
 - [Vim](https://crosse.github.io/vim_tutorial/) (External)
 - [Vim + Markdown](Vim.md)
