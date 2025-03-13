@@ -4,11 +4,6 @@ marp: true
 ---
 # systemd
 
-## Demo setup
-
-ssh uuguser@demo#.jmunixusers.org
-Password: uugpass
-
 ---
 # History
 
@@ -219,6 +214,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
+- `systemctl daemon-reload`
 - `systemctl start speedtest.timer`
 - `systemctl status speedtest.timer`
 
@@ -228,6 +224,7 @@ WantedBy=timers.target
 - `apt-get install tree`
 
 ```text
+# cat /etc/systemd/system/tree.service
 [Unit]
 Description=Run tree
 
@@ -239,7 +236,7 @@ WantedBy=multi-user.target
 ```
 
 - `systemctl daemon-reload`
-- `systemct start tree`
+- `systemctl start tree`
 - `journalctl -u tree`
 
 ---
@@ -253,6 +250,7 @@ WantedBy=multi-user.target
 # Minor lockdown
 
 ```text
+# cat /etc/systemd/system/tree.service
 [Unit]
 Description=Run tree
 
