@@ -105,7 +105,7 @@ marp: true
 - While init scripts ran sequentially, systemd will launch anything in parallel that satisfies declared dependencies
 - Yes, anything! Be careful about filesystems being mounted, network being online, etc
 - There are pre-defined targets like `network-online.target` to help
-- Try `systemctl list-dependencies sshd.service` to show a sample dependency tree
+- Try `systemctl list-dependencies ssh.service` to show a sample dependency tree
 
 ---
 # About the boot process
