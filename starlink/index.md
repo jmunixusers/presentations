@@ -5,7 +5,6 @@ class: invert
 
 # Lessons and Takeaways from Setting up a Starlink in the Woods
 
-
 Mitch Feigenbaum - <https://mitchf.me>
 
 ---
@@ -33,8 +32,8 @@ Mitch Feigenbaum - <https://mitchf.me>
 # Initial Challenges
 
 1. Starlink router is very limited
-	a. No guest network capability
-	b. No ethernet adapter
+  a. No guest network capability
+  b. No ethernet adapter
 2. Trees block the view (especially in the Spring)
 
 ---
@@ -77,7 +76,7 @@ Mitch Feigenbaum - <https://mitchf.me>
 
 # How we solved it
 
-### Not easily
+## Not easily
 
 ---
 
