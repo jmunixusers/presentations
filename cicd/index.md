@@ -2,6 +2,12 @@
 marp: true
 ---
 
+<style scoped>
+section {
+  font-size: 150%;
+}
+</style>
+
 # What is CI/CD?
 
 **Continuous Integration (CI)**: Automate the process of merging new code into a shared repository, early and often.
@@ -33,6 +39,15 @@ The idea is to automate the testing and delivery of software from the initial co
 
 ---
 
+<style scoped>
+pre {
+  font-size: 75%;
+}
+section {
+  font-size: 100%;
+}
+</style>
+
 # The Agenda
 
 You will be setting up a sample GitHub repository, and setting up a GitHub Actions configuration file to ensure that code will be checked and, if it passes the tests, deploy a new build automatically.
@@ -40,7 +55,7 @@ You will be setting up a sample GitHub repository, and setting up a GitHub Actio
 **Terminology to understand:**
 
 - **Events**: Trigger for a workflow. "When new code is pushed to this repository, run the below job."
-- **Jobs**: A series of *steps* and *actions* that only run once triggered by an event (typically linters and testing software).
+- **Jobs**: A series of _steps_ and _actions_ that only run once triggered by an event (typically linters and testing software).
 - **Runners**: An isolated environment (container) that runs our code throughout the CI/CD process.
 
 Here is a simple example to demonstrate these concepts in action!
@@ -63,7 +78,7 @@ jobs:
 
       - name: Run linter
         uses: github/super-linter@v3
-        env: 
+        env:
           DEFAULT_BRANCH: main # This job will ONLY run on the main branch
           # Never use plaintext to store sensitive information, use secrets!
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -71,9 +86,15 @@ jobs:
 
 ---
 
+<style scoped>
+section {
+  font-size: 90%;
+}
+</style>
+
 # Getting Started
 
-*Note:* In order to follow along, you must install Git and have an active GitHub account.
+_Note:_ In order to follow along, you must install Git and have an active GitHub account.
 
 ## Fork my sample repository
 
@@ -88,8 +109,8 @@ For demonstration purposes, I have created a sample repository that contains a s
 1. On GitHub, navigate to **your fork** of the sample repository.
 2. Above the list of files, click the green **Code** button
 3. Copy the URL for the repository.
-    1. If you have an SSH key associated with your GitHub account already, use the SSH option.
-    2. Otherwise, use the HTTPS option.
+   1. If you have an SSH key associated with your GitHub account already, use the SSH option.
+   2. Otherwise, use the HTTPS option.
 4. Open your terminal, and type the following:
 
 ```bash
@@ -100,6 +121,12 @@ git clone <PASTE YOUR LINK HERE>
 After you've completed these steps, you should have the repository in the location you specified.
 
 ---
+
+<style scoped>
+section {
+  font-size: 150%;
+}
+</style>
 
 # Create your first workflow
 
@@ -118,6 +145,16 @@ These commands do the following:
   - This is your workflow file. It can be named anything you want, but make sure to leave the `.yml` extension!
 
 ---
+
+<style scoped>
+section {
+  font-size: 135%;
+}
+pre {
+  font-size: 55%;
+}
+</style>
+
 # Open your workflow in a text editor
 
 Let's say, for instance, we want our groundbreaking, revolutionary "Hello World" app to conform to standard PEP 8 formatting. How would we accomplish this?
@@ -127,48 +164,52 @@ name: Hello World application
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
-
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Test with pytest
+        run: |
+          pytest
 ```
 
 ---
+
+<style scoped>
+section {
+  font-size: 120%;
+}
+</style>
 
 # Time out! What's going on here?
 
 This seems like a lot. What is this specifically doing?
 
-- First, you're setting the *events* that will trigger this workflow. In this case, this workflow triggers when you push to the main branch of the repository, or if someone submits a pull request.
+- First, you're setting the _events_ that will trigger this workflow. In this case, this workflow triggers when you push to the main branch of the repository, or if someone submits a pull request.
 - Then, you're defining a job, and in that job, you're doing a couple of things:
-  - First, you're saying that you want this *runner* to use Ubuntu.
-  - Second, you're defining your *steps*:
+  - First, you're saying that you want this _runner_ to use Ubuntu.
+  - Second, you're defining your _steps_:
     - Set up Python 3.10.
     - Install the dependencies we need.
     - Run the linter.
@@ -188,6 +229,7 @@ This is where CI/CD shines!
 - Add a bunch of random whitespaces, or add some code that doesn't work. Does the integration fail?
 
 ---
+
 # More Examples of CI/CD Pipelines
 
 ## Simple
@@ -204,6 +246,13 @@ This is where CI/CD shines!
 - [Huge GitLab Pipeline (click "Show dependencies")](https://gitlab.com/gitlab-org/gitlab/-/pipelines/1745834196)
 
 ---
+
+<style scoped>
+section {
+  font-size: 100%;
+}
+</style>
+
 # What's next?
 
 This post is only really scratching the surface on what's possible with CI/CD, so here are some recommendations on
@@ -213,4 +262,4 @@ where to look to improve your knowledge.
   - Here's [my workflow for Heehoposting](https://github.com/hackisonjd/heehoposting/blob/main/.github/workflows/hugo.yml).
 - Evaluate some of the GitHub workflow templates and see if they work in your project.
 
-![Make sure to check the Actions link on the top bar of your repo!](images/001.png)
+![h:400px](images/001.png)
