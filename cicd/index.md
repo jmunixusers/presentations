@@ -2,7 +2,6 @@
 marp: true
 ---
 
----
 # What is CI/CD?
 
 **Continuous Integration (CI)**: Automate the process of merging new code into a shared repository, early and often.
@@ -19,6 +18,7 @@ marp: true
 Most developer platforms have their own CI/CD solutions (GitHub Actions), but many people also self-host these solutions themselves (a topic for another time).
 
 ---
+
 # The Theory
 
 The idea is to automate the testing and delivery of software from the initial code commit all the way through to deployment.
@@ -32,6 +32,7 @@ The idea is to automate the testing and delivery of software from the initial co
 **Is it worth it?** It depends!
 
 ---
+
 # The Agenda
 
 You will be setting up a sample GitHub repository, and setting up a GitHub Actions configuration file to ensure that code will be checked and, if it passes the tests, deploy a new build automatically.
@@ -67,7 +68,9 @@ jobs:
           # Never use plaintext to store sensitive information, use secrets!
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
 ---
+
 # Getting Started
 
 *Note:* In order to follow along, you must install Git and have an active GitHub account.
@@ -97,6 +100,7 @@ git clone <PASTE YOUR LINK HERE>
 After you've completed these steps, you should have the repository in the location you specified.
 
 ---
+
 # Create your first workflow
 
 ```bash
@@ -112,6 +116,7 @@ These commands do the following:
   - This directory is where GitHub looks for your workflow files.
 - Create a new file named `static.yml`
   - This is your workflow file. It can be named anything you want, but make sure to leave the `.yml` extension!
+
 ---
 # Open your workflow in a text editor
 
