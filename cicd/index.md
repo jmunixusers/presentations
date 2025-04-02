@@ -1,8 +1,8 @@
 ---
-title: A Beginner's Guide to CI and CD
+marp: true
 ---
 
-## What is CI/CD?
+# What is CI/CD?
 
 **Continuous Integration (CI)**: Automate the process of merging new code into a shared repository, early and often.
 
@@ -17,11 +17,13 @@ title: A Beginner's Guide to CI and CD
 
 Most developer platforms have their own CI/CD solutions (GitHub Actions), but many people also self-host these solutions themselves (a topic for another time).
 
-## The Theory
+---
+
+# The Theory
 
 The idea is to automate the testing and delivery of software from the initial code commit all the way through to deployment.
 
-### Why do this?
+## Why do this?
 
 - Limits amount of human intervention required to build a project. (Automate once, be "lazy" forever)
 - Allows for multiple people, with drastically different roles, to deploy code without conflicts ("merge hell")
@@ -29,7 +31,9 @@ The idea is to automate the testing and delivery of software from the initial co
 
 **Is it worth it?** It depends!
 
-## The Agenda
+---
+
+# The Agenda
 
 You will be setting up a sample GitHub repository, and setting up a GitHub Actions configuration file to ensure that code will be checked and, if it passes the tests, deploy a new build automatically.
 
@@ -65,11 +69,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Getting Started
+---
+
+# Getting Started
 
 *Note:* In order to follow along, you must install Git and have an active GitHub account.
 
-### Fork my sample repository
+## Fork my sample repository
 
 For demonstration purposes, I have created a sample repository that contains a simple Python "Hello World" file.
 
@@ -77,7 +83,7 @@ For demonstration purposes, I have created a sample repository that contains a s
 2. In the top-right corner of the page, click **Fork**. Leave everything as default.
 3. Click **Create fork**.
 
-### Download the repository to your local device
+## Download the repository to your local device
 
 1. On GitHub, navigate to **your fork** of the sample repository.
 2. Above the list of files, click the green **Code** button
@@ -93,7 +99,9 @@ git clone <PASTE YOUR LINK HERE>
 
 After you've completed these steps, you should have the repository in the location you specified.
 
-### Create your first workflow
+---
+
+# Create your first workflow
 
 ```bash
 cd gh-actions-example
@@ -109,7 +117,8 @@ These commands do the following:
 - Create a new file named `static.yml`
   - This is your workflow file. It can be named anything you want, but make sure to leave the `.yml` extension!
 
-### Open your workflow in a text editor
+---
+# Open your workflow in a text editor
 
 Let's say, for instance, we want our groundbreaking, revolutionary "Hello World" app to conform to standard PEP 8 formatting. How would we accomplish this?
 
@@ -150,7 +159,9 @@ jobs:
 
 ```
 
-### Time out! What's going on here?
+---
+
+# Time out! What's going on here?
 
 This seems like a lot. What is this specifically doing?
 
@@ -169,19 +180,22 @@ By taking the extra five or so minutes to define a workflow first, you've saved 
 
 This is where CI/CD shines!
 
-### Play around with the workflow
+---
+
+# Play around with the workflow
 
 - Change specific arguments in the `.yaml` file. What's changed? How does this affect the testing behavior?
 - Add a bunch of random whitespaces, or add some code that doesn't work. Does the integration fail?
 
-## More Examples of CI/CD Pipelines
+---
+# More Examples of CI/CD Pipelines
 
-### Simple
+## Simple
 
 - [Run python unit tests/codecov on multiple different python versions](https://github.com/TabulateJarl8/randfacts/blob/master/.github/workflows/main.yml)
 - [Automatically build a jar in a Java Maven Project](https://github.com/TabulateJarl8/modpackSwitcher/blob/master/.github/workflows/main.yml)
 
-### Complex
+## Complex
 
 - [Build/deploy multiarch snaps, and other various Linux/Windows packages](https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid/-/blob/trunk/.gitlab-ci.yml)
   - [Full run view](https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid/-/pipelines/1711964739)
@@ -189,7 +203,8 @@ This is where CI/CD shines!
   - [Full run view](https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid-bindings/-/pipelines/1712101626)
 - [Huge GitLab Pipeline (click "Show dependencies")](https://gitlab.com/gitlab-org/gitlab/-/pipelines/1745834196)
 
-## What's next?
+---
+# What's next?
 
 This post is only really scratching the surface on what's possible with CI/CD, so here are some recommendations on
 where to look to improve your knowledge.
