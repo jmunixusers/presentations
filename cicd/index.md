@@ -158,7 +158,9 @@ jobs:
         pytest
 
 ```
+
 ---
+
 # Time out! What's going on here?
 
 This seems like a lot. What is this specifically doing?
@@ -179,10 +181,12 @@ By taking the extra five or so minutes to define a workflow first, you've saved 
 This is where CI/CD shines!
 
 ---
+
 # Play around with the workflow
 
 - Change specific arguments in the `.yaml` file. What's changed? How does this affect the testing behavior?
 - Add a bunch of random whitespaces, or add some code that doesn't work. Does the integration fail?
+
 ---
 # More Examples of CI/CD Pipelines
 
