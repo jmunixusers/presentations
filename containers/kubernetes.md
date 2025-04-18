@@ -125,7 +125,7 @@ We've used cgroups here inside systemd unit files to help control uncooperative 
 - Abbreviated "k8s" - k, 8 random letters, s
 - Greek for "helmsman" - steering wheel logo
 - Seven-sided for "7 of 9", the friendly Borg
-- Google partnered with the Linux Foundation to form the Cloud Native Compute Foundation (CNCF), to development and maintain the project
+- Google partnered with the Linux Foundation to form the Cloud Native Compute Foundation (CNCF), to develop and maintain the project
 
 ---
 # What is Kubernetes?
