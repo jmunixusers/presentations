@@ -46,6 +46,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 - [GPL](GPL.md)
 - [IRC](IRC.md)
 - [Laravel](laravel/Laravel.md)
+- [Open-source philosophy](oss-philosophy.md)
 - [osquery](osquery.md)
 - [Salt](saltstack/Salt.md)
 - [Starlink](starlink/index.md)
