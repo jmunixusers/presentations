@@ -5,7 +5,7 @@ marp: true
 
 ## Warmup
 Take a moment to create a GitHub account, or verify your password. Feel free to
-post your username in Teams chat so we can get a little social network going.
+post your username in Discord so we can get a little social network going.
 Follow me @ripleymj.
 
 ---
@@ -37,7 +37,7 @@ Resolving deltas: 100% (77/77), done.
 ---
 # Step 3 - Confirm your origin
 
-Confirm the origin URL is set correctly. (From here out, you should see your e-ID instead of `ripleymj`.)
+Confirm the origin URL is set correctly. (From here out, you should see your username instead of `ripleymj`.)
 
 ```bash
 ~/history$ git remote get-url origin
@@ -62,7 +62,7 @@ upstream
 Create a new branch by "checking it out" with a name that roughly describes its purpose, like `add-YOURNAME`.
 
 ```bash
-$ git checkout -b add-mike
+$ git switch -c add-mike
 Switched to a new branch 'add-mike'
 $ git branch
 * add-mike
@@ -119,7 +119,7 @@ Wait here for your pull request to be merged.
 Switch back to the main branch by checking it out.
 
 ```bash
-$ git checkout main
+$ git switch main
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
 ```
