@@ -11,20 +11,20 @@ analyze the state of your system.
 
 ## CLI commands
 
-| Command                       | Short Description |
-|-------------------------------|-------------------|
-| `systemctl status [unit]`  | Show the current status of all units or a single unit (includes processes and recent log messages if a unit is given) |
-| `systemctl restart unit` | Restart the unit |
-| `systemctl stop unit`    | Stop the unit |
-| `systemctl start unit`   | Start the unit |
-| `systemctl enable unit [--now]` | Enable the unit (run it on boot), and optionally start it now |
-| `systemctl disable unit [--now]` | Disable the unit, and optionally stop it now |
-| `systemctl cat unit` | Print the configuration for the unit |
-| `systemctl edit unit [--full]` | Create an override config for the unit, or just override the whole file |
-| `systemctl daemon-reload` | Load all the changes made to the unit files on disk |
-| `systemctl reboot` | Reboot the computer |
-| `systemctl poweroff` | Turn off the computer |
-| `systemctl suspend` | Put the computer to sleep |
+| Command                          | Short Description                                                       |
+|----------------------------------|-------------------------------------------------------------------------|
+| `systemctl status [unit]`        | Show the current status of all units or a single unit                   |
+| `systemctl restart unit`         | Restart the unit                                                        |
+| `systemctl stop unit`            | Stop the unit                                                           |
+| `systemctl start unit`           | Start the unit                                                          |
+| `systemctl enable unit [--now]`  | Enable the unit (run it on boot), and optionally start it now           |
+| `systemctl disable unit [--now]` | Disable the unit, and optionally stop it now                            |
+| `systemctl cat unit`             | Print the configuration for the unit                                    |
+| `systemctl edit unit [--full]`   | Create an override config for the unit, or just override the whole file |
+| `systemctl daemon-reload`        | Load all the changes made to the unit files on disk                     |
+| `systemctl reboot`               | Reboot the computer                                                     |
+| `systemctl poweroff`             | Turn off the computer                                                   |
+| `systemctl suspend`              | Put the computer to sleep                                               |
 
 ## Service unit files
 
