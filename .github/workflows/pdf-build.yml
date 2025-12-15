@@ -21,7 +21,7 @@ jobs:
           sudo snap install chromium
           sudo apt-get -q update
           sudo apt-get -qq -y install pandoc texlive-xetex librsvg2-bin
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: ~/.npm
           key: "${{ runner.os }}-node-"
