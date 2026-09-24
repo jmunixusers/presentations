@@ -23,6 +23,7 @@ For slides rendered to PDF or presentation notes for offline reading, download t
 - Git - [101](git101/index.md), [150](git150/index.md), [201](https://github.com/jmunixusers/git-201) (External), [301](git301/index.md), [401](git401/index.md)
 - [groff](groff/index.md)
 - Homelabbing - [Part 1 (Theory)](homelab.md), [Part 2 (Demo)](homelab-2.md)
+  - [2026 Update](homelab-2026/index.md)
 - [Homelab Storage](homelab-storage/index.md)
 - [How to build a VM](BuildAVM/index.md)
 - [Intel Pin](https://github.com/lam2mo/uug-pin) (External)
